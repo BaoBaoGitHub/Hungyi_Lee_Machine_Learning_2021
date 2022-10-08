@@ -1,10 +1,10 @@
-# Self-attention P1
+# Sequence as input
 
 CNN以后,我们要讲另外一个常见的Network架构,这个架构叫做Self-Attention,而这个Self-Attention想要解决的问题是什么呢？
 
 ## Sophisticated Input 
 
-到目前為止,我们的Network的Input都是一个向量,不管是在预测这个,YouTube观看人数的问题上啊,还是影像处理上啊,我们的输入都可以看作是一个向量,然后我们的输出,可能是一个数值,这个是Regression,可能是一个类别,这是****Classification****
+到目前為止,我们的Network的Input都是一个向量,不管是在预测这个,YouTube观看人数的问题上啊,还是影像处理上啊,我们的输入都可以看作是一个向量,然后我们的输出,可能是一个数值,这个是Regression,可能是一个类别,这是**Classification**
 
 ![image-20221008091438003](./04Sequence as input.assets/image-20221008091438003.png)
 
@@ -137,9 +137,9 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 第二种类型有作业四,感兴趣可以去看看作业四的程式，那因為上课时间有限,所以上课,我们今天就先只讲第一个类型,也就是输入跟输出数目一样多的状况
 
-## Sequence Labeling
+# Sequence Labeling
 
-### CNN for Sequence Labeling?
+## CNN for Sequence Labeling?
 
 那这种输入跟输出数目一样多的状况又叫做Sequence Labeling,你要给Sequence裡面的每一个向量,都给它一个Label,那要怎麼解Sequence Labeling的问题呢
 
@@ -183,7 +183,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 **所以有没有更好的方法,来考虑整个Input Sequence的资讯呢,这就要用到我们接下来要跟大家介绍的,Self-Attention这个技术**
 
-### Self-Attention for Sequence Labeling
+## Self-Attention for Sequence Labeling!
 
 Self-Attention的运作方式就是,**Self-Attention会吃一整个Sequence的资讯**
 
@@ -226,7 +226,7 @@ Transformer我们今天还不会讲到,但我们之后会讲到,Transformer裡�
 
 那Self-Attention是怎麼运作的呢
 
-#### Self-Attention
+### Self-Attention
 
 **Self-Attetion接收一个Sequence，输出同等数量的Vector，其中每个Vector都考虑了整个输入Sequence的全部信息。**
 
@@ -240,7 +240,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 那接下来呢就是要跟大家说明,怎麼產生$b^1$这个向量,那你知道怎麼產生$b^1$这个向量以后,你就知道怎麼產生剩下$b^1 b^2 b^3 b^4$剩下的向量
 
-##### Attention Score
+### Attention Score
 
 这里有一个特别的机制,这个机制是根据$a^1$这个向量,找出整个很长的sequence裡面,到底哪些部分是重要的,哪些部分跟判断$a^1$是哪一个label是有关係的,哪些部分是我们要决定$a^1$的class,决定$a^1$的regression数值的时候,所需要用到的资讯
 
@@ -296,7 +296,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 这边你不一定要用Soft-Max,用别的替代也没问题,比如说有人尝试过说做个ReLU,这边通通做个ReLU,那结果发现还比Soft-Max好一点,所以这边你不一定要用Soft-Max,这边你要用什麼Activation Function都行,你高兴就好,你可以试试看,那Soft-Max是最常见的,那你可以自己试试看,看能不能试出比Soft-Max更好的结果
 
-##### Extract Information Based on Attention Score
+### Extract Information Based on Attention Score
 
 接下来得到这个$α'$以后,我们就要根据这个$α'$去抽取出这个Sequence裡面重要的资讯,根据这个α我们已经知道说,哪些向量跟$a^1$是最有关係的,怎麼抽取重要的资讯呢,
 
@@ -320,7 +320,7 @@ $$
 
 
 
-# Self-attention_P2
+
 
 ![image-20221008095919642](./04Sequence as input.assets/image-20221008095919642.png)
 
@@ -356,7 +356,7 @@ $$
 
 同理就可以,由 $a^3$ 乘一个 transform 得到 $q^3$,然后就计算 $b^3$,从 $a^4$ 乘一个 transform 得到 $q^4$,就计算 $b^4$,以上说的是  Self-attention 它运作的过程
 
-## Self-Attention——矩阵的角度
+### Self-Attention——矩阵的角度
 
 接下来我们从矩阵乘法的角度,再重新讲一次我们刚才讲的,Self-attention 是怎麼运作的
 
@@ -452,7 +452,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 但是其他的操作都没有未知的参数,都是我们人為设定好的,都不需要透过 training data 找出来,那这整个就是 Self-attention 的操作,从 I 到 O 就是做了 Self-attention
 
-## Multi-head Self-attention
+### Multi-head Self-attention
 
 Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-head Self-attention,其实今天的使用是非常地广泛的
 
@@ -505,9 +505,9 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 也就是再乘上一个矩阵,然后得到 bi,然后再送到下一层去,那这个就是 Multi-head attention,一个这个 Self-attention 的变形
 
-## Positional Encoding 
+### Positional Encoding 
 
-### No position information in self-attention
+#### No position information in self-attention
 
 那讲到目前為止,你会发现说 Self-attention 的这个 layer,它少了一个也许很重要的资讯,这个资讯是位置的资讯
 
@@ -519,7 +519,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 但是这样子设计可能会有一些问题,因為有时候位置的资讯也许很重要,举例来说,我们在做这个 POS tagging,就是词性标记的时候,也许你知道说动词比较不容易出现在句首,所以如果我们知道说,某一个词汇它是放在句首的,那它是动词的可能性可能就比较低,这样子的位置的资讯往往也是有用的
 
-### Each positon has a unique positional vector $e^i$
+#### Each positon has a unique positional vector $e^i$
 
 可是在我们到目前為止,讲的 Self-attention 的操作裡面,根本就没有位置的资讯,所以怎麼办呢,所以你做 Self-attention 的时候,如果你觉得位置的资讯是一个重要的事情,那你可以把位置的资讯把它塞进去,怎麼把位置的资讯塞进去呢,这边就要用到一个叫做,positional encoding的技术
 
@@ -537,7 +537,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 所以它就是把这边这个向量,放在第一个位置,把这个向量加到第二个位置的 a上,把这个向量加到第三个位置的 a 上,以此类推,每一个位置都有一个专属的 e,希望透过给每一个位置不同的 e,你的 model 在处理这个 input 的时候,它可以知道现在的 input,它的位置的资讯是什麼样子
 
-### Hand-crafted or Learned from data
+#### Hand-crafted or Learned from data
 
 这样子的 positional vector,它是 handcrafted 的,也就是它是人设的,那人设的这个 vector 有很多问题,就假设我现在在定这个 vector 的时候,只定到 128,那我现在 sequence 的长度,如果是 129 怎麼办呢
 
@@ -557,7 +557,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 总之你有各式各样不同的方法,来產生 positional encoding,那目前我们还不知道哪一种方法最好,这是一个尚待研究中的问题,所以你不用纠结说,為什麼 Sinusoidal 最好,**你永远可以提出新的做法**
 
-## Applications …
+### Applications …
 
 Self-attention 当然是用得很广,我们已经提过很多次 transformer 这个东西
 
@@ -567,7 +567,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 但 Self-attention,不是只能用在 NLP 相关的应用上,它还可以用在很多其他的问题上,
 
-### Self-attention for Speech
+#### Self-attention for Speech
 
 比如说在做语音的时候,你也可以用 Self-attention,不过在做语音的时候,你可能会对 Self-attention,做一些小小的改动
 
@@ -599,7 +599,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 所以如果在做 Self-attention 的时候,也许没有必要看过一整个句子,也许没有必要让 Self-attention 考虑一整个句子,也许只需要考虑一个小范围就好,这样就可以加快运算的速度，这个是 Truncated Self-attention,
 
-### Self-attention for Image
+#### Self-attention for Image
 
 那其实 Self-attention ,还可以被用在影像上,Self-attention
 
@@ -618,6 +618,34 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 ![image-20221008102204015](./04Sequence as input.assets/image-20221008102204015.png)
 
 那这边就举了两个例子,来给大家参考,那现在把 Self-attention 用在影像处理上,也不算是一个非常石破天惊的事情,
+
+#### Self-attention for Graph——GNN
+
+Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Self-attention 来处理,所以 Self-attention 也可以用在 Graph 上面,但是当我们把 Self-attention,用在Graph 上面的时候,有什麼样特别的地方呢,、
+
+![image-20221008103557924](./04Sequence as input.assets/image-20221008103557924.png)
+
+在 Graph 上面,每一个 node 可以表示成一个向量,但不只有 node 的资讯,还有 edge 的资讯,我们知道哪些 node 之间是有相连的,也就是哪些 node 是有关联的
+
+我们知道哪些向量间是有关联,那之前我们在做 Self-attention 的时候,所谓的关联性是 network 自己找出来的,但是现在既然有了 Graph 的资讯,有了 edge 的资讯,那关联性也许就不需要透过机器自动找出来,这个图上面的 edge 已经暗示了我们,node 跟 node 之间的关联性
+
+所以今天当你把 Self-attention,用在 Graph 上面的时候,你有一个选择是你在做这个,Attention Matrix 计算的时候,你可以只计算有 edge 相连的 node 就好
+
+举例来说在这个图上,node 1 跟 node 8 有相连,那我们只需要计算 node 1 跟 node 8,这两个向量之间的 attention 的分数,那 1 跟 6 相连,所以只有 1 跟 6 之间,需要计算 attention 的分数,1 跟 5 有相连,所以只有 1 跟 5 需要计算 attention 的分数,2 跟 3 有相连,所以只有 2 跟 3 需要计算 attention 的分数,以此类推
+
+那如果两个 node 之间没有相连,那其实很有可能就暗示我们,这两个 node 之间没有关係,既然没有关係,我们就不需要再去计算它的 attention score,直接把它设為 0 就好了
+
+因為这个 Graph 往往是人為根据某些 domain knowledge 建出来的,那 domain knowledge 告诉我们说,这两个向量彼此之间没有关联,我们就没有必要再用机器去学习这件事情
+
+**其实当我们把 Self-attention,按照我们这边讲的这种限制,用在 Graph 上面的时候,其实就是一种 Graph Neural Network,也就是一种 GNN**
+
+那我知道 GNN,现在也是一个很 fancy 的题目,那我不会说 Self-attention 就要囊括了,所有 GNN 的各种变形了,但把 Self-attention 用在 Graph 上面,是某一种类型的 Graph Neural Network,那这边呢,一样我们也没有办法细讲了,GNN 这边坑也是很深啊,这边水是很深,那就放一下助教之前上课的连结
+
+![image-20221008103700321](./04Sequence as input.assets/image-20221008103700321.png)
+
+大概花了快三个小时,在讲GNN,而且其实还没有讲完,就告诉你说这个 Graph Neural Network,也是有非常深的技术,这边水也是很深,那这不是我们今天这一堂课可以讲的内容
+
+### Self-attention v.s. Other Models
 
 #### Self-attention v.s. CNN
 
@@ -682,7 +710,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 所以这个就是 Self-attention 跟 CNN 的比较，那 Self-attention 跟 CNN,谁比较好呢,**我应该选哪一个呢,事实上你也可以都用**,在我们作业四裡面,如果你要做 strong baseline 的话,就特别给你一个提示,就是用 conformer,裡面就是有用到 Self-attention,也有用到 CNN
 
-### Self-attention v.s. RNN
+#### Self-attention v.s. RNN
 
 我们来比较一下,Self-attention 跟 RNN,RNN就是 recurrent neural network,这门课裡面现在就不会讲到 recurrent neural network,因為 recurrent neural network 的角色,很大一部分都可以用 Self-attention 来取代了,
 
@@ -737,33 +765,9 @@ RNN 它今天 input 一排是 vector,output 另外一排 vector 的时候,它没
 
 ![image-20221008103532357](./04Sequence as input.assets/image-20221008103532357.png)
 
-### Self-attention for Graph——G
 
-Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Self-attention 来处理,所以 Self-attention 也可以用在 Graph 上面,但是当我们把 Self-attention,用在Graph 上面的时候,有什麼样特别的地方呢,、
 
-![image-20221008103557924](./04Sequence as input.assets/image-20221008103557924.png)
-
-在 Graph 上面,每一个 node 可以表示成一个向量,但不只有 node 的资讯,还有 edge 的资讯,我们知道哪些 node 之间是有相连的,也就是哪些 node 是有关联的
-
-我们知道哪些向量间是有关联,那之前我们在做 Self-attention 的时候,所谓的关联性是 network 自己找出来的,但是现在既然有了 Graph 的资讯,有了 edge 的资讯,那关联性也许就不需要透过机器自动找出来,这个图上面的 edge 已经暗示了我们,node 跟 node 之间的关联性
-
-所以今天当你把 Self-attention,用在 Graph 上面的时候,你有一个选择是你在做这个,Attention Matrix 计算的时候,你可以只计算有 edge 相连的 node 就好
-
-举例来说在这个图上,node 1 跟 node 8 有相连,那我们只需要计算 node 1 跟 node 8,这两个向量之间的 attention 的分数,那 1 跟 6 相连,所以只有 1 跟 6 之间,需要计算 attention 的分数,1 跟 5 有相连,所以只有 1 跟 5 需要计算 attention 的分数,2 跟 3 有相连,所以只有 2 跟 3 需要计算 attention 的分数,以此类推
-
-那如果两个 node 之间没有相连,那其实很有可能就暗示我们,这两个 node 之间没有关係,既然没有关係,我们就不需要再去计算它的 attention score,直接把它设為 0 就好了
-
-因為这个 Graph 往往是人為根据某些 domain knowledge 建出来的,那 domain knowledge 告诉我们说,这两个向量彼此之间没有关联,我们就没有必要再用机器去学习这件事情
-
-**其实当我们把 Self-attention,按照我们这边讲的这种限制,用在 Graph 上面的时候,其实就是一种 Graph Neural Network,也就是一种 GNN**
-
-那我知道 GNN,现在也是一个很 fancy 的题目,那我不会说 Self-attention 就要囊括了,所有 GNN 的各种变形了,但把 Self-attention 用在 Graph 上面,是某一种类型的 Graph Neural Network,那这边呢,一样我们也没有办法细讲了,GNN 这边坑也是很深啊,这边水是很深,那就放一下助教之前上课的连结
-
-![image-20221008103700321](./04Sequence as input.assets/image-20221008103700321.png)
-
-大概花了快三个小时,在讲Self Attention,而且其实还没有讲完,就告诉你说这个 Graph Neural Network,也是有非常深的技术,这边水也是很深,那这不是我们今天这一堂课可以讲的内容,好 
-
-## More
+### More
 
 其实Self-attention 有非常非常多的变形,你可以看一篇 paper 叫做,Long Range Arena,裡面比较了各种不同的 Self-attention 的变形
 
