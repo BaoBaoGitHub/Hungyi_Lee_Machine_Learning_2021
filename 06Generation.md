@@ -1400,7 +1400,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 
 
-# GAN from Unpaired Data_for Unsupervised Learning
+# GAN from Unpaired Data for Unsupervised Learning
 
 ## Problems
 
