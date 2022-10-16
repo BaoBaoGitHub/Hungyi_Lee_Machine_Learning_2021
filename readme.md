@@ -1,4 +1,6 @@
-1. 使用方法：下载本仓库到本地并解压文件夹，使用typora打开即可食用。
+1. 使用方法：下载本仓库到本地并解压文件夹，使用typora打开md文件或者打开pdf文件即可食用。
+
+2. 目录结构说明：md_files为md格式的笔记，pdf_files为pdf格式的笔记。
 
 2. 2021年李宏毅机器学习网址：https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.php  
    2022年李宏毅机器学习网址：https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php  
