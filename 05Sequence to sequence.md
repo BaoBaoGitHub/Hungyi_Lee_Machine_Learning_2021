@@ -1,6 +1,6 @@
 
 
-![image-20221008111116750](./05Sequence to sequence.assets/image-20221008111116750.png)
+![image-20221008111116750](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111116750.png)
 
 变形金刚的英文就是Transformer,那Transformer也跟我们之后会,提到的BERT有非常强烈的关係,所以这边有一个BERT探出头来,代表说Transformer跟BERT,是很有关係的
 
@@ -18,7 +18,7 @@
 
 1. 举例来说,Seq2seq一个很好的应用就是 **语音辨识**
 
-   ![image-20221008111208245](./05Sequence to sequence.assets/image-20221008111208245.png)
+   ![image-20221008111208245](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111208245.png)
 
    在做语音辨识的时候,输入是声音讯号,声音讯号其实就是一串的vector,输出是语音辨识的结果,也就是输出的这段	声音讯号,所对应的文字
 
@@ -28,7 +28,7 @@
 
 2. 还有很多其他的例子,比如说作业五我们会做机器翻译
 
-   ![image-20221008111230354](./05Sequence to sequence.assets/image-20221008111230354.png)
+   ![image-20221008111230354](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111230354.png)
 
    让机器读一个语言的句子,输出另外一个语言的句子,那在做机器翻译的时候,输入的文字的长度是N,输出的句子的长度是N',那N跟N'之间的关係,也要由机器自己来决定
 
@@ -36,7 +36,7 @@
 
 3. 甚至可以做更复杂的问题,比如说做语音翻译
 
-   ![image-20221008111317757](./05Sequence to sequence.assets/image-20221008111317757.png)
+   ![image-20221008111317757](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111317757.png)
 
    语音翻译就是,你对机器说一句话,比如说machine learning,他输出的不是英文,他直接把他听到的英文的声音讯号翻译成中文文字
 
@@ -84,7 +84,7 @@
 
 机器在听的一千五百个小时的,乡土剧以后,你可以对它输入一句台语,然后他就输出一句中文的文字,以下是真正的例子
 
-![image-20221008111520251](./05Sequence to sequence.assets/image-20221008111520251.png)
+![image-20221008111520251](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111520251.png)
 
 机器听到的声音是这样子的
 
@@ -93,7 +93,7 @@
 - 但机器其实也是蛮容易犯错的,底下特别找机个犯错的例子,给你听一下,你听听这一段声音讯号,不会腻吗(台语),他说不会腻吗(台语),我自己听到的时候我觉得,我跟机器的答案是一样的,就是说**要生了吗**,但其实这句话,正确的答案就是,不会腻吗(台语),不会腻吗
 - 当然机器在倒装,你知道有时候你从台语,转成中文句子需要倒装,在倒装的部分感觉就没有太学起来,举例来说它听到这样的句子,我有跟厂长拜託(台语),他说我有跟厂长拜託(台语),那机器的输出是,我有帮厂长拜託,但是你知道说这句话,其实是倒装,我有跟厂长拜託(台语),是我拜託厂长,但机器对於它来说,如果台语跟中文的关係需要倒装的话,看起来学习起来还是有一点困难
 
-![image-20221008111547211](./05Sequence to sequence.assets/image-20221008111547211.png)
+![image-20221008111547211](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111547211.png)
 
 这个例子想要告诉你说,直接台语声音讯号转繁体中文,不是没有可能,是有可能可以做得到的,那其实台湾有很多人都在做,台语的语音辨识,如果你想要知道更多有关,台语语音辨识的事情的话,可以看一下下面这个[网站](https://sites.google.com/speech.ntut.edu.tw/fsw/home/challenge-2020)
 
@@ -103,7 +103,7 @@
 
 这边就是demo一下台语的语音合成,这个资料用的是,台湾 媠声(台语)的资料,来找GOOGLE台湾媠声(台语),就可以找到这个资料集,裡面就是台语的声音讯号,听起来像是这个样子
 
-![image-20221008111629165](./05Sequence to sequence.assets/image-20221008111629165.png)
+![image-20221008111629165](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008111629165.png)
 
 比如说你跟它说,欢迎来到台湾台大语音处理实验室
 
@@ -119,7 +119,7 @@
 
 举例来说你可以用Seq2Seq model,来训练一个聊天机器人
 
-![image-20221008112004001](./05Sequence to sequence.assets/image-20221008112004001.png)
+![image-20221008112004001](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112004001.png)
 
 聊天机器人就是你对它说一句话,它要给你一个回应,输入输出都是文字,文字就是一个vector Sequence,所以你完全可以用Seq2Seq 的model,来做一个聊天机器人
 
@@ -135,7 +135,7 @@
 
 Question Answering,就是给机器读一段文字,然后你问机器一个问题,希望他可以给你一个正确的答案
 
-![image-20221008112047013](./05Sequence to sequence.assets/image-20221008112047013.png)
+![image-20221008112047013](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112047013.png)
 
 - 假设你今天想做的是翻译,那机器读的文章就是一个英文句子,问题就是这个句子的德文翻译是什麼,然后输出的答案就是德文
 - 或者是你想要叫机器自动作摘要,摘要就是给机器读一篇长的文章,叫他把长的文章的重点节录出来,那你就是给机器一段文字,问题是这段文字的摘要是什麼,然后期待他答案可以输出一个摘要
@@ -147,7 +147,7 @@ Question Answering,就是给机器读一段文字,然后你问机器一个问题
 
 Seq2Seq model只要是输入一段文字,输出一段文字,只要是**输入一个Sequence**,**输出一个Sequence**就可以解,所以你可以把QA的问题,硬是用Seq2Seq model解,叫它读一篇文章读一个问题,然后就直接输出答案,所以各式各样NLP的任务,其实都有机会使用Seq2Seq model
 
-![image-20221008112205789](./05Sequence to sequence.assets/image-20221008112205789.png)
+![image-20221008112205789](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112205789.png)
 
 必须要强调一下,对多数NLP的任务,或对多数的语音相关的任务而言,往往為这些任务**客製化模型,你会得到更好的结果**
 
@@ -163,13 +163,13 @@ Seq2Seq model只要是输入一段文字,输出一段文字,只要是**输入一
 
 举例来说文法剖析,给机器一段文字,比如Deep learning is very powerful
 
-![image-20221008112347166](./05Sequence to sequence.assets/image-20221008112347166.png)
+![image-20221008112347166](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112347166.png)
 
 机器要做的事情是產生,一个文法的剖析树 告诉我们,deep加learning合起来,是一个名词片语,very加powerful合起来,是一个形容词片语,形容词片语加is以后会变成,一个动词片语,动词片语加名词片语合起来,是一个句子
 
 那今天文法剖析要做的事情,就是產生这样子的一个Syntactic tree,所以在文法剖析的任务裡面,假设你想要deep learning解的话,输入是一段文字,他是一个Sequence,但输出看起来不像是一个Sequence,输出是一个树状的结构,但事实上一个树状的结构,可以硬是把他看作是一个Sequence
 
-![image-20221008112427956](./05Sequence to sequence.assets/image-20221008112427956.png)
+![image-20221008112427956](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112427956.png)
 
 这个树状结构可以对应到一个,这样子的Sequence,从这个Sequence裡面,你也可以看出
 
@@ -184,7 +184,7 @@ train一个Seq2Seq model,读这个句子,然后直接输入这一串文字,再�
 
 你可以读一篇文章叫做,grammar as a Foreign Language
 
-![image-20221008112635579](./05Sequence to sequence.assets/image-20221008112635579.png)
+![image-20221008112635579](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112635579.png)
 
 这篇文章其实不是太新的文章,你会发现她放在arxiv上面的时间,是14年的年底,所以其实也是一个,上古神兽等级的文章,这篇文章问世的时候,那个时候Seq2Seq model还不流行,那时候Seq2Seq model,主要只有被用在翻译上,所以这篇文章的title才会取说,grammar as a Foreign Language
 
@@ -202,7 +202,7 @@ multi-class的classification,跟multi-label的classification,听起来名字很�
 
 但是multi-label的classification,意思是说同一个东西,它可以属於多个class,举例来说 你在做文章分类的时候
 
-![image-20221008112812926](./05Sequence to sequence.assets/image-20221008112812926.png)
+![image-20221008112812926](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112812926.png)
 
 可能这篇文章 属於class 1跟3,这篇文章属於class 3 9 17等等,你可能会说,这种multi-label classification的问题,能不能直接把它当作一个multi-class classification的问题来解
 
@@ -223,7 +223,7 @@ multi-class的classification,跟multi-label的classification,听起来名字很�
 
 或者是object detection,这个看起来跟seq2seq model,应该八竿子打不著的问题,它也可以用seq2seq's model硬解
 
-![image-20221008112901953](./05Sequence to sequence.assets/image-20221008112901953.png)
+![image-20221008112901953](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008112901953.png)
 
 object detection就是给机器一张图片,然后它把图片裡面的物件框出来,把它框出说 这个是斑马 这个也是斑马,但这种问题 可以用seq2seq's硬做,至於怎麼做 我们这边就不细讲,我在这边放一个文献,放一个连结给大家参考,讲这麼多就是要告诉你说,seq2seq's model 它是一个,很powerful的model,它是一个很有用的model
 
@@ -231,17 +231,17 @@ object detection就是给机器一张图片,然后它把图片裡面的物件框
 
 **我们现在就是要来学,怎麼做seq2seq这件事,一般的seq2seq's model,它裡面会分成两块 一块是Encoder,另外一块是Decoder**
 
-![image-20221008113807690](./05Sequence to sequence.assets/image-20221008113807690.png)
+![image-20221008113807690](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008113807690.png)
 
 你input一个sequence有Encoder,负责处理这个sequence,再把处理好的结果丢给Decoder,由Decoder决定,它要输出什麼样的sequence,等一下 我们都还会再细讲,Encoder跟 Decoder内部的架构
 
 seq2seq model的起源,其实非常的早 在14年的9月,就有一篇seq2seq's model,用在翻译的文章 被放到Arxiv上
 
-![image-20221008114015630](./05Sequence to sequence.assets/image-20221008114015630.png)
+![image-20221008114015630](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114015630.png)
 
 可以想像当时的seq2seq's model,看起来还是比较阳春的,今天讲到seq2seq's model的时候,大家第一个会浮现在脑中的,可能都是我们今天的主角,也就是transformer
 
-![image-20221008114030062](./05Sequence to sequence.assets/image-20221008114030062.png)
+![image-20221008114030062](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114030062.png)
 
 它有一个Encoder架构,有一个Decoder架构,它裡面有很多花花绿绿的block,等一下就会讲一下,这裡面每一个花花绿绿的block,分别在做的事情是什麼
 
@@ -249,7 +249,7 @@ seq2seq model的起源,其实非常的早 在14年的9月,就有一篇seq2seq's 
 
 seq2seq model Encoder要做的事情,就是**给一排向量，输出另外一排向量**
 
-![image-20221008114120776](./05Sequence to sequence.assets/image-20221008114120776.png)
+![image-20221008114120776](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114120776.png)
 
 给一排向量、输出一排向量这件事情,很多模型都可以做到,可能第一个想到的是,我们刚刚讲完的self-attention,其实不只self-attention,RNN CNN 其实也都能够做到,input一排向量,output另外一个同样长度的向量
 
@@ -259,13 +259,13 @@ seq2seq model Encoder要做的事情,就是**给一排向量，输出另外一�
 
 现在的Encoder裡面,会**分成很多很多的block**
 
-![image-20221008114215032](./05Sequence to sequence.assets/image-20221008114215032.png)
+![image-20221008114215032](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114215032.png)
 
 每一个block都是输入一排向量,输出一排向量,你输入一排向量 第一个block,第一个block输出另外一排向量,再输给另外一个block,到最后一个block,会输出最终的vector sequence,每一个block 其实,并不是neural network的一层
 
 **每一个block裡面做的事情,是好几个layer在做的事情**,在transformer的Encoder裡面,每一个block做的事情,大概是这样子的
 
-![image-20221008114242102](./05Sequence to sequence.assets/image-20221008114242102.png)
+![image-20221008114242102](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114242102.png)
 
 - 先做一个self-attention,input一排vector以后,做self-attention,考虑整个sequence的资讯，Output另外一排vector.
 - 接下来这一排vector,会再丢到fully connected的feed forward network裡面,再output另外一排vector,这一排vector就是block的输出
@@ -274,7 +274,7 @@ seq2seq model Encoder要做的事情,就是**给一排向量，输出另外一�
 
 在之前self-attention的时候,我们说 输入一排vector,就输出一排vector,这边的每一个vector,它是考虑了 所有的input以后,所得到的结果
 
-![image-20221008114322980](./05Sequence to sequence.assets/image-20221008114322980.png)
+![image-20221008114322980](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114322980.png)
 
 在transformer裡面,它加入了一个设计,我们不只是输出这个vector,我们还要把这个vector加上它的input,它要把input拉过来 直接加给输出,得到新的output 
 
@@ -286,7 +286,7 @@ seq2seq model Encoder要做的事情,就是**给一排向量，输出另外一�
 
 得到residual的结果以后,再把它做一件事情叫做normalization,这边用的不是batch normalization,这边用的叫做layer normalization
 
-![image-20221008114441018](./05Sequence to sequence.assets/image-20221008114441018.png)
+![image-20221008114441018](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114441018.png)
 
 layer normalization做的事情,比bacth normalization更简单一点
 
@@ -302,7 +302,7 @@ x'_i=\frac{x_i-m}{\sigma}
 $$
 得到layer normalization的输出以后,它的这个输出 才是FC network的输入
 
-![image-20221008114623939](./05Sequence to sequence.assets/image-20221008114623939.png)
+![image-20221008114623939](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114623939.png)
 
 而FC network这边,也有residual的架构,所以 我们会把FC network的input,跟它的output加起来 做一下residual,得到新的输出
 
@@ -327,7 +327,7 @@ $$
 
 行 不一定要这样设计,这个encoder的network架构,现在设计的方式,本文是按照原始的论文讲给你听的,但**原始论文的设计 不代表它是最好的,最optimal的设计**
 
-![image-20221008114830440](./05Sequence to sequence.assets/image-20221008114830440.png)
+![image-20221008114830440](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008114830440.png)
 
 - 有一篇文章叫,[on layer normalization in the transformer architecture](https://arxiv.org/abs/2002.04745)，它问的问题就是 為什麼,layer normalization是放在那个地方呢,為什麼我们是先做,residual再做layer normalization,能不能够把layer normalization,放到每一个block的input,也就是说 你做residual以后,再做layer normalization,再加进去 你可以看到说左边这个图,是原始的transformer,右边这个图是稍微把block,更换一下顺序以后的transformer,更换一下顺序以后 结果是会比较好的,这就代表说,原始的transformer 的架构,并不是一个最optimal的设计,你永远可以思考看看,有没有更好的设计方式
 - 再来还有一个问题就是,為什麼是layer norm 為什麼是别的,不是别的,為什麼不做batch normalization,也许这篇paper可以回答你的问题,这篇paper是[Power Norm：,Rethinking Batch Normalization In Transformers](https://arxiv.org/abs/2003.07845),它首先告诉你说 為什麼,batch normalization不如,layer normalization,在Transformers裡面為什麼,batch normalization不如,layer normalization,接下来在说,它提出来一个power normalization,一听就是很power的意思,都可以比layer normalization,还要performance差不多或甚至好一点
@@ -342,13 +342,13 @@ Decoder其实有两种,接下来会花比较多时间介绍,比较常见的 Auto
 
 语音辨识就是输入一段声音,输出一串文字,你会把一段声音输入给 Encoder,比如说你对机器说,机器学习,机器收到一段声音讯号,**声音讯号 进入 Encoder以后,输出会是什麼,输出会变成一排 Vector**
 
-![image-20221008115123851](./05Sequence to sequence.assets/image-20221008115123851.png)
+![image-20221008115123851](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008115123851.png)
 
 **Encoder** 做的事情,就是**输入一个 Vector Sequence,输出另外一个 Vector Sequence，其实就是Sequence Labeling**
 
 接下来,就轮到 Decoder 运作了,**Decoder 要做的事情就是產生输出**,也就是產生语音辨识的结果, Decoder 怎麼產生这个语音辨识的结果
 
-![image-20221008115204693](./05Sequence to sequence.assets/image-20221008115204693.png)
+![image-20221008115204693](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008115204693.png)
 
 Decoder 做的事情,就是**把 Encoder 的输出先读进去**,至於怎麼读进去,这个我们等一下再讲 我们先,你先假设 Somehow 就是有某种方法,把 Encoder 的输出读到 Decoder 裡面,这步我们等一下再处理
 
@@ -356,7 +356,7 @@ Decoder 怎麼產生一段文字
 
 首先,你要先给它一个特殊的符号,这个特殊的符号,代表开始,在助教的投影片裡面,是写 **Begin Of Sentence,缩写是 BOS**
 
-![image-20221008115235204](./05Sequence to sequence.assets/image-20221008115235204.png)
+![image-20221008115235204](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008115235204.png)
 
 就是 Begin 的意思,这个是一个 Special 的 Token,你就是在你的个 Lexicon 裡面,你就在你可能,本来 Decoder 可能產生的文字裡面,多加一个特殊的字,这个字就代表了 BEGIN,代表了开始这个事情
 
@@ -364,7 +364,7 @@ Decoder 怎麼產生一段文字
 
 接下来Decoder 会吐出一个向量,这个 Vector 的长度很长,跟你的 Vocabulary 的 Size 是一样的
 
-![image-20221008120054133](./05Sequence to sequence.assets/image-20221008120054133.png)
+![image-20221008120054133](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120054133.png)
 
 Vocabulary Size则是什麼意思
 
@@ -380,7 +380,7 @@ Vocabulary Size则是什麼意思
 
 每一个中文的字,都会对应到一个数值,因為在產生这个向量之前,你通常会先跑一个 Softmax,就跟做分类一样,所以这一个向量裡面的分数,它是一个 Distribution,也就是,它这个向量裡面的值,它全部加起来,总和 会是 1
 
-![image-20221008120150219](./05Sequence to sequence.assets/image-20221008120150219.png)
+![image-20221008120150219](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120150219.png)
 
 分数最高的一个中文字,它就是最终的输出
 
@@ -388,7 +388,7 @@ Vocabulary Size则是什麼意思
 
 然后接下来,你把“机”当做是 Decoder 新的 Input,原来 Decoder 的 Input,只有 BEGIN 这个特别的符号,现在它除了 BEGIN 以外,它还有“机”作為它的 Input
 
-![image-20221008120218982](./05Sequence to sequence.assets/image-20221008120218982.png)
+![image-20221008120218982](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120218982.png)
 
 所以 Decoder 现在它有两个输入
 
@@ -421,11 +421,11 @@ Vocabulary Size则是什麼意思
 
 
 
-![image-20221008120309484](./05Sequence to sequence.assets/image-20221008120309484.png)
+![image-20221008120309484](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120309484.png)
 
 然后这个 Process ,就反覆持续下去,这边有一个关键的地方,我们特别用红色的虚线把它标出来
 
-![image-20221008120322360](./05Sequence to sequence.assets/image-20221008120322360.png)
+![image-20221008120322360](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120322360.png)
 
 也就是说 **Decoder 看到的输入,其实是它在前一个时间点,自己的输出,Decoder 会把自己的输出,当做接下来的输入**
 
@@ -439,7 +439,7 @@ Vocabulary Size则是什麼意思
 
 我们来看一下这个 Decoder内部的结构长什麼样子
 
-![image-20221008120724088](./05Sequence to sequence.assets/image-20221008120724088.png)
+![image-20221008120724088](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120724088.png)
 
 那我们这边,把 Encoder 的部分先暂时省略掉,那在 Transformer 裡面,Decoder 的结构,长得是这个样子的,看起来有点复杂,比 Encoder 还稍微复杂一点,
 
@@ -447,11 +447,11 @@ Vocabulary Size则是什麼意思
 
 那我们现在先把 Encoder 跟 Decoder 放在一起
 
-![image-20221008120808550](./05Sequence to sequence.assets/image-20221008120808550.png)
+![image-20221008120808550](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120808550.png)
 
 稍微比较一下它们之间的差异,那你会发现说,如果我们把 Decoder 中间这一块,**中间这一块把它盖起来,其实 Encoder 跟 Decoder,并没有那麼大的差别**
 
-![image-20221008120838057](./05Sequence to sequence.assets/image-20221008120838057.png)
+![image-20221008120838057](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008120838057.png)
 
 你看 Encoder 这边,Multi-Head Attention,然后 Add &amp; Norm,Feed Forward,Add &amp; Norm,重复 N 次,Decoder 其实也是一样
 
@@ -463,21 +463,21 @@ Vocabulary Size则是什麼意思
 
 这个 Masked 的意思是这样子的,这是我们原来的 Self-Attention
 
-![image-20221008121009389](./05Sequence to sequence.assets/image-20221008121009389.png)
+![image-20221008121009389](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121009389.png)
 
 Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,都要看过完整的 Input 以后,才做决定,所以输出 $b^1$ 的时候,其实是根据 $a^1$ 到 $a^4$ 所有的资讯,去输出 $b^1$
 
 当我们把 Self-Attention,转成 Masked Attention 的时候,它的不同点是,现在我们不能再看右边的部分,也就是產生 $b^1$ 的时候,我们只能考虑 $a^1$ 的资讯,你不能够再考虑 $a^2$ $a^3$ $a^4$
 
-![image-20221008121137030](./05Sequence to sequence.assets/image-20221008121137030.png)
+![image-20221008121137030](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121137030.png)
 
 產生 $b^2$ 的时候,你只能考虑 $a^1$ $a^2$ 的资讯,不能再考虑 $a^3$ $a^4$ 的资讯
 
-![image-20221008121152120](./05Sequence to sequence.assets/image-20221008121152120.png)
+![image-20221008121152120](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121152120.png)
 
 產生 $b^3$ 的时候,你就不能考虑 $a^4$ 的资讯,
 
-![image-20221008121217437](./05Sequence to sequence.assets/image-20221008121217437.png)
+![image-20221008121217437](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121217437.png)
 
 產生 $b^4$ 的时候,你可以用整个 Input Sequence 的资讯,这个就是 Masked 的 Self-Attention,
 
@@ -485,7 +485,7 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 讲得更具体一点,你做的事情是,当我们要產生 $b^2$ 的时候,我们只拿第二个位置的 Query $b^2$,去跟第一个位置的 Key,和第二个位置的 Key,去计算 Attention,第三个位置跟第四个位置,就不管它,不去计算 Attention
 
-![image-20221008121233866](./05Sequence to sequence.assets/image-20221008121233866.png)
+![image-20221008121233866](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121233866.png)
 
 我们这样子不去管这个 $a^2$ 右边的地方,只考虑 $a^1$ 跟 $a^2$,只考虑 $q^1$ $q^2$,只考虑 $k^1$ $k^2$,$q^2$ 只跟 $k^1$ 跟 $k^2$ 去计算 Attention,然后最后只计算 $b^1$ 跟 $b^2$ 的 Weighted Sum
 
@@ -493,7 +493,7 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 那為什麼会这样,為什麼需要加 Masked 
 
-![image-20221008121250806](./05Sequence to sequence.assets/image-20221008121250806.png)
+![image-20221008121250806](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121250806.png)
 
 这件事情其实非常地直觉:我们一开始 Decoder 的运作方式,它是一个一个输出,所以是先有 $a^1$ 再有 $a^2$,再有 $a^3$ 再有 $a^4$
 
@@ -509,7 +509,7 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 可是到底输出的 Sequence 的长度应该是多少,我们不知道
 
-![image-20221008121341520](./05Sequence to sequence.assets/image-20221008121341520.png)
+![image-20221008121341520](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121341520.png)
 
 你没有办法轻易的从输入的 Sequence 的长度,就知道输出的 Sequence 的长度是多少,并不是说,输入是 4 个向量,输出一定就是 4 个向量
 
@@ -521,7 +521,7 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 这就让我想到推文接龙
 
-![image-20221008121507609](./05Sequence to sequence.assets/image-20221008121507609.png)
+![image-20221008121507609](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121507609.png)
 
 我不知道大家知不到这是什麼,这是一个这个古老的民俗传统,流传在 PTT 上面,这个民俗传统是怎麼运作的,就有一个人,先推一个中文字,然后推一个超,然后接下来,就会有另外一个乡民,去推另外一个字,然后可以接上去的,所以就可以產生一排的词汇啦,一排字啦,就是超人正大中天外飞仙草,不知道在说些什麼,这个是 Process ,可以持续好几个月,都不停下来,我也不知道為什麼,那怎麼让这个 Process 停下来,那要怎麼让它停下来
 
@@ -531,7 +531,7 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 所以我们要让 Decoder 做的事情,也是一样,要让它可以输出一个断,所以你要特别準备一个特别的符号,这个符号,就叫做断,我们这边,用 END 来表示这个特殊的符号
 
-![image-20221008121528712](./05Sequence to sequence.assets/image-20221008121528712.png)
+![image-20221008121528712](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121528712.png)
 
 所以除了所有中文的方块字,还有 BEGIN 以外,你还要**準备一个特殊的符号,叫做"断"**,那其实在助教的程式裡面,它是把 BEGIN 跟 END,就是开始跟这个断,用同一个符号来表示
 
@@ -547,19 +547,19 @@ Input 一排 Vector,Output 另外一排 Vector,这一排 Vector 每一个输出,
 
 用两页投影片,非常简短地讲一下,Non-Autoregressive 的 Model
 
-![image-20221008121628796](./05Sequence to sequence.assets/image-20221008121628796.png)
+![image-20221008121628796](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121628796.png)
 
 Non-Autoregressive ,通常缩写成 NAT,所以有时候 Autoregressive 的 Model,也缩写成 AT,Non-Autoregressive 的 Model 是怎麼运作的
 
 这个 Autoregressive 的 Model 是
 
-![image-20221008121721527](./05Sequence to sequence.assets/image-20221008121721527.png)
+![image-20221008121721527](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121721527.png)
 
 先输入 BEGIN,然后出现 w1,然后再把 w1 当做输入,再输出 w2,直到输出 END 為止
 
 那 NAT 是这样,它不是依次產生
 
-![image-20221008121754859](./05Sequence to sequence.assets/image-20221008121754859.png)
+![image-20221008121754859](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121754859.png)
 
 就假设我们现在產生是中文的句子,它不是依次產生一个字,它是一次把整个句子都產生出来
 
@@ -569,7 +569,7 @@ NAT 的 Decoder可能吃的是一整排的 BEGIN 的 Token,你就把一堆一排
 
 这边你可能会问一个问题：刚才不是说不知道输出的长度应该是多少吗,那我们这边怎麼知道 BEGIN 要放多少个,当做 NAT Decoder 的收入？
 
-![image-20221008121819646](./05Sequence to sequence.assets/image-20221008121819646.png)
+![image-20221008121819646](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008121819646.png)
 
 没错 这件事没有办法很自然的知道,没有办法很直接的知道,所以有几个,所以有几个做法
 
@@ -598,19 +598,19 @@ NAT 的 Decoder可能吃的是一整排的 BEGIN 的 Token,你就把一堆一排
 
 NAT 的 Decoder,最近它之所以是一个热门研究主题,就是它虽然表面上看起来有种种的厉害之处,尤其是平行化是它最大的优势,但是 **NAT 的 Decoder ,它的 Performance,往往都不如 AT 的 Decoder**
 
-![image-20221008122020384](./05Sequence to sequence.assets/image-20221008122020384.png)
+![image-20221008122020384](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122020384.png)
 
 所以发现有很多很多的研究试图让,NAT 的 Decoder 的 Performance 越来越好,试图去逼近 AT 的 Decoder,不过今天你要让 NAT 的 Decoder,跟 AT 的 Decoder Performance 一样好,你**必须要用非常多的 Trick** 才能够办到,就 AT 的 Decoder 随便 Train 一下,NAT 的 Decoder 你要花很多力气,才有可能跟 AT 的 Performance 差不多
 
 為什麼 NAT 的 Decoder Performance 不好,有一个问题我们今天就不细讲了,叫做 Multi-Modality的问题,那如果你想要这个深入了解 NAT,那就把之前上课,助教这个上课补充的内容,连结https://youtu.be/jvyKmU4OM3c放在这边给大家参考
 
-![image-20221008122226817](./05Sequence to sequence.assets/image-20221008122226817.png)
+![image-20221008122226817](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122226817.png)
 
 ## Connect Encoder-Decoder : Cross Attention
 
 接下来就要讲**Encoder 跟 Decoder它们中间是怎麼传递资讯**的了,也就是我们要讲,刚才我们刻意把它遮起来的那一块
 
-![image-20221008122252497](./05Sequence to sequence.assets/image-20221008122252497.png)
+![image-20221008122252497](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122252497.png)
 
 这块叫做 Cross Attention,它是连接 Encoder 跟 Decoder 之间的桥樑,那这一块裡面啊,会发现有两个输入来自於 Encoder,Encoder 提供两个箭头,然后 Decoder 提供了一个箭头,所以从左边这两个箭头,Decoder 可以读到 Encoder 的输出
 
@@ -618,7 +618,7 @@ NAT 的 Decoder,最近它之所以是一个热门研究主题,就是它虽然表
 
 这个是你的 Encoder
 
-![image-20221008122344227](./05Sequence to sequence.assets/image-20221008122344227.png)
+![image-20221008122344227](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122344227.png)
 
 输入一排向量,输出一排向量,我们叫它 $a^1 a^2 a^3$
 
@@ -626,13 +626,13 @@ NAT 的 Decoder,最近它之所以是一个热门研究主题,就是它虽然表
 
 所以输入一个向量 输出一个向量,然后接下来把这个向量呢,乘上一个矩阵做一个 Transform,得到一个 Query 叫做 q
 
-![image-20221008122434858](./05Sequence to sequence.assets/image-20221008122434858.png)
+![image-20221008122434858](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122434858.png)
 
 然后这边的 $a^1 a^2 a^3$ 呢,也都產生 Key,Key1 Key2 Key3,那把这个 q 跟 $k^1 k^2 k^3$,去计算 Attention 的分数,得到 $α_1 α_2 α_3$,当然你可能一样会做 Softmax,把它稍微做一下 Normalization,所以我这边加一个 ',代表它可能是做过 Normalization
 
 接下来再把 $α_1 α_2 α_3$,就乘上 $v^1 v^2 v^3$,再把它 Weighted Sum 加起来会得到 v
 
-![image-20221008122511106](./05Sequence to sequence.assets/image-20221008122511106.png)
+![image-20221008122511106](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122511106.png)
 
 那这一个 V,就是接下来会丢到 Fully-Connected 的,Network 做接下来的处理,那这个步骤就是 q 来自於 Decoder,k 跟 v 来自於 Encoder,这个步骤就叫做 Cross Attention
 
@@ -640,7 +640,7 @@ NAT 的 Decoder,最近它之所以是一个热门研究主题,就是它虽然表
 
 当然这个,就现在假设產生第二个,第一个这个中文的字產生一个“机”,接下来的运作也是一模一样的
 
-![image-20221008122608335](./05Sequence to sequence.assets/image-20221008122608335.png)
+![image-20221008122608335](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122608335.png)
 
 输入 BEGIN 输入机,產生一个向量,这个向量一样乘上一个 Linear 的 Transform,得到 q',得到一个 Query,这个 Query 一样跟 $k^1 k^2 k^3$,去计算 Attention 的分数,一样跟 $v^1 v^2 v^3$ 做 Weighted Sum 做加权,然后加起来得到 v',交给接下来 Fully-Connected Network 做处理
 
@@ -654,7 +654,7 @@ NAT 的 Decoder,最近它之所以是一个热门研究主题,就是它虽然表
 
 **不一定要这样**,你永远可以自己兜一些新的想法,所以我这边就是引用一篇论文告诉你说,也有人尝试不同的 Cross Attension 的方式
 
-![image-20221008122646123](./05Sequence to sequence.assets/image-20221008122646123.png)
+![image-20221008122646123](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122646123.png)
 
 Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边每一层都一定要看,Encoder 的最后一层输出呢,能不能够有各式各样不同的连接方式,这完全可以当做一个研究的问题来 Study
 
@@ -666,7 +666,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 接下来就要讲怎麼做训练,那如果是做语音辨识,那你要有训练资料,你要收集一大堆的声音讯号,每一句声音讯号都要有工读生来听打一下,打出说它的这个对应的词汇是什麼
 
-![image-20221008122912903](./05Sequence to sequence.assets/image-20221008122912903.png)
+![image-20221008122912903](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122912903.png)
 
 工读生听这段是机器学习,他就把机器学习四个字打出来,所以就知道说你的这个 Transformer,应该要学到 听到这段声音讯号,它的输出就是机器学习这四个中文字
 
@@ -674,13 +674,13 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 我们已经知道说输入这段声音讯号,第一个应该要输出的中文字是“机”,所以今天当我们把 BEGIN,丢给这个 Encoder 的时候,它第一个输出应该要跟“机”越接近越好
 
-![image-20221008122930977](./05Sequence to sequence.assets/image-20221008122930977.png)
+![image-20221008122930977](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008122930977.png)
 
 “机”这个字会被表示成一个 One-Hot 的 Vector,在这个 Vector 裡面,只有机对应的那个维度是 1,其他都是 0,这是正确答案,那我们的 Decoder,它的输出是一个 Distribution,是一个机率的分布,我们会希望这一个机率的分布,跟这个 One-Hot 的 Vector 越接近越好
 
 所以你会去计算这个 Ground Truth,跟这个 Distribution 它们之间的 Cross Entropy,然后我们希望这个 Cross Entropy 的值,越小越好
 
-![image-20221008123013304](./05Sequence to sequence.assets/image-20221008123013304.png)
+![image-20221008123013304](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123013304.png)
 
 它就跟分类很像,刚才助教在讲解作业的时候也有提到这件事情,你可以想成每一次我们在產生,每一次 Decoder 在產生一个中文字的时候,其实就是做了一次分类的问题,中文字假设有四千个,那就是做有四千个类别的分类的问题
 
@@ -688,13 +688,13 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 所以实际上训练的时候这个样子,我们已经知道输出应该是“机器学习”这四个字,就告诉你的 Decoder ,现在你第一次的输出 第二次的输出,第三次的输出 第四次输出,应该分别就是“机” “器” “学”跟“习”,这四个中文字的 One-Hot Vector,我们希望我们的输出,跟这四个字的 One-Hot Vector 越接近越好
 
-![image-20221008123054360](./05Sequence to sequence.assets/image-20221008123054360.png)
+![image-20221008123054360](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123054360.png)
 
 在训练的时候,每一个输出都会有一个 Cross Entropy,每一个输出跟 One-Hot Vector,跟它对应的正确答案都有一个 Cross Entropy,我们要希望所有的 Cross Entropy 的总和最小,越小越好
 
 所以这边做了四次分类的问题,我们希望这些分类的问题,它总合起来的 Cross Entropy 越小越好,还有 END 这个符号
 
-![image-20221008123119307](./05Sequence to sequence.assets/image-20221008123119307.png)
+![image-20221008123119307](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123119307.png)
 
 那这个就是 Decoder 的训练：**把 Ground Truth ,正确答案给它,希望 Decoder 的输出跟正确答案越接近越好**
 
@@ -724,7 +724,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 像这种复製的行為在哪些任务会用得上呢,一个例子是做聊天机器人
 
-![image-20221008123501751](./05Sequence to sequence.assets/image-20221008123501751.png)
+![image-20221008123501751](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123501751.png)
 
 - 人对机器说:你好 我是库洛洛,
 
@@ -740,7 +740,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 或者是在做摘要的时候,你可能更需要 Copy 这样子的技能
 
-![image-20221008123516659](./05Sequence to sequence.assets/image-20221008123516659.png)
+![image-20221008123516659](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123516659.png)
 
 摘要就是,你要训练一个模型,然后这个模型去读一篇文章,然后產生这篇文章的摘要
 
@@ -754,7 +754,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 最早有从输入复製东西的能力的模型,叫做 Pointer Network
 
-![image-20221008123601328](./05Sequence to sequence.assets/image-20221008123601328.png)
+![image-20221008123601328](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123601328.png)
 
 那这个过去上课是有讲过的,我把[录影](https://youtu.be/VdOyqNQ9aww)放在这边给大家参考,好 那后来还有一个变形,叫做 Copy Network,那你可以看一下这一篇,Copy Mechanism,就是 Sequence-To-Sequence,有没有问题,你看 Sequence-To-Sequence Model,是怎麼做到从输入复製东西到输出来的
 
@@ -772,7 +772,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 像这样的方法做出来结果,其实还不错,
 
-![image-20221008123635773](./05Sequence to sequence.assets/image-20221008123635773.png)
+![image-20221008123635773](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123635773.png)
 
 举例来说我叫机器连说 4 次发财,看看它会怎麼讲,机器输出的结果是:发财 发财 发财 发财
 
@@ -790,7 +790,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 这个是有可能的,这招就叫做 **Guided Attention**
 
-![image-20221008123709302](./05Sequence to sequence.assets/image-20221008123709302.png)
+![image-20221008123709302](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123709302.png)
 
 像语音辨识这种任务,你其实很难接受说,你讲一句话,今天辨识出来,居然有一段机器没听到,或语音合成你输入一段文字,语音合出来居然有一段没有念到,这个人很难接受
 
@@ -800,7 +800,7 @@ Encoder 这边有很多层,Decoder 这边有很多层,為什麼 Decoder 这边�
 
 **Guiding Attention 要做的事情就是,要求机器它在做 Attention 的时候,是有固定的方式的,**举例来说,对语音合成或者是语音辨识来说,我们想像中的 Attention,应该就是由左向右
 
-![image-20221008123757519](./05Sequence to sequence.assets/image-20221008123757519.png)
+![image-20221008123757519](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123757519.png)
 
 在这个例子裡面,我们用红色的这个曲线,来代表 Attention 的分数,这个越高就代表 Attention 的值越大
 
@@ -818,7 +818,7 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 那对 Decoder 而言,它做的事情就是,每一次在第一个 Time Step,它在 A B 裡面决定一个,然后决定了 A 以后,再把 A 当做输入,然后再决定 A B 要选哪一个
 
-![image-20221008123826967](./05Sequence to sequence.assets/image-20221008123826967.png)
+![image-20221008123826967](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123826967.png)
 
 那举例来说,它可能选 B 当作输入,再决定 A B 要选哪一个,那在我们刚才讲的 Process 裡面,每一次 Decoder 都是选,分数最高的那一个
 
@@ -830,7 +830,7 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 但是 Greedy Decoding,一定是更好的方法吗,有没有可能我们在第一步的时候,先稍微捨弃一点东西
 
-![image-20221008123846477](./05Sequence to sequence.assets/image-20221008123846477.png)
+![image-20221008123846477](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123846477.png)
 
 比如说第一步虽然 B 是 0.4,但我们就先选 0.4 这个 B,然后接下来我们选了 B 以后,也许接下来的 B 的可能性就大增,就变成 0.9,然后接下来第三个步骤,B 的可能性也是 0.9
 
@@ -848,7 +848,7 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 举例来说这篇 Paper 叫做,The Curious Case Of Neural Text Degeneration,那这个任务要做的事情是,Sentence Completion,也就是机器先读一段句子,接下来它要把这个句子的后半段,把它完成,你给它一则新闻,或者是一个故事的前半部,哇 它自己发挥它的想像创造力,把这个文章,把故事的后半部把它写完
 
-![image-20221008123919487](./05Sequence to sequence.assets/image-20221008123919487.png)
+![image-20221008123919487](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008123919487.png)
 
 那你会发现说,Beam Search 在这篇文章裡面,一开头就告诉你说,Beam Search 自己有问题：如果你用 Beam Search 的话,会发现说机器不断讲重复的话,它不断开始陷入鬼打墙 无穷迴圈,不断说重复的话
 
@@ -876,7 +876,7 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 但我们在训练的时候显然不是这样,训练的时候,每一个词汇是分开考虑的,训练的时候,我们 Minimize 的是 Cross Entropy,Minimize Cross Entropy,真的可以 Maximize BLEU Score 吗
 
-<img ![image-20221008124026811](./05Sequence to sequence.assets/image-20221008124026811.png)
+<img ![image-20221008124026811](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008124026811.png)
 
 不一定,因為这两个根本就是,它们可能有一点点的关联,但它们又没有那麼直接相关,它们根本就是两个不同的数值,所以我们 Minimize Cross Entropy,不见得可以让 BLEU Score 比较大
 
@@ -898,7 +898,7 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 测试的时候,Decoder 看到的是自己的输出,所以测试的时候,Decoder 会看到一些错误的东西,但是在训练的时候,Decoder 看到的是完全正确的,那这个不一致的现象叫做,Exposure Bias
 
-![image-20221008124138578](./05Sequence to sequence.assets/image-20221008124138578.png)
+![image-20221008124138578](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008124138578.png)
 
 假设 Decoder 在训练的时候,永远只看过正确的东西,那在测试的时候,你只要有一个错,那就会一步错 步步错,因為对 Decoder 来说,它从来没有看过错的东西,它看到错的东西会非常的惊奇,然后接下来它產生的结果可能都会错掉
 
@@ -906,11 +906,11 @@ Beam Search ,我们这边举一个例子,在这个例子裡面我们假设说,�
 
 有一个可以的思考的方向是,给 Decoder 的输入加一些错误的东西,就这麼直觉,你不要给 Decoder 都是正确的答案,偶尔给它一些错的东西,它反而会学得更好,这一招叫做,Scheduled Sampling,它不是那个 Schedule Learning Rate,刚才助教有讲 Schedule Learning Rate,那是另外一件事,不相干的事情,这个是 Scheduled Sampling
 
-![image-20221008124238156](./05Sequence to sequence.assets/image-20221008124238156.png)
+![image-20221008124238156](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008124238156.png)
 
 Scheduled Sampling 其实很早就有了,这个是 15 年的 Paper,很早就有 Scheduled Sampling,在还没有 Transformer,只有 LSTM 的时候,就已经有 Scheduled Sampling,但是 Scheduled Sampling 这一招,它其实会伤害到,Transformer 的平行化的能力,那细节可以再自己去了解一下,所以对 Transformer 来说,它的 Scheduled Sampling,另有招数跟传统的招数,跟原来最早提在,这个 LSTM上被提出来的招数,也不太一样,那我把一些 Reference 的,列在这边给大家参考
 
-![image-20221008124311118](./05Sequence to sequence.assets/image-20221008124311118.png)
+![image-20221008124311118](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/05Sequence to sequence.assets/image-20221008124311118.png)
 
 好 那以上我们就讲完了,Transformer 和种种的训练技巧,这个我们已经讲完了 Encoder,讲完了 Decoder,也讲完了它们中间的关係,也讲了怎麼训练,也讲了种种的 Tips
 

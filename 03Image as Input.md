@@ -4,7 +4,7 @@
 
 接下来讲有关分类怎麼做这件事情,这边讲的是一个短的版本,因為时间有限的关係,如果你想要看长的版本的话,可以看一下[过去上课的录影](https://www.bilibili.com/video/BV13x411v7US?p=10)
 
-![image-20221006213241899](./03Image as Input.assets/image-20221006213241899.png)
+![image-20221006213241899](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213241899.png)
 
 过去可能是花两个小时,到三个小时的时间才讲完,分类这件事情,我们这边用一个最快的方法,直接跟你讲分类是怎麼做的
 
@@ -12,11 +12,11 @@
 
 分类是怎麼做的呢 我们已经讲了,Regression就是输入一个向量,然后输出一个数值,我们希望输出的数值跟某一个label,也就是我们要学习的目标,越接近越好，这门课里面，如果是正确的答案就有加Hat,Model的输出没有加Hat
 
-![image-20221006213303312](./03Image as Input.assets/image-20221006213303312.png)
+![image-20221006213303312](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213303312.png)
 
 有一个可能,假设你会用Regression的话,我们其实可以**把Classification,当作是Regression来看**
 
-![image-20221006213311076](./03Image as Input.assets/image-20221006213311076.png)
+![image-20221006213311076](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213311076.png)
 
 这个方法不一定是个好方法,这是一个比较奇妙的方法,输入一个东西以后,我们的输出仍然是一个scaler,它叫做y 然后这一个y,我们要让它跟正确答案,那个Class越接近越好,但是y是一个数字,我们怎麼让它跟Class越接近越好呢,我们必须把Class也变成数字
 
@@ -24,7 +24,7 @@
 
 但是这会是一个好方法吗,如果你仔细想想的话,这个方法也许在某些状况下,是会有瑕疵的
 
-![image-20221006213327031](./03Image as Input.assets/image-20221006213327031.png)
+![image-20221006213327031](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213327031.png)
 
 因為如果你假设说Class one就是编号1,Class two就是编号2,Class3就是编号3,意味著说你觉得**Class1跟Class2是比较像**,然后**Class1跟Class3 它是比较不像**,像这样子的表示Class的方式,有时候可行 有时候不可行
 
@@ -36,7 +36,7 @@
 
 当你在做分类的问题的时候,比较常见的做法是把你的Class,用 One-hot vector来表示
 
-![image-20221006213349410](./03Image as Input.assets/image-20221006213349410.png)
+![image-20221006213349410](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213349410.png)
 
 如果有三个Class,我们的 label 这个ŷ,就是一个三维的向量,然后呢 如果是Class1就是$\begin{bmatrix}{1} \\\ {0}\\\ {0}\end{bmatrix}$,如果是Class2就是$\begin{bmatrix} {0}\\\ {1}\\\ {0}\end{bmatrix}$,如果是Class3就是$\begin{bmatrix} {0}\\\ {0}\\\ {1}\end{bmatrix}$,所以每一个Class,你都用一个One-hot vector来表示
 
@@ -44,7 +44,7 @@
 
 如果我们今天的目标y hat是一个向量 比如说,ŷ是有三个element的向量，那我们的network,也应该要Output的维度也是三个数字才行
 
-![image-20221006213403258](./03Image as Input.assets/image-20221006213403258.png)
+![image-20221006213403258](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213403258.png)
 
 到目前為止我们讲的network,其实都只Output一个数值,因為我们过去做的都是Regression的问题,所以只Output一个数字
 
@@ -52,7 +52,7 @@
 
 你可以Output一个数值,你就可以Output三个数值,所以把本来Output一个数值的方法,重复三次
 
-![image-20221006213422785](./03Image as Input.assets/image-20221006213422785.png)
+![image-20221006213422785](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213422785.png)
 
 - 把a₁ a₂ a₃,乘上三个不同的Weight 加上bias,得到y₁
 
@@ -66,11 +66,11 @@
 
 好 那所以我们现在,知道了Regression是怎麼做的,Input x Output y 要跟 label ŷ,越接近越好
 
-![image-20221006213447405](./03Image as Input.assets/image-20221006213447405.png)
+![image-20221006213447405](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213447405.png)
 
 如果是Classification,input x可能乘上一个W,再加上b 再通过activation function,再乘上W'再加上b' 得到y,我们现在的**y它不是一个数值,它是一个向量**
 
-![image-20221006213457727](./03Image as Input.assets/image-20221006213457727.png)
+![image-20221006213457727](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213457727.png)
 
 但是在做Classification的时候,我们往往会**把y再通过一个叫做Soft-max的function得到y'**,然后我们才去计算,y'跟y hat之间的距离
 
@@ -86,7 +86,7 @@
 
 这个是Soft-max的block,输入y₁ y₂ y₃,它会產生y₁' y₂' y₃'
 
-![image-20221006213634633](./03Image as Input.assets/image-20221006213634633.png)
+![image-20221006213634633](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213634633.png)
 
 它裡面运作的模式是这个样子的
 $$
@@ -96,7 +96,7 @@ $$
 
 或者是用图示化的方法是这个样子
 
-![image-20221006213653864](./03Image as Input.assets/image-20221006213653864.png)
+![image-20221006213653864](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006213653864.png)
 
 y₁取exp y₂取exp y₃取exp,把它全部加起来,得到一个Summation,接下来再把exp y₁'除掉Summation,exp y₂'除掉Summation,exp y₃'除掉Summation,就得到y₁' y₂' y₃'
 
@@ -119,7 +119,7 @@ y₁取exp y₂取exp y₃取exp,把它全部加起来,得到一个Summation,接
 
 ## Loss of Classification
 
-![image-20221006214126210](./03Image as Input.assets/image-20221006214126210.png)
+![image-20221006214126210](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006214126210.png)
 
 我们把x,丢到一个Network裡面產生y以后,我们会通过soft-max得到y',再去计算y'跟ŷ之间的距离,这个写作е
 
@@ -143,7 +143,7 @@ $$
 
 但是為什麼会有Cross-entropy,这麼奇怪的式子出现呢？
 
-![image-20221006214212886](./03Image as Input.assets/image-20221006214212886.png)
+![image-20221006214212886](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006214212886.png)
 
 那如果要讲得长一点的话,这整个故事我们可以把它讲成,**Make Minimize Cross-entropy其实就是maximize likelihood**,你很可能在很多地方,都听过likelihood这个词汇,详见[过去上课影片](https://www.bilibili.com/video/BV13x411v7US?p=10)
 
@@ -175,7 +175,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
  那我们看一下 如果我们这个e,设定為Mean Square Error,跟Cross-entropy的时候,算出来的Error surface会有什麼样,不一样的地方.底下这两个图,就分别在我们e是Mean square error,跟Cross-entropy的时候,y₁ y₂的变化对loss的影响,对Error surface的影响,
 
-![image-20221006214253472](./03Image as Input.assets/image-20221006214253472.png)
+![image-20221006214253472](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006214253472.png)
 
 我们这边是用红色代表Loss大,蓝色代表Loss小
 
@@ -185,7 +185,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 所以这两个图都是左上角Loss大,右下角Loss小,所以我们就期待说,我们最后在Training的时候,我们的参数可以走到右下角**的地方
 
-![image-20221006214938206](./03Image as Input.assets/image-20221006214938206.png)
+![image-20221006214938206](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221006214938206.png)
 
 那假设我们开始的地方,都是左上角
 
@@ -212,7 +212,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 我们的模型的输出应该是什麼呢,我们模型的目标是分类,所以我们会把每一个类别,表示成一个 One-Hot 的 Vector,我的目标就叫做 $\hat{y}$
 
-![image-20221007203627447](./03Image as Input.assets/image-20221007203627447.png)
+![image-20221007203627447](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007203627447.png)
 
 在这个 One-Hot 的 Vector 裡面,假设我们现在类别是一个猫的话,那猫所对应的 Dimension,它的数值就是 1,其他的东西所对的 Dimension 的数值就是 0
 
@@ -222,7 +222,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 其实对於一个 Machine 来说,一张图片其实是一个三维的 Tensor
 
-![image-20221007203727985](./03Image as Input.assets/image-20221007203727985.png)
+![image-20221007203727985](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007203727985.png)
 
 如果不知道 Tensor 是什麼的话,你就想成它是**维度大於 2 的矩阵就是 Tensor**,矩阵是二维,那二维以上的 超过二维的矩阵,你就叫它 Tensor
 
@@ -234,7 +234,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 到目前為止我们所讲的 Network,它的输入其实都是一个向量,所以我们只要能够把一张图片变成一个向量,我们就可以把它当做是 Network 的输入,但是怎麼把这个三维的 Tensor 变成一个向量呢,那最直觉的方法就是直接拉直它
 
-![image-20221007203831474](./03Image as Input.assets/image-20221007203831474.png)
+![image-20221007203831474](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007203831474.png)
 
 一个三维的 Tensor 裡面有几个数字呢
 
@@ -244,13 +244,13 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 这个向量啊,我们可以把它当做是一个 Network 的输入,那我们到目前為止,只讲过了 Fully Connected Network,好 如果我们把向量当做 Network 的输入,我们 Input 这边 Feature Vector,它的长度就是 100 × 100×3
 
-![image-20221007204053049](./03Image as Input.assets/image-20221007204053049.png)
+![image-20221007204053049](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204053049.png)
 
 非常长的一个 Vector,那假设我们现在的,第一层的 Neuron 的数目有 1000 个,那你能计算一下这边第一层,总共有多少个 Weight 吗
 
 我们每一个 Neuron,它跟输入的向量的每一个数值,都会有一个 Weight,所以如果输入的向量长度是 100 × 100×3,有 1000 个 Neuron,那我们现在第一层的 Weight,就有 1000×100 × 100×3,也就是 3×10 的 7 次方
 
-![image-20221007204213156](./03Image as Input.assets/image-20221007204213156.png)
+![image-20221007204213156](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204213156.png)
 
 是一个非常巨大的数目,那如果参数越多会有什麼样的问题呢
 
@@ -268,7 +268,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 也许对一个影像辨识的系统而言,对一个影像辨识的 Neuron,对一个影像辨识的类神经网路裡面的神经而言,它要做的就是侦测说现在这张图片裡面,有没有出现一些特别重要的 Pattern
 
-![image-20221007204331924](./03Image as Input.assets/image-20221007204331924.png)
+![image-20221007204331924](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204331924.png)
 
 举例来说 如果现在
 
@@ -282,7 +282,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 举例来说这一个例子,不知道你有没有看到,这裡面有什麼样的动物?
 
-![image-20221007204359709](./03Image as Input.assets/image-20221007204359709.png)
+![image-20221007204359709](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204359709.png)
 
 你看这边有一个鸟嘴,这边有一个眼睛,看起来牠是一个乌鸦，但是牠其实是一隻猫，如果你看到牠是一隻鸟的话,那你就应该放下酒杯了,因為这是一隻猫
 
@@ -290,7 +290,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 但是假设我们现在用 Neuron 做的事情,其实就是判断说现在有没有某种 Pattern 出现,那也许**我们并不需要每一个 Neuron都去看一张完整的图片**
 
-![image-20221007204422416](./03Image as Input.assets/image-20221007204422416.png)
+![image-20221007204422416](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204422416.png)
 
 因為这一些重要的 Pattern,比如说鸟嘴 比如说眼睛 比如说鸟爪,并不需要看整张完整的图片,才能够得到这些资讯,
 
@@ -306,7 +306,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 那这个 Neuron,怎麼考虑这个 Receptive Field 裡,有没有发生什麼样的事情呢
 
-![image-20221007204533106](./03Image as Input.assets/image-20221007204533106.png)
+![image-20221007204533106](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204533106.png)
 
 它要做的事情就是
 
@@ -314,13 +314,13 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 - 这个 Neuron 会给 27 维的向量的,每一个 Dimension 一个 Weight,所以这个 Neuron 有 3×3×3  27个 Weight,
 - 再加上 Bias 得到的输出,这个输出再送给下一层的 Neuron 当作输入,
 
-![image-20221007204614367](./03Image as Input.assets/image-20221007204614367.png)
+![image-20221007204614367](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204614367.png)
 
 
 
 所以每一个 Neuron,它只考虑自己的 Receptive Field,那这个 Receptive Field 要怎麼决定出来呢,那这个就要问你自己了
 
-![image-20221007204639502](./03Image as Input.assets/image-20221007204639502.png)
+![image-20221007204639502](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204639502.png)
 
 - 你可以说这边有个蓝色的 Neuron,它就看左上角这个范围,这是它的 Receptive Field
 - 另外又有另外一个黄色的 Neuron,它是看右下角这个 3×3×3 的范围
@@ -329,7 +329,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 那接下来你就会浮想联翩有各式各样的想法,举例来说,
 
-![image-20221007204706125](./03Image as Input.assets/image-20221007204706125.png)
+![image-20221007204706125](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204706125.png)
 
 - 那我可不可以 Receptive Field 有大有小呢?因為毕竟 Pattern 有的比较小 有的比较大,有的 Pattern 也许在 3×3 的范围内,就可以被侦测出来,有的 Pattern 也许要 11×11 的范围,才能被侦测出来,可以,这个算是常见的招式了
 - 我可不可以 Receptive Field,只考虑某些 Channel呢,我们这边看起来我们的 Receptive Field,是 R G B 三个 Channel 都考虑,但也许有些 Pattern,只在红色的 Channel 会出现,也许有些 Pattern,只在蓝色的 Channel 会出现啊,我可不可以有的 Neuron 只考虑一个 Channel 呢？可以,其实之后在讲到 Network Compression的时候,会讲到这种 Network 的架构,在一般 CNN 裡面你不常这样子的考虑,但是有这样子的做法
@@ -344,7 +344,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 1. **看所有的 Channel**
 
-![image-20221007204749096](./03Image as Input.assets/image-20221007204749096.png)
+![image-20221007204749096](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204749096.png)
 
 一般在做影像辨识的时候我们可能,你可能不会觉得有些 Pattern 只出现某一个 Channel 裡面,所以会看全部的 Channel,所以既然会看全部的 Channel
 
@@ -358,7 +358,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 2. 到目前為止我们讲的都是一个 Receptive Field,那各个不同 Receptive Field 之间的关係,是怎麼样呢,你会把你在最左上角的这个 Receptive Field,往右移一点,然后製造一个另外一个 Receptive Field,**这个移动的量叫做 Stride**
 
-![image-20221007204907946](./03Image as Input.assets/image-20221007204907946.png)
+![image-20221007204907946](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007204907946.png)
 
 像在这个例子裡面 Stride 就等於 2,那 **Stride 是一个你自己决定的 Hyperparameter**,但这个 Stride 你往往不会设太大,往往设 1 或 2 就可以了
 
@@ -368,7 +368,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 3. 再往右移两格就放在这边,那这边就遇到一个问题了,它超出了影像的范围怎麼办呢
 
-![image-20221007205001579](./03Image as Input.assets/image-20221007205001579.png)
+![image-20221007205001579](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205001579.png)
 
 那有人可能会说,那就不要在这边摆 Receptive Field,但你这样就漏掉了影像的边边的地方啊,如果有个 Pattern 就在边边的地方,你就没有 Neuron 去关照那些 Pattern啦,没有 Neuron 去侦测出现在边边的 Pattern 了,所以一般边边的地方也会考虑的,但超出范围了怎麼办呢
 
@@ -378,7 +378,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 4. 那你除了这个横著移动,你也会这个直著移动,你有会有这个垂直方向上的移动,
 
-![image-20221007205046659](./03Image as Input.assets/image-20221007205046659.png)
+![image-20221007205046659](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205046659.png)
 
 在这边呢 我们一样垂直方向 Stride 也是设 2,所以你有一个 Receptive Field 在这边,垂直方向移动两格,就有一个 Receptive Field 在这个地方,你就按照这个方式,扫过整张图片,所以整张图片裡面,每一吋土地都是有被某一个,Receptive Field 覆盖的,也就是图片裡面每一个位置,都有一群 Neuron 在侦测那个地方,有没有出现某些 Pattern
 
@@ -388,7 +388,7 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 第二个观察就是,**同样的 Pattern,它可能会出现在图片的不同区域裡面**,
 
-![image-20221007205108757](./03Image as Input.assets/image-20221007205108757.png)
+![image-20221007205108757](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205108757.png)
 
 比如说鸟嘴这个 Pattern,它可能出现在图片的左上角,也可能出现在图片的中间,虽然它们的形状都是一样的 都是鸟嘴,但是它们可能出现在,图片裡面的不同的位置
 
@@ -396,13 +396,13 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 那假设在那个 Receptive Field 裡面,有一个 Neuron 它的工作,就是侦测鸟嘴的话,那鸟嘴就会被侦测出来
 
-![image-20221007205128155](./03Image as Input.assets/image-20221007205128155.png)
+![image-20221007205128155](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205128155.png)
 
 所以就算鸟嘴出现在中间,也没有关係,假设有 这边一定是在某一个,Receptive Field 的范围裡面,那个 Receptive Field,一定有一组 Neuron 在照顾,那假设其中有一个 Neuron,它可以侦测鸟嘴的话,那鸟嘴出现在图片的中间,也会被侦测出来
 
 但这边的问题是,这些侦测鸟嘴的 Neuron,它们做的事情其实是一样的,只是它们守备的范围是不一样,**我们真的需要每一个守备范围,都去放一个侦测鸟嘴的 Neuron 吗？**
 
-![image-20221007205200127](./03Image as Input.assets/image-20221007205200127.png)
+![image-20221007205200127](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205200127.png)
 
 如果不同的守备范围,都要有一个侦测鸟嘴的 Neuron,那你的参数量不会太多了吗？
 
@@ -412,11 +412,11 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 如果放在影像处理上的话,**我们能不能够让,不同 Receptive Field 的 Neuron共享参数,也就是做 Parameter Sharing权值共享,**那共享参数是什麼意思呢
 
-![image-20221007205245819](./03Image as Input.assets/image-20221007205245819.png)
+![image-20221007205245819](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205245819.png)
 
 所谓共享参数就是,这**两个 Neuron 它们的 weights完全是一样的**,我这边特别用顏色来告诉你说,它们的 weights 完全是一样的
 
-![image-20221007205301643](./03Image as Input.assets/image-20221007205301643.png)
+![image-20221007205301643](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205301643.png)
 
 - 上面这个 Neuron 的第一个 weight,叫做 w1,下面这个 Neuron 的第一个 weight 也是 w1,它们是同一个 weight,我用红色来表示
 
@@ -448,11 +448,11 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 那我们刚才已经讲说,每一个 Receptive Field,它都有一组 Neuron 在负责守备
 
-![image-20221007205430113](./03Image as Input.assets/image-20221007205430113.png)
+![image-20221007205430113](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205430113.png)
 
 比如说 64 个 Neuron,所以这个 Receptive Field有 64 个 Neuron,这个 Receptive Field 也有 64 个 Neuron,那它们彼此之间会怎麼共享参数呢
 
-![image-20221007205501751](./03Image as Input.assets/image-20221007205501751.png)
+![image-20221007205501751](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205501751.png)
 
 我们这边用一样的顏色,就代表说这两个 Neuron,共享一样的参数
 
@@ -469,23 +469,23 @@ Network先输出y₁ y₂ y₃,在通过soft-max以后,產生y₁' y₂'跟y₃'
 
 目前已经讲了两个简化的方法,那我们来整理一下我们学到了什麼,这是 **Fully Connected 的 Network**
 
-![image-20221007205651353](./03Image as Input.assets/image-20221007205651353.png)
+![image-20221007205651353](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205651353.png)
 
 它是弹性最大的,但有时候不需要看整张图片,也许只要看图片的一小部分就可以侦测出重要的 Pattern,所以我们有了 Receptive Field 的概念
 
-![image-20221007205718069](./03Image as Input.assets/image-20221007205718069.png)
+![image-20221007205718069](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205718069.png)
 
 当我们强制一个 Neuron只能看一张图片裡面的一个范围的时候,它的弹性是变小的,如果是 Fully Connected 的 Network,它可以决定看整张图片，还是只看一个范围,就如果它只想看一个范围,就把很多 Weight 设成 0,就只看一个范围，所以加入 Receptive Field 以后,你的 Network 的弹性是变小的
 
 接下来我们还有权值共享,权值共享又更进一步限制了 Network 的弹性
 
-![image-20221007205733525](./03Image as Input.assets/image-20221007205733525.png)
+![image-20221007205733525](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205733525.png)
 
 本来在 Learning 的时候,它可以决定这两个 Network 的参数要是什麼,每一个 Neuron 可以各自有不同的参数,它们可以正好学出一模一样的参数,也可以有不一样的参数
 
 但是加入参数共享以后,就意味著说 某一些 Neuron参数要一模一样,所以这又更增加了对 Neuron 的限制,**而 Receptive Field 加上 Parameter Sharing,就是 Convolutional Layer**，每一个receptive field都有一组neuron，这组neuron中的每一个都可以识别一个pattern。不同receptive field的neuron组的参数是相同的，相同的参数代表可以识别相同的pattern。
 
-![image-20221007205818328](./03Image as Input.assets/image-20221007205818328.png)
+![image-20221007205818328](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007205818328.png)
 
 有用到 Convolutional Layer 的 Network,就叫 Convolutional Neural Network,就是 CNN,所以从这个图上啊,你可以很明显地看出,其实 CNN 的 Bias 比较大,它的 Model 的 Bias 比较大
 
@@ -504,7 +504,7 @@ Model Bias 大，不一定是坏事
 
 第二个版本是这样的,**Convolutional 的 Layer 就是裡面有很多的 Filter**
 
-![image-20221007210324412](./03Image as Input.assets/image-20221007210324412.png)
+![image-20221007210324412](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210324412.png)
 
 这些 Filter 啊 它们的大小是,3 × 3 × Channel 的 Size,如果今天是彩色图片的话,那就是 RGB 三个 Channel,如果是黑白的图片的话,它的 Channel 就等於 1
 
@@ -514,7 +514,7 @@ Model Bias 大，不一定是坏事
 
 那这些 Filter,怎麼去图片裡面抓 Pattern 的呢,我们现在举一个实际的例子
 
-![image-20221007210400079](./03Image as Input.assets/image-20221007210400079.png)
+![image-20221007210400079](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210400079.png)
 
 例子裡面,我们假设 Channel 是 1,也就是说我们图片是黑白的图片
 
@@ -522,7 +522,7 @@ Model Bias 大，不一定是坏事
 
 那我们现在已经假设这些 Filter 裡面的数值已经找出来了,我们来看看说这些 Filter,是怎麼跟一张图片进行运作,怎麼去图片上面把 Pattern 侦测出来的
 
-![image-20221007210536012](./03Image as Input.assets/image-20221007210536012.png)
+![image-20221007210536012](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210536012.png)
 
 这是我们的图片,它是一个 6 × 6 的大小的图片,那这些 Filter的做法就是,先把 Filter 放在图片的左上角,然后把 Filter 裡面所有的值,跟左上角这个范围内的 9 个值做相乘,也就是把这个 Filter 裡面的 9 个值,跟这个范围裡面的 9 个值呢,做 Inner Product,做完是 3
 
@@ -552,37 +552,37 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 接下来这个 Filter 呢,本来放在左上角,接下来就往右移一点,那这个移动的距离叫做 Stride
 
-![image-20221007210855705](./03Image as Input.assets/image-20221007210855705.png)
+![image-20221007210855705](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210855705.png)
 
 那在刚才讲前一个版本的故事的时候,我们的 Stride 是设 2,那在这个版本的故事裡面,我们 Stride 就设為 1,那往右移一点,然后再把这个 Filter,跟这个范围裡面的数值,算 Inner Product 算出来是 -1 
 
-![image-20221007210906126](./03Image as Input.assets/image-20221007210906126.png)
+![image-20221007210906126](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210906126.png)
 
 然后就以此类推,再往右移一点 再算一下,然后这边全部扫完以后,就往下移一点 再算一下,以此类推,一直到把这个 Filter 放在右下角,算出一个数值,答案就是 -1 就这样
 
 这个 Filter 怎麼说它在侦测 Pattern 呢
 
-![image-20221007210921712](./03Image as Input.assets/image-20221007210921712.png)
+![image-20221007210921712](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210921712.png)
 
 你看这个 Filter 裡面,它对角线的地方都是1,所以它看到 Image 裡面也出现连三个 1 的时候,它的数值会最大
 
-![image-20221007210931795](./03Image as Input.assets/image-20221007210931795.png)
+![image-20221007210931795](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210931795.png)
 
 所以你会发现左上角的地方的值最大,左下角的地方的值最大,就告诉我们说,这个图片裡面左上角有出现 3,左上角有出现这个 Pattern,左下角有出现这个,三个 1 连在一起的 Pattern,这个是第一个 Filter
 
 好 那接下来呢,我们把每一个 Filter,都做重复的 Process,比如说这边有第二个 Filter
 
-![image-20221007210942680](./03Image as Input.assets/image-20221007210942680.png)
+![image-20221007210942680](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210942680.png)
 
 我们就把第二个 Filter,先从左上角开始扫起,得到一个数值,往右移一点 再得到一个数值,再往右移一点 再得到一个数值,反覆同样的 Process,反覆同样的操作,直到把整张图片都扫完,我们又得到另外一群数值
 
-![image-20221007210958861](./03Image as Input.assets/image-20221007210958861.png)
+![image-20221007210958861](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007210958861.png)
 
 所以每一个 Filter,都会给我们一群数字,红色的 Filter 给我们一群数字,蓝色的 Filter 给我们一群数字,如果我们有 64 个 Filter,我们就得到 64 群的数字了,**那这一群数字啊,它又有一个名字,它叫做 Feature Map**
 
 所以当我们把一张图片,通过一个 Convolutional Layer,裡面有一堆 Filter 的时候,我们產生出来了一个 Feature Map
 
-![image-20221007211047773](./03Image as Input.assets/image-20221007211047773.png)
+![image-20221007211047773](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211047773.png)
 
 那假设这个 Convolutional Layer裡面,它有 64 个 Filter,那我们產生出来64个 Feature Map,每一组在这个例子裡面是 4 × 4，这个 Feature Map你可以看成是,另外一张新的图片
 
@@ -590,7 +590,7 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 这个 **Convolutional Layer 是可以叠很多层的**,刚才是叠了第一层,那如果叠第二层会发生什麼事呢
 
-![image-20221007211137415](./03Image as Input.assets/image-20221007211137415.png)
+![image-20221007211137415](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211137415.png)
 
 第二层的 Convolution 裡面,也有一堆的 Filter,那每一个 Filter 呢,它的大小我们这边也设 3 × 3,那它的高度必须设為 64
 
@@ -604,15 +604,15 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 如果我们一样设 3 × 3 的话,当我们看最左上角这个数值的时候,最左上角这个数值在影像上,其实是对应到这个范围,
 
-![image-20221007211240975](./03Image as Input.assets/image-20221007211240975.png)
+![image-20221007211240975](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211240975.png)
 
 右下角的数值在影像上,其实是对应到这个范围,
 
-![image-20221007211253688](./03Image as Input.assets/image-20221007211253688.png)
+![image-20221007211253688](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211253688.png)
 
 所以当我们看这 3 × 3 的范围的时候,和第一个 Convolutional Layer 的输出的,这个 Feature Map 的,3 × 3 的范围的时候,我们在原来的影像上,其实是考虑了一个 5 × 5 的范围
 
-![image-20221007211303203](./03Image as Input.assets/image-20221007211303203.png)
+![image-20221007211303203](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211303203.png)
 
 所以虽然我们的 Filter 只有 3 × 3,但它在影像上考虑的范围,是比较大的 是 5 × 5,所以今天你的 Network 叠得越深,同样是 3 × 3 的大小的 Filter,它看的范围就会越来越大,所以 Network 够深,你不用怕你侦测不到比较大的 Pattern,它还是可以侦测到比较大的 Pattern
 
@@ -620,7 +620,7 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 刚才我们讲了两个版本的故事了,那这两个版本的故事,是一模一样的
 
-![image-20221007211328320](./03Image as Input.assets/image-20221007211328320.png)
+![image-20221007211328320](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211328320.png)
 
 我们在第一个版本的故事裡面,说到了有一些 Neuron,这些 Neuron 会共用参数,这些**共用的参数,就是第二个版本的故事裡面的 Filter**
 
@@ -632,7 +632,7 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 在刚才第一个版本的故事裡面,我们说不同的 Neuron,它们可以 Share Weight,然后去守备不同的范围,而 **Share Weight 这件事,其实就是我们把 Filter 扫过一张图片**
 
-![image-20221007211439760](./03Image as Input.assets/image-20221007211439760.png)
+![image-20221007211439760](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211439760.png)
 
 那把 F**ilter 扫过一张图片这件事,其实就是 Convolution**,这就是為什麼 Convolutional Layer,要叫 Convolutional Layer 的关係
 
@@ -640,7 +640,7 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
 今天特别从两个不同的面向,讲 CNN 这个东西,希望可以帮助你对 CNN 有更深地了解
 
-![image-20221007211522633](./03Image as Input.assets/image-20221007211522633.png)
+![image-20221007211522633](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211522633.png)
 
 為什麼用 CNN 是基於两个观察
 
@@ -653,7 +653,7 @@ $(1\times1)+(-1\times0)+(-1\times0)+(-1\times0)+(1\times1)+(-1\times0)+(-1\times
 
  Convolutional Layer,在做影像辨识的时候呢,其实还有第三个常用的东西,这个东西呢 叫做 Pooling,那 Pooling 是怎麼来的呢
 
-![image-20221007211549944](./03Image as Input.assets/image-20221007211549944.png)
+![image-20221007211549944](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211549944.png)
 
 Pooling 来自於另外一个观察
 
@@ -667,11 +667,11 @@ Pooling 来自於另外一个观察
 
 那 Pooling 其实也有很多不同的版本,我们这边讲的是 Max Pooling
 
-![image-20221007211732297](./03Image as Input.assets/image-20221007211732297.png)
+![image-20221007211732297](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211732297.png)
 
 刚才说每一个 Filter 都產生一把数字,要做 Pooling 的时候,我们就把这些数字几个几个一组,比如说在这个例子裡面就是 2×2 个一组,每一组裡面选一个代表,在 Max Pooling 裡面,我们选的代表就是最大的那一个
 
-![image-20221007211747087](./03Image as Input.assets/image-20221007211747087.png)
+![image-20221007211747087](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211747087.png)
 
 你不一定要选最大的那一个,这个是你自己可以决定的,Max Pooling 这一个方法是选最大的那一个,但是也有 average Pooling ，就是选平均嘛,还有选几何平均的,所以有各式各样的 Pooling 的方法
 
@@ -681,7 +681,7 @@ Pooling 来自於另外一个观察
 
 所以我们做完 Convolution 以后,往往后面还会搭配 Pooling,那 **Pooling 做的事情就是把图片变小**,做完 Convolution 以后我们会得到一张图片,这一张图片裡面有很多的 Channel,那做完 Pooling 以后,我们就是把这张图片的 Channel 不变,本来 64 个 Channel 还是 64 个 Channel,但是我们会把图片变得比较狭长一点
 
-![image-20221007211851508](./03Image as Input.assets/image-20221007211851508.png)
+![image-20221007211851508](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211851508.png)
 
 在刚才的例子裡面,本来 4×4 的图片,如果我们把这个 Output 的数值啊,2×2 个一组的话,那 4×4 的图片就会变成 2×2 的图片,这个就是 Pooling 所做的事情
 
@@ -697,7 +697,7 @@ Pooling 来自於另外一个观察
 
 那一般以后,你的架构就是 Convolution 加 Pooling,那我刚才讲过说 Pooling 是可有可无啦,今天很多人可能会选择不用 Pooling,好 那如果你做完几次 Convolution 以后,接下来呢,最终怎麼得到最后的结果呢
 
-![image-20221007211948707](./03Image as Input.assets/image-20221007211948707.png)
+![image-20221007211948707](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007211948707.png)
 
 你会把 Pooling 的 Output 做一件事情,叫做 Flatten,Flatten 的意思就是,把这个影像裡面啊,本来排成矩阵的样子的东西拉直,把所有的数值拉直变成一个向量,再把这个向量,丢进 Fully Connected 的 Layer 裡面
 
@@ -707,13 +707,13 @@ Pooling 来自於另外一个观察
 
 那除了影像辨识以外啊,你可能听过 CNN 另外一个最常见的,最耳熟能详的应用,就是用来下围棋,那今天呢 如果讲个机器学习的课,没有提到 AlphaGo,大家就觉得你什麼都没有讲对不对,所以我们来提一下 AlphaGo,好 怎麼用这个 CNN 来下围棋呢
 
-![image-20221007212013755](./03Image as Input.assets/image-20221007212013755.png)
+![image-20221007212013755](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212013755.png)
 
 我们说下围棋其实就是一个分类的问题,你的 Network 的输入,是棋盘上黑子跟白子的位置,你的输出就是下一步应该要落子的位置
 
 可是我们今天已经知道说,Network 的输入就是一个向量啊,那怎麼把棋盘表示成一个向量呢,完全没有问题,棋盘上就是有 19 × 19 个位置嘛,那我们就把一个棋盘,表示成一个 19 × 19 维的向量,在这个向量裡面,如果某一个位置有一个黑子,那那个位置我们就填 1,如果白子我们就填 -1,如果没有子我们就填 0
 
-![image-20221007212025289](./03Image as Input.assets/image-20221007212025289.png)
+![image-20221007212025289](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212025289.png)
 
 我们就可以告诉 Network 说,现在棋盘上的盘势长什麼样,我们可以用一个 19 × 19 维的向量,来描述一个棋盘,当然这不一定是要这麼做啦,不一定要黑子是 1 白子是 -1,然后没有子就是 0,这只是一个可能的表示方式而已,你们可以想出其他更神奇的表示方式,总之我们有办法把棋盘上的盘势,用一个向量来描述
 
@@ -721,7 +721,7 @@ Pooling 来自於另外一个观察
 
 所以下围棋,就是一个有 19 × 19 个类别的分类的问题,Network 会 Output 说,在这 19 × 19 个类别裡面,哪一个类别是最好的,应该要选择下一步落子的位置应该在哪裡,那这个问题完全可以用一个,Fully Connected 的 Network 来解决,但是用 CNN 的效果更好
 
-![image-20221007212044290](./03Image as Input.assets/image-20221007212044290.png)
+![image-20221007212044290](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212044290.png)
 
 為什麼用 CNN 的效果更好呢,首先你完全可以把一个棋盘,看作是一张图片,一个棋盘,可以看作是一个解析度 19 × 19 的图片,一般图片很大,一般图片可能都 100 × 100 的解析度,都是很小的图片了啊,但是棋盘是一个更小的图片,这个图片它的解析度只有 19 × 19,这个图片裡面每一个像素 每一个 Pixel,就代表棋盘上一个可以落子的位置
 
@@ -739,13 +739,13 @@ Pooling 来自於另外一个观察
 
 我们刚才讲说在影像上的**第一个观察**是,很多重要的 Pattern,你只需要看小范围就知道,下围棋是不是也是一样呢
 
-![image-20221007212131710](./03Image as Input.assets/image-20221007212131710.png)
+![image-20221007212131710](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212131710.png)
 
 举例来说这一个 Pattern,你就算不用看整个棋盘的盘势,你都知道说这边发生了什麼事,这个就是白子被黑子围住了嘛,那接下来黑子如果放在这边,就可以把白子提走,那白子要放在这边才不会,才可以接这个白子 才不会被提走,那其实在 AlphaGo 裡面啊,它的第一层的 Layer,它的 Filter 的大小就是 5 × 5,所以显然在设计这个 Network 的人觉得说,棋盘上很多重要的 Pattern,也许看 5 × 5 的范围就可以知道了
 
 再来是我们说影像上的第二个观察是,同样的 Pattern 可能会出现在不同的位置,在下围棋裡面是不是也是一样呢,
 
-![image-20221007212147554](./03Image as Input.assets/image-20221007212147554.png)
+![image-20221007212147554](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212147554.png)
 
 这个叫吃的 Pattern,它可以出现在棋盘上的任何位置,它可以出现在左上角,也可以出现在右下角,所以从这个观点来看,影像跟下围棋有很多共同之处
 
@@ -755,7 +755,7 @@ Pooling 来自於另外一个观察
 
 但是棋盘是这个样子吗,你可以把棋盘上的奇数行跟偶数列拿掉,还是同一个棋局吗,听起来好像不是对不对,下围棋这麼精细的任务,你随便拿掉一个 Column 拿掉一个 Row,整个棋整个局势就不一样啦,怎麼可能拿掉一个 Row 拿掉一个 Column,还会没有问题呢
 
-![image-20221007212204435](./03Image as Input.assets/image-20221007212204435.png)
+![image-20221007212204435](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212204435.png)
 
 所以有人就会说,啊 CNN 裡面就是要有 Pooling,然后影像辨识都是用 Pooling,所以 AlphaGo 也一定有用 Pooling,所以代表 AlphaGo 很烂啊,针对 Pooling 这个弱点去攻击它,一定就可以把它打爆,真的是这样吗
 
@@ -763,7 +763,7 @@ Pooling 来自於另外一个观察
 
 其实 AlphaGo 在 Nature 上的 Paper,其实没有多长,大概就,我记得就五 六页而已,所以其实你一下子就可以看完了,而且在这个文章的正文裡面,甚至没有提它用的网路架构是什麼样子,它没有讲 Network 架构的细节,这个细节在哪裡呢,这个细节在附件裡面,所以我就仔细读了一下附件,看看说 AlphaGo 的网路结构长什麼样子
 
-![image-20221007212228122](./03Image as Input.assets/image-20221007212228122.png)
+![image-20221007212228122](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212228122.png)
 
 我们就来看一下,这个附件裡面是怎麼描述,AlphaGo 的类神经网路结构的,它先说呢
 
@@ -786,7 +786,7 @@ Pooling 来自於另外一个观察
 
 而那 CNN 呢,除了下围棋还有影像以外,欸 近年来也用在语音上,也用在文字处理上,这边我们就不再细讲
 
-![image-20221007212349939](./03Image as Input.assets/image-20221007212349939.png)
+![image-20221007212349939](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212349939.png)
 
 但是呢 你如果你真的想把 CNN 用在语音上,用在这个文字处理上,你要仔细看一下文献上的方法
 
@@ -800,7 +800,7 @@ Pooling 来自於另外一个观察
 
 有人会说 CNN,其实 CNN,它没有办法处理影像放大缩小,或者是旋转的问题,怎麼说呢,假设今天你给 CNN 看的狗都是这个大小,它可以辨识说这是一隻狗,当你把这个图片放大的时候,它可以辨识说牠还是一隻狗吗,可能是不行的
 
-![image-20221007212407157](./03Image as Input.assets/image-20221007212407157.png)
+![image-20221007212407157](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212407157.png)
 
 你可能会想说 欸怎麼会不能够辨识呢,这两个形状不是一模一样啊,怎麼放大就不能辨识呢,CNN 这麼笨吗
 
@@ -812,4 +812,4 @@ Pooling 来自於另外一个观察
 
 那你说 欸 CNN 这个不能够处理 Scaling,跟 Rotation 的问题啊,**那有没有什麼 Network 架构,是可以处理这个问题呢,其实有的,有一个架构叫 Special Transformer Layer**,我们不会讲它,就把它的这个录影的连结放在这边,给大家参考
 
-![image-20221007212542259](./03Image as Input.assets/image-20221007212542259.png)
+![image-20221007212542259](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/03Image as Input.assets/image-20221007212542259.png)

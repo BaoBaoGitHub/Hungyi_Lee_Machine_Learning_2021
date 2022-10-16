@@ -6,7 +6,7 @@
 
 到目前為止大家学到的network,都是一个function,你给他一个X就可以输出一个Y
 
-![image-20221009143642028](./06Generation.assets/image-20221009143642028.png)
+![image-20221009143642028](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009143642028.png)
 
 我们已经学到各式各样的,network架构,可以处理不同的X 不同的Y
 
@@ -25,7 +25,7 @@
 
 那把network拿来,当作generator使用,他特别的地方是现在network的输入,会加上一个**random的variable,会加上一个Z** 
 
-![image-20221009143734896](./06Generation.assets/image-20221009143734896.png)
+![image-20221009143734896](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009143734896.png)
 
 这个Z,是从某一个,distribution sample出来的,所以现在network它不是只看一个固定的X得到输出,它是同时看X跟Z得到输出
 
@@ -40,17 +40,17 @@ Z特别的地方是 它是不固定的,每一次我们用这个network的时候,
 
 这个distribution,这边有一个限制是,它必须够简单，够简单的意思是,我们知道它的式子长什麼样子,我们可以从这个distribution,去做sample
 
-![image-20221009143812904](./06Generation.assets/image-20221009143812904.png)
+![image-20221009143812904](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009143812904.png)
 
 举例来说这个distribution,可以是一个function distribution,你知道function distribution的式子,你知道怎麼从,gaussian distribution做sample
 
 它也可以是uniform distribution,那uniform distribution,的式子你一定知道,你也知道怎麼从,uniform distribution做sample,所以这一个distribution,的形状你自己决定,但你只要记得说它是简单的,你能够sample它的 就结束了
 
-![image-20221009144021766](./06Generation.assets/image-20221009144021766.png)
+![image-20221009144021766](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144021766.png)
 
 所以每次今天,有一个X进来的时候,你都从这个distribution,裡面做一个sample,然后得到一个output,随著你sample到的Z不同,Y的输出也就不一样,所以这个时候我们的network输出,不再是单一一个固定的东西,而变成了一个复杂的distribution,同样的X作為输入,我们这边每次sample到,不一样的东西,通过一个复杂的network转换以后,它就会变成一个复杂的分布,你的network的输出,就变成了一个distribution
 
-![image-20221009144044300](./06Generation.assets/image-20221009144044300.png)
+![image-20221009144044300](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144044300.png)
 
 那这种**可以输出,一个distribution的network,我们就叫它generator**
 
@@ -64,7 +64,7 @@ Z特别的地方是 它是不固定的,每一次我们用这个network的时候,
 
 这边举的例子,是video prediction,就是给机器一段的影片,然后它要预测接下来会发生什麼事情
 
-![image-20221009144123652](./06Generation.assets/image-20221009144123652.png)
+![image-20221009144123652](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144123652.png)
 
 那这个例子,是我从上面这个,github的连结 https://github.com/dyelax/Adversarial_Video_Generation找到的,那在这个连结裡面 它要做的事情,是去预测小精灵这个游戏,接下来的游戏画面会长什麼样子
 
@@ -97,7 +97,7 @@ video prediction,那你就给你的network过去的游戏画面,然后它的输�
 
 那有什麼样的可能性,可以处理这个问题,一个可能性就是,让机器的输出是有机率的,让它不再是输出单一的输出,让它输出一个机率的分佈
 
-![image-20221009144548757](./06Generation.assets/image-20221009144548757.png)
+![image-20221009144548757](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144548757.png)
 
 当我们给这个network,一个distribution的时候,当我们给这个network input,加上一个Z的时候,它的输出就变成了一个distribution,它的输出就不再是固定的
 
@@ -109,7 +109,7 @@ video prediction,那你就给你的network过去的游戏画面,然后它的输�
 
 举例来说,画图这件事情,可能就需要一些创造力
 
-![image-20221009144643524](./06Generation.assets/image-20221009144643524.png)
+![image-20221009144643524](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144643524.png)
 
 举例来说假设叫一个人,画一个红眼睛的角色,那每个人可能画出来,或者心裡想的动画人物可能都不一样,有哪些角色是红眼睛的
 
@@ -119,7 +119,7 @@ video prediction,那你就给你的network过去的游戏画面,然后它的输�
 
 那还有什麼样的例子,会需要用到创造力,举例来说 对话这件事情
 
-![image-20221009144701886](./06Generation.assets/image-20221009144701886.png)
+![image-20221009144701886](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144701886.png)
 
 举例来说假设你跟另外一个人说,你知道辉夜是谁吗,其实有很多不同的答案对不对
 
@@ -133,7 +133,7 @@ generative的model,其中一个非常知名的,就是generative adversarial netw
 
 它其实有很多各式各样的变形,你可以在网路上找到,一个GAN的[动物园](https://github.com/hindupuravinash/the-gan-zoo),找到一个GAN的zoo
 
-![image-20221009144919620](./06Generation.assets/image-20221009144919620.png)
+![image-20221009144919620](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009144919620.png)
 
 那个GAN的动物园裡面,收集了超过五百种以上的GAN,每次有人发明了,一个新的GAN的时候,他就会在前面加一个英文的字母,但是英文的字母是有限的,很快的英文的字母就被用尽了
 
@@ -143,13 +143,13 @@ Anime Face Generation
 
 我们现在要举的例子,就是要让机器生成动画人物的,二次元人物的脸,我们举的例子是Unconditional的generation,unconditional generation,就是我们这边先把X拿掉
 
-![image-20221009145009696](./06Generation.assets/image-20221009145009696.png)
+![image-20221009145009696](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145009696.png)
 
 那之后我们在讲到conditional,generation的时候,我们会再把X加回来,这边先把X拿掉,所以我们的generator它输入就是Z,它的输出就是Y
 
 那输入的这个Z是什麼
 
-![image-20221009145037047](./06Generation.assets/image-20221009145037047.png)
+![image-20221009145037047](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145037047.png)
 
 我们都假设Z是从一个normal distribution里sample出来的向量,那这个向量通常会是一个,low-dimensional的向量,它的维度其实是你自订的,你自己决定的,那通常你就订个50，100,的大小,它是你自己决定的
 
@@ -161,7 +161,7 @@ Anime Face Generation
 
 当你输入的向量不同的时候,你的输出就会跟著改变,所以你从这个,normal distribution裡面,Sample Z出来 Sample到不同的Z,那你输出来的Y都不一样,那我们希望说不管你这边sample到什麼Z,输出来的都是动画人物的脸
 
-![image-20221009145121516](./06Generation.assets/image-20221009145121516.png)
+![image-20221009145121516](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145121516.png)
 
 那讲到这边可能有同学会问说,这边為什麼是,normal distribution,不能是别的吗？
 
@@ -175,13 +175,13 @@ Anime Face Generation
 
 discriminator它的作用是,它会拿一张图片作為输入,它的输出是一个数值,这个discriminator本身,也是一个neural network,它就是一个function
 
-![image-20221009145224336](./06Generation.assets/image-20221009145224336.png)
+![image-20221009145224336](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145224336.png)
 
 它输入一张图片,它的输出就是一个数字,它输出就是一个scalar,这个scalar越大就代表说,现在输入的这张图片,越像是真实的二次元人物的图像
 
 举例来说
 
-![image-20221009145316410](./06Generation.assets/image-20221009145316410.png)
+![image-20221009145316410](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145316410.png)
 
 这个是二次元人物的头像,那就输出1 假设1是最大的值,那这个也是画得很好的就输出1,这个不知道在画什麼就输出0.1,这个不知道在画什麼就输出0.1
 
@@ -193,17 +193,17 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 為什麼要多一个discriminator,这边就讲一个故事,这个故事跟演化是有关的
 
-![image-20221009145530356](./06Generation.assets/image-20221009145530356.png)
+![image-20221009145530356](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145530356.png)
 
 这不是一片枯叶,它其实枯叶蝶的拟态,那枯叶蝶长得跟枯叶非常像,它可以躲避天敌,那枯叶蝶的祖先,其实也不是长得像枯叶一样,也许他们原来也是五彩斑斕,但為什麼他们变得长得像枯叶一样,是因為有天择的压力
 
-![image-20221009145538592](./06Generation.assets/image-20221009145538592.png)
+![image-20221009145538592](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145538592.png)
 
 这个不是普通的麻雀 这个是波波,这个波波会吃枯叶蝶的祖先,在天择的压力之下,枯叶蝶就变成棕色的
 
 因為波波它只会吃彩色的东西,它看到彩色的东西知道是蝴蝶,就把它吃掉,那看到棕色的东西,那个波波就觉得是枯叶就可以骗过它,所以枯叶蝶的祖先,在天择的压力之下,顏色就变成是棕色的
 
-![image-20221009145556057](./06Generation.assets/image-20221009145556057.png)
+![image-20221009145556057](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145556057.png)
 
 但是波波也是会演化的,所以波波為了要吃到这些枯叶蝶,你有偽装成枯叶的枯叶蝶,所以它也进化了,波波进化以后就是比比鸟这样
 
@@ -213,7 +213,7 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 这个就是大比鸟,那大比鸟可能可以分辨,这个枯叶蝶跟枯叶的不同
 
-![image-20221009145608231](./06Generation.assets/image-20221009145608231.png)
+![image-20221009145608231](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145608231.png)
 
 那这个是演化的故事,对应到GAN 枯叶蝶就是generator,那它的天敌就是discriminator,
 
@@ -221,7 +221,7 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 那现在我们generator要做的事情,是画出二次元的人物,那generator怎麼学习画出二次元的人物,它学习的过程是这样子
 
-![image-20221009145619317](./06Generation.assets/image-20221009145619317.png)
+![image-20221009145619317](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145619317.png)
 
 第一代的generator它的参数几乎是,它的参数完全是随机的,所以它根本就不知道,要怎麼画二次元的人物,所以它画出来的东西就是一些,莫名其妙的杂讯
 
@@ -229,7 +229,7 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 接下来generator就调整它的裡面的参数,Generator就进化了,它调整它裡面的参数 它调整的目标,是為了要骗过discriminator,假设discriminator,判断一张图片是不是真实的依据,看的是有没有眼睛,那generator就產生眼睛出来,给discriminator看
 
-![image-20221009145645753](./06Generation.assets/image-20221009145645753.png)
+![image-20221009145645753](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145645753.png)
 
 所以generator產生眼睛出来,然后他可以骗过第一代的,discriminator,但是discriminator也是会进化的,所以第一代的discriminator,就变成第二代的discriminator,第二代的discriminator,会试图分辨这一组图片,跟真实图片之间的差异,它会试图去找出这两者之间的差异
 
@@ -237,7 +237,7 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 接下来第三代的generator,就会想办法,去骗过第二代的discriminator,既然第二代的discriminator是看,有没有嘴巴来判断是不是真正的,二次元人物,那第三代的generator就会把嘴巴加上去
 
-![image-20221009145715601](./06Generation.assets/image-20221009145715601.png)
+![image-20221009145715601](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145715601.png)
 
 那discriminator也会逐渐的进步,它会越来越严苛,然后期待discriminator越来越严苛,Generator產生出来的图片,就可以越来越像二次元的人物,那因為这边有一个generator,有一个discriminator,它们彼此之间是会互动
 
@@ -249,7 +249,7 @@ discriminator它的作用是,它会拿一张图片作為输入,它的输出是�
 
 所以generator,跟discriminator的关係啊,用动画来说就是写作敌人唸做朋友,就跟进藤光还有塔矢亮一样,或者是跟Naruto跟Sasuke一样
 
-![image-20221009145750214](./06Generation.assets/image-20221009145750214.png)
+![image-20221009145750214](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145750214.png)
 
 ## Algorithm
 
@@ -261,7 +261,7 @@ network在训练前,你要先初始化它的参数,所以我们这边就假设�
 
 初始化完以后,接下来训练的第一步是,定住你的generator,只train你的discriminator
 
-![image-20221009145829390](./06Generation.assets/image-20221009145829390.png)
+![image-20221009145829390](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145829390.png)
 
 那因為一开始你的generator的参数,是随机初始化的,那如果你又固定住你的generator,那它根本就什麼事都没有做啊,它的参数都是随机的啊
 
@@ -271,13 +271,13 @@ network在训练前,你要先初始化它的参数,所以我们这边就假设�
 
 好那你会有一个database,这个database裡面,有很多二次元人物的头像,这个去网路上爬个图库就有了,这个不难蒐集，从这个图库裡面,去sample一些,二次元人物的头像出来
 
-![image-20221009145908728](./06Generation.assets/image-20221009145908728.png)
+![image-20221009145908728](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145908728.png)
 
 接下来你就拿真正的二次元人物头像,跟generator產生出来的结果,去训练你的discriminator,discriminator它训练的目标是要分辨,真正的二次元人物,跟generator產生出来的二次元人物,它们之间的差异
 
 讲得更具体一点啊,你实际上的操作是这个样子,你可能会把这些真正的人物都标1,Generator產生出来的图片都标0
 
-![image-20221009145924306](./06Generation.assets/image-20221009145924306.png)
+![image-20221009145924306](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009145924306.png)
 
 接下来对於discriminator来说,这就是一个分类的问题,或者是regression的问题
 
@@ -292,13 +292,13 @@ network在训练前,你要先初始化它的参数,所以我们这边就假设�
 
 拟人化的讲法是,我们就让generator想办法去骗过discriminator,因為刚才discriminator,已经学会分辨,真图跟假图的差异,真图跟生成的图片的差异,Generator如果可以骗过,discriminator它可以產生一些图片,Discriminator觉得,是真正的图片的话,那generator產生出来的图片,可能就可以以假乱真
 
-![image-20221009150008872](./06Generation.assets/image-20221009150008872.png)
+![image-20221009150008872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150008872.png)
 
 它实际上的操作方法是这样子,你有一个generator,generator吃一个向量作為输入,从gaussian distribution sample,出来的向量作為输入,然后產生一个图片
 
 接下来我们把这个图片丢到,Discriminator裡面,Discriminator会给这个图片,一个分数,那generator它训练的目标,就Discriminator参数是固定的,我们只会调整generator的参数
 
-![image-20221009150024445](./06Generation.assets/image-20221009150024445.png)
+![image-20221009150024445](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150024445.png)
 
 Generator训练的目标,是要Discriminator的输出值,越大越好,那因為Discriminator,它本来训练的时候,它训练的目标它可以做的事情就是,看到好的图片就给它大的分数,如果generator可以调整参数之后,输出来的图片Discriminator,会给予高分,那意味著generator產生出来的图片,是比较真实的
 
@@ -306,7 +306,7 @@ Generator训练的目标,是要Discriminator的输出值,越大越好,那因為D
 
 举例来说generator,如果是五层的network,Discriminator如果是五层的network,把它们接起来我们就把它当作是一个,十层的network来看待
 
-![image-20221009150052042](./06Generation.assets/image-20221009150052042.png)
+![image-20221009150052042](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150052042.png)
 
 而这个十层的network裡面,某一个hidden layer它的输出很宽,它的输出的这个dimension呢,就跟图片裡面pixel的数目,乘三是一样的,你把这个hidden layer的输出呢,做一下整理以后 就会变成一张图片,所以这整个大的network裡面,其中某一层的输出就是代表一张图片
 
@@ -333,7 +333,7 @@ Generator训练的目标,是要Discriminator的输出值,越大越好,那因為D
 
 接下来就是反覆的训练,discriminator跟generator,训练完discriminator以后,固定住discriminator,训练generator,训练完generator以后,再用generator去產生更多的,新的產生出来的图片,再给discriminator做训练,训练完discriminator以后,再去训练generator,反覆的去执行
 
-![image-20221009150222034](./06Generation.assets/image-20221009150222034.png)
+![image-20221009150222034](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150222034.png)
 
 所以你是训练一阵子discriminator,训练一阵子generator,训练一阵子discriminator,再训练一阵子generator,Generator跟discriminator,它们是反覆的去进行训练,当其中一种进行训练的时候,另外一个就固定住,那你期待discriminator跟generator,都可以做得越来越好,
 
@@ -345,35 +345,35 @@ Generator训练的目标,是要Discriminator的输出值,越大越好,那因為D
 
 好那我训练了,我把那个generator呢,Update了一百次以后,所谓generator update 一百次,的意思是说,就是discriminator train一下,generator train一下,discriminator train一下,generator train一下,这样往返一百次以后得到的结果,是这样子
 
-![image-20221009150311517](./06Generation.assets/image-20221009150311517.png)
+![image-20221009150311517](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150311517.png)
 
 嗯 不知道在做些什麼,但我接下来呢就再等了一下,Train 一千次的
 
-![image-20221009150554939](./06Generation.assets/image-20221009150554939.png)
+![image-20221009150554939](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150554939.png)
 
 discriminator 跟generator,各自训练这样反覆一千次以后,机器就產生了眼睛,机器知道说 人脸就是要有两个眼睛,所以它就把眼睛标上去,训练到两千次的时候,你发现嘴巴就出来了
 
-![image-20221009150605591](./06Generation.assets/image-20221009150605591.png)
+![image-20221009150605591](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150605591.png)
 
 训练到五千次的时候,已经开始有一点人脸的样子了,而且你发现说机器学到说,动画人物啊,就是要有那个水汪汪的大眼睛,所以他每个人的眼睛呢,都涂得非常的大,涂有反白 代表说反光,是水汪汪的大眼睛
 
-![image-20221009150704896](./06Generation.assets/image-20221009150704896.png)
+![image-20221009150704896](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150704896.png)
 
 这个是训练一万次以后的结果,有发现形状已经有出来了,只是有点模糊,很多地方有点晕开的感觉,好像是水彩画的样子,
 
-![image-20221009150712274](./06Generation.assets/image-20221009150712274.png)
+![image-20221009150712274](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150712274.png)
 
 接下来这个是,update两万次的结果
 
-![image-20221009150722721](./06Generation.assets/image-20221009150722721.png)
+![image-20221009150722721](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150722721.png)
 
 这个是update五万次的结果
 
-![image-20221009150732001](./06Generation.assets/image-20221009150732001.png)
+![image-20221009150732001](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150732001.png)
 
 我后来就停在五万次的地方,那其实你在作业裡面,是有机会做得比这个结果更好的,这个是助教是学生的时候做的结果啦,那如果是最好,可能可以做到这个样子
 
-![image-20221009150744825](./06Generation.assets/image-20221009150744825.png)
+![image-20221009150744825](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150744825.png)
 
 那你会发现说这些人物呢都还不错,只是有一些比较,还是会有偶尔会有一些崩坏啦,但乍看之下呢可能比一些作画画风,会崩坏的动画公司,比如说一些妹非妹做的还要好一些了,
 
@@ -383,13 +383,13 @@ https://www.gwern.net/images/gan/stylegan/2019-02-11-stylegan-danbooru2017faces-
 
 我在网路上呢,找到了一个这样子的结果,这个是用StyleGAN做的,那用StyleGAN做起来,可以做到这个样子
 
-![image-20221009150827315](./06Generation.assets/image-20221009150827315.png)
+![image-20221009150827315](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150827315.png)
 
 我觉得非常惊人喔,很惊人喔 这些都是,用GAN產生出来的人物,这边他还產生了异色瞳,我不知道算是画错呢还是它特意呢,要產生异色瞳,对异色瞳,就一眼白眼一眼血轮眼这样子的概念,
 
 好那除了產生动画人物以外,当然也可以產生真实的人脸,有一个技术叫做progressive GAN,它可以產生非常高清的人脸
 
-![image-20221009150845837](./06Generation.assets/image-20221009150845837.png)
+![image-20221009150845837](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150845837.png)
 
 上下两排都是机器產生的,好所以这个显然progressive GAN,它有办法產生以假乱真的人脸
 
@@ -403,11 +403,11 @@ https://www.gwern.net/images/gan/stylegan/2019-02-11-stylegan-danbooru2017faces-
 
 你还可以把输入的向量,做内插 做interpolation,把输入的向量做内插以后,会发生什麼事呢,你就会看到两张图片之间连续的变化
 
-![image-20221009150933459](./06Generation.assets/image-20221009150933459.png)
+![image-20221009150933459](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150933459.png)
 
 举例来说你输入一个向量,这边產生一个看起来非常严肃的男人,你输入一个向量,这边產生一个笑口常开的女人,那你输入这两个向量中间的,interpolation它的内插,你就看到这个男人逐渐的笑了起来,或者是呢这边有更多的例子
 
-![image-20221009150950403](./06Generation.assets/image-20221009150950403.png)
+![image-20221009150950403](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009150950403.png)
 
 你输入一个向量,这个输入的向量这边是假的啦,但这边產生出来的图片是真的,你输入一个向量,这边產生一个往左看的人,你输入一个向量,这边產生一个往右看的人,你把往左看的人跟往右看的人,做interpolation会发生什麼事呢
 
@@ -419,15 +419,15 @@ https://www.gwern.net/images/gan/stylegan/2019-02-11-stylegan-danbooru2017faces-
 
 然后就结束,然后就投了一个paper,那但是他所谓的成功啊,其实是长这个样子的
 
-![image-20221009151023863](./06Generation.assets/image-20221009151023863.png)
+![image-20221009151023863](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009151023863.png)
 
 在14年的时候,我第一看到这个结果的时候,我觉得哇靠还真的可以產生图片,太厉害了,当然如果从今天的角度来看,你会觉得说 这样你也算是有成功吗,今天比如说你用,BigGAN產生出来的图片,可以做到像这个样子
 
-![image-20221009151039229](./06Generation.assets/image-20221009151039229.png)
+![image-20221009151039229](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009151039229.png)
 
 这些图片都是机器生成的,当然仔细看一下,还是可以发现一些破绽,举例来说这隻狗 它多了一个脚啊,或者是这个杯子,它左右没有很对称啊,它有点歪歪的,但这些图片都是机器生成的,那有时候机器,也会產生一些幻想中的角色,举例来说机器就產生了一个网球狗啊,
 
-![image-20221009151054830](./06Generation.assets/image-20221009151054830.png)
+![image-20221009151054830](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009151054830.png)
 
 
 
@@ -459,7 +459,7 @@ P1是用了一堆比喻说明GAN 的操作是怎麼进行的
 
 如果你一下子没有办法想像,这个 PG 、Pdata 是怎麼一回事的话,那我们用一维的状况来跟大家说明
 
-![image-20221009152623746](./06Generation.assets/image-20221009152623746.png)
+![image-20221009152623746](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152623746.png)
 
 我们假设 
 
@@ -469,21 +469,21 @@ P1是用了一堆比喻说明GAN 的操作是怎麼进行的
 
 那我们的 Normal Distribution 就长这个样子
 
-![image-20221009152630987](./06Generation.assets/image-20221009152630987.png)
+![image-20221009152630987](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152630987.png)
 
 那丢到 Generator 以后,假设你输入 5 个点,那边这每一个点,它的位置会改变,那你就產生一个新的 Distribution,那可能本来大家都集中在中间,通过这个 Generator,通过一个 Network 裡面很复杂,不知道做了什麼事情以后,这些点就分成两边,所以你的 Distribution 就变成这个样子
 
-![image-20221009152641350](./06Generation.assets/image-20221009152641350.png)
+![image-20221009152641350](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152641350.png)
 
 而Pdata 是指真正的资料的分布,真正资料分布可能长这个样子
 
-![image-20221009152702262](./06Generation.assets/image-20221009152702262.png)
+![image-20221009152702262](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152702262.png)
 
 它分两面的状况是更极端的,左边的东西比较多,右边的东西比较少,那你期待左边这个分布跟右边这个分布,越接近越好,如果写成式子的话
 
 你可以写成这个样子
 
-![image-20221009152714790](./06Generation.assets/image-20221009152714790.png)
+![image-20221009152714790](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152714790.png)
 
 Div Of PG 跟 Pdata,它指的意思就是 PG 跟 Pdata,这两个 Distribution 之间的 Divergence(散度)
 
@@ -504,7 +504,7 @@ Divergence 这就是衡量,两个的 Distribution 相似度的一个 Measure
 
 但是我们这边遇到一个困难的问题
 
-![image-20221009152818256](./06Generation.assets/image-20221009152818256.png)
+![image-20221009152818256](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152818256.png)
 
 这个 Loss,我们是可以算的,但是这个 Divergence 是要怎麼样算？那你可能知道一些 Divergence 的式子,比如说 KL Divergence,比如说 JS Divergence,这些 Divergence 用在这种 Continues 的,Distribution 上面,你要做一个很复杂的,在实作上你几乎不知道要怎麼算的积分,那我们根本就无法把这个 Divergence 算出来
 
@@ -516,7 +516,7 @@ Divergence 这就是衡量,两个的 Distribution 相似度的一个 Measure
 
 所以我现在遇到的问题就是,不知道怎麼计算 Divergence,而 GAN 告诉我们就是,你不需要知道 PG 跟 Pdata它们实际上的 Formulation 长什麼样子，只要能从 PG 和 Pdata这两个 Distributions Sample 东西出来,就有办法算 Divergence
 
-![image-20221009152903195](./06Generation.assets/image-20221009152903195.png)
+![image-20221009152903195](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009152903195.png)
 
 怎麼从真正的 Data 裡面,Sample 出东西来，怎麼从 Generator 裡面,產生一些东西出来？
 
@@ -539,7 +539,7 @@ Divergence 这就是衡量,两个的 Distribution 相似度的一个 Measure
 - 我们有一大堆的 Real Data,这个 Real Data 就是从 Pdata Sample 出来的结果
 - 我们有一大堆 Generative 的 Data,Generative 的 Data,就可以看作是从 PG Sample 出来的结果
 
-![image-20221009153029713](./06Generation.assets/image-20221009153029713.png)
+![image-20221009153029713](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153029713.png)
 
 根据 Real 的 Data 跟 Generative 的 Data,我会去训练一个 Discriminator,它的训练的目标是
 
@@ -552,7 +552,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 实际以上的过程,你也可以把它写成式子,把它当做是一个 Optimization 的问题,这个 Optimization 的问题是这样子的
 
-![image-20221009153104792](./06Generation.assets/image-20221009153104792.png)
+![image-20221009153104792](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153104792.png)
 
 这个 Discriminator 可以去 Maximize某一个 Function,我们这边叫做 Objective Function**（我们要 Maximize 的东西,我们会叫 Objective Function,如果 Minimize 我们就叫它 Loss Function）**
 
@@ -566,7 +566,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 我们希望这个 Objective Function V越大越好
 
-![image-20221009153208698](./06Generation.assets/image-20221009153208698.png)
+![image-20221009153208698](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153208698.png)
 
 - 意味著我们希望这边的 D (Y) 越大越好,我们希望 Y 如果是从 Pdata Sample 出来的,它就要越大越好
 - 我们希望说如果 Y 是从,这个 PG Sample 出来的,它就要越小越好
@@ -583,7 +583,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 有两个 Class 的 Data,训练一个 Binary 的 Classifier,训练完就等同於是,解了这一个 Optimization 的问题
 
-![image-20221009153319445](./06Generation.assets/image-20221009153319445.png)
+![image-20221009153319445](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153319445.png)
 
 那这边最神奇的地方是这一个式子,这个红框框裡面的数值,它跟 JS Divergence 有关
 
@@ -597,7 +597,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 你可以想想看,假设 PG 跟 Pdata,它的 Divergence 很小
 
-![image-20221009153406478](./06Generation.assets/image-20221009153406478.png)
+![image-20221009153406478](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153406478.png)
 
 - 也就 PG 跟 Pdata 很像,它们差距没有很大,它们很像 PG 跟 Pdata Sample 出来的,蓝色的星星跟红色的星星,它们是混在一起的
 
@@ -617,15 +617,15 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 所以我们说我们本来的目标是要找一个 Generator,去 Minimize PG 跟 Pdata 的 Divergence
 
-![image-20221009153445142](./06Generation.assets/image-20221009153445142.png)
+![image-20221009153445142](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153445142.png)
 
 但我们卡在不知道怎麼计算 Divergence,那我们现在要知道,我们只要训练一个 Discriminator,训练完以后,这个 Objective Function 的最大值,就是这个 Divergence,就跟这个 Divergence 有关
 
-![image-20221009153510985](./06Generation.assets/image-20221009153510985.png)
+![image-20221009153510985](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153510985.png)
 
 那我们何不就把红框框裡面这一项,跟 Divergence 做替换,我们何不就把 Divergence,替换成红框框裡面这一项,所以我们就有了这样一个 Objective Function
 
-![image-20221009153545181](./06Generation.assets/image-20221009153545181.png)
+![image-20221009153545181](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009153545181.png)
 
 这个 Objective Function 乍看之下有点复杂,它有一个 Minimum,又有一个 Maximum,所以你不小心就会脑筋转不过来
 
@@ -636,7 +636,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 然后我们要找一个 G,让红框框裡面的值最小,这个 G 就是我们要的 Generator,而刚才我们讲的这个 Generator 跟 Discriminator,互动 互相欺骗这个过程,其实就是想解这一个有 Minimize,又有 Maximize 这个 Min Max,Min Max 的问题,就是透过下面这一个,我们刚才讲的 GAN 的 Argument 来解的
 
-![image-20221009154312968](./06Generation.assets/image-20221009154312968.png)
+![image-20221009154312968](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154312968.png)
 
 那至於实际上,為什麼下面这个 Argument 可以解这个问题,你也可以参见原始 GAN 的 Paper
 
@@ -646,7 +646,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 你完全可以这麼做,你只要改了那个 Objective Function,你就可以量各式各样的 Divergence,那至於怎麼样设计 Objective Function,得到不同的 Divergence,那有一篇叫做 F GAN 的 Paper 裡面,有非常详细的证明
 
-![image-20221009154524885](./06Generation.assets/image-20221009154524885.png)
+![image-20221009154524885](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154524885.png)
 
 它有很多的 Table 告诉你说,不同的 Divergence,要怎麼设计它的 Objective Function,你设计什麼样的 Objective Function,去找它的 Maximum Value,就会变成什麼样的 Divergence,在这篇文章裡https://arxiv.org/abs/1606.00709面都有详细的记载,这一开始有人会觉得说,GAN 之所以没有很好 Train,也许是因為,就是我们没有在真的,这个 Minimize JS Divergence
 
@@ -654,7 +654,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 所以俗话就说,No Pain No Gan 
 
-![image-20221009154613871](./06Generation.assets/image-20221009154613871.png)
+![image-20221009154613871](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154613871.png)
 
 
 
@@ -676,7 +676,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 - 第一个理由是来自於 Data 本身的特性
 
-  ![image-20221009154749209](./06Generation.assets/image-20221009154749209.png)
+  ![image-20221009154749209](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154749209.png)
 
   PG 跟 Pdata,它们都是要產生图片的,那图片其实是高维空间裡面的一个低维的 Manifold(流形（英语：Manifolds）是可以局部[欧几里得空间](https://zh.wikipedia.org/wiki/欧几里得空间)化的一个[拓扑空间](https://zh.wikipedia.org/wiki/拓扑空间)，是欧几里得空间中的曲线、曲面等概念的推广),怎麼知道图片是高维空间,裡面低维的 Manifold 
 
@@ -686,7 +686,7 @@ Discriminator 训练的目标,就是要分辨好的图跟不好的图,分辨真�
 
 - 第二个理由是,我们是从来都不知道 PG 跟 Pdata 长什麼样子,我们对 PG 跟 Pdata,它的分布的理解,其实来自於 Sample
 
-  ![image-20221009154902054](./06Generation.assets/image-20221009154902054.png)
+  ![image-20221009154902054](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154902054.png)
 
   所以也许 PG 跟 Pdata,它们是有非常大的 Overlap 的范围,但是我们实际上,在了解这个 PG 跟 Pdata,在计算它们的 Divergence 的时候,我们是从  Pdata 裡面 Sample 一些点出来,从 PG 裡面 Sample 一些点出来
 
@@ -706,23 +706,23 @@ JS Divergence 有个特性,是两个没有重叠的分布,JS Divergence 算出�
 
 所以举例来说
 
-![image-20221009154940831](./06Generation.assets/image-20221009154940831.png)
+![image-20221009154940831](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154940831.png)
 
 假设这是你的 Pdata,这是你的 PG,它们都,假设它们都是一条直线,然后中间有很长的距离,你算它们的 JS Divergence,是 Log2
 
 假设你的 PG 跟 Pdata 其实蛮接近的
 
-![image-20221009154948486](./06Generation.assets/image-20221009154948486.png)
+![image-20221009154948486](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154948486.png)
 
 那中间的间隔其实是比较小的,算出来结果还是 Log2
 
 除非你的 PG 跟 Pdata 有重合
 
-![image-20221009154958550](./06Generation.assets/image-20221009154958550.png)
+![image-20221009154958550](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009154958550.png)
 
 不然这个 PG 跟 Pdata 只要它们是两条直线,它们这两条直线没有相交,那算出来就是 Log2,算出来这个 Case,算出来是 Log2,这个 Case 算出来也是 Log2
 
-![image-20221009155024591](./06Generation.assets/image-20221009155024591.png)
+![image-20221009155024591](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155024591.png)
 
 那但是明明中间这个 Case,中间这个 Generator就比左边这个 Generator 好,明明蓝色的线就跟红色的线比较近,但是从 JS Divergence 上面,看不出这样子的现象
 
@@ -732,7 +732,7 @@ JS Divergence 有个特性,是两个没有重叠的分布,JS Divergence 算出�
 
 因為你 Sample 的图片根本就没几张,对你的 Discriminator 来说,你 Sample 256 张 Real 的图片,256 张 Fake 的图片,它直接用硬背的,都可以把这两组图片分开,知道说谁是 Real 谁是 Fake,所以实际上,如果你有自己 Train 过 GAN 的话你会发现,如果你用 Binary 的 Classifier Train 下去,你会发现,你几乎每次 Train 完你的 Classifier 以后,也就你 Train 完你的 Discriminator 以后,正确率都是 100%
 
-![image-20221009155048300](./06Generation.assets/image-20221009155048300.png)
+![image-20221009155048300](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155048300.png)
 
 我们本来会期待说,这个 Discriminator 的 Loss,也许代表了某些事情,这个 Binary Classifier Loss,也许代表某些事情,这个 **Loss 越来越大,代表问题越来越难**,代表我们的 Generated Data,跟 Real 的 Data 越来越接近
 
@@ -752,13 +752,13 @@ Wasserstein Distance 的想法是这个样子,假设你有两个 Distribution,�
 
 Wasserstein Distance 它计算的方法,就是想像你在开一台推土机
 
-![image-20221009155213338](./06Generation.assets/image-20221009155213338.png)
+![image-20221009155213338](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155213338.png)
 
 推土机的英文叫做 Earth Mover,想像你在开一台推土机,那你把 P 想成是一堆土,把 Q 想成是你要把土堆放的目的地,**那这个推土机把 P 这边的土,挪到 Q 所移动的平均距离,就是 Wasserstein Distance**
 
 在这个例子裡面,我们假设 P 都集中在这个点,Q 都集中在这个点,对推土机而言,假设它要把 P 这边的土挪到 Q 这边,那它要平均走的距离,就是 D
 
-![image-20221009155231713](./06Generation.assets/image-20221009155231713.png)
+![image-20221009155231713](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155231713.png)
 
 所以在这个例子裡面,假设 P 集中在一个点,Q 集中在一个点,这两个点之间的距离是 D 的话,那 P 跟 Q 的 Wasserstein Distance,就是 D
 
@@ -772,21 +772,21 @@ Wasserstein Distance 它计算的方法,就是想像你在开一台推土机
 
 假设这是你的 P,假设这是你的 Q
 
-![image-20221009155305669](./06Generation.assets/image-20221009155305669.png)
+![image-20221009155305669](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155305669.png)
 
 假设你开了一个推土机,想要把 P 把它重新塑造一下形状,让 P 的形状跟 Q 比较接近一点,那有什麼样的做法,你会发现说,你可能的 Moving Plans,把 P重新塑造成 Q 的方法有无穷多种
 
 你可以说我把这边的土搬到这裡来,我把这边的土搬到这裡来,把 P 变成 Q
 
-![image-20221009155317262](./06Generation.assets/image-20221009155317262.png)
+![image-20221009155317262](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155317262.png)
 
 但你也可以捨近求远说,我把这裡的土搬到这裡来,把这裡的土搬到这裡来,捨近求远,一样还是可以把 P 变成 Q
 
-![image-20221009155326466](./06Generation.assets/image-20221009155326466.png)
+![image-20221009155326466](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155326466.png)
 
 所以当我们考虑,比较复杂的 Distribution 的时候,把 Q 把 P 变成 Q 的方法,是有非常非常多不同的方法,你有各式各样不同的 Moiving Plan,用不同的 Moving Plan,你推土机平均走的距离就不一样
 
-![image-20221009155342274](./06Generation.assets/image-20221009155342274.png)
+![image-20221009155342274](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155342274.png)
 
 在左边这个例子裡面,推土机平均走的距离比较少,在右边这个例子裡面因為捨近求远,推土机平均走的距离比较大
 
@@ -800,7 +800,7 @@ Wasserstein Distance 它计算的方法,就是想像你在开一台推土机
 
 我们先不讲,怎麼计算 Wasserstein Distance 这件事,我们先来讲假设我们能够计算Wasserstein Distance 的话,它可以带给我们什麼样的好处
 
-![image-20221009155529634](./06Generation.assets/image-20221009155529634.png)
+![image-20221009155529634](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155529634.png)
 
 那假设 PG 跟 Pdata 它们的距离是 $d_0$,在左边这个例子裡面,Wasserstein Distance 算出来就是 $d_0$
 
@@ -816,7 +816,7 @@ Wasserstein Distance 它计算的方法,就是想像你在开一台推土机
 
 这又让我想到一个演化的例子,这是眼睛的生成
 
-![image-20221009155547720](./06Generation.assets/image-20221009155547720.png)
+![image-20221009155547720](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155547720.png)
 
 右边这个是人类的眼睛,人类的眼睛是非常地复杂的,那有一些生物它有非常原始的眼睛,比如说有一些细胞具备有感光的能力,这可以看做是最原始的眼睛,但是这些最原始的眼睛,怎麼变成最复杂的眼睛,这对人类来说其实觉得非常难想像
 
@@ -824,7 +824,7 @@ Wasserstein Distance 它计算的方法,就是想像你在开一台推土机
 
 那如果你直接觉得说,从这个地方就可以一步跳到这个地方,那根本不可能发生,但是中间其实是有很多连续的步骤,从感光细胞到眼睛,中间其实是有连续的步骤的
 
-![image-20221009155617855](./06Generation.assets/image-20221009155617855.png)
+![image-20221009155617855](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155617855.png)
 
 举例来说,感光的细胞可能会,出现在一个比较凹陷的地方,皮肤凹陷下去,这样感光细胞可以接受来自不同方向的光源,然后后来觉得说,乾脆把凹陷的地方盖起来,后来觉得盖起来的地方裡面,可以放一些液体,然后最后就变成了人的眼睛
 
@@ -844,7 +844,7 @@ WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence �
 
 那这边就不讲过程,直接告诉结果,解下面这个 Opimilazion 的 Problem,解出来以后你得到的值,就是 Wasserstein Distance
 
-![image-20221009155817072](./06Generation.assets/image-20221009155817072.png)
+![image-20221009155817072](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155817072.png)
 
 我们就观察一下这个式子,这个式子裡面有说
 
@@ -856,7 +856,7 @@ WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence �
 - 如果 y是从 Pdata Sample 出来的,D(y),就 Discriminator 的 Output 要越大越好
 - 如果 X 是从 PG,从 Generator Sample 出来的,那 D(y),也就 Discriminator 的 Output,应该要越小越好
 
-![image-20221009155901990](./06Generation.assets/image-20221009155901990.png)
+![image-20221009155901990](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155901990.png)
 
 但是这边还有另外一个限制,它不是光大括号裡面的值变大就好,还有一个限制是,D 不能够是一个随便的 Function,D必须要是一个 1-Lipschitz 的 Function
 
@@ -866,13 +866,13 @@ WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence �
 
 那為什麼足够平滑这件事情是非常重要的,我们可以从直观来理解它,假设这个是真正的资料的分布,这是 Generated 的资料的分布
 
-![image-20221009155923362](./06Generation.assets/image-20221009155923362.png)
+![image-20221009155923362](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155923362.png)
 
 如果我们没有这个限制,只看大括号裡面的值的话,大括号裡面的目标,是要这些真正的值,它的 D(y) 越大越好,那要让 Generated 的值,它的 D(y) 越小越好
 
 如果你没有做任何限制,只单纯要这边的值越大越好,这边的值越小越好,在蓝色的点跟绿色的点,也就是真正的 Image,跟 Generated 的 Image,没有任何重叠的情况下,你的 Discriminator 会做什麼,它会给 Real 的 Image 无限大的正值,给 Generated 的 Image 无限大的负值
 
-![image-20221009155937944](./06Generation.assets/image-20221009155937944.png)
+![image-20221009155937944](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009155937944.png)
 
 所以你这个 Training 根本就没有办法收敛,而且你会发现说,只要这两堆 Data 没有重叠,你算出来的值都是无限大,你算出来的这个 Maximum 值都是无限大,这显然不是我们要的,这不就跟 JS Divergence 的问题一模一样吗
 
@@ -892,7 +892,7 @@ WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence �
 
 怎麼确保 Discriminator,一定符合 1-Lipschitz Function 的限制,最早刚提出 WGAN 的时候,其实没有什麼好想法,只知道写出了这个式子,那要怎麼真的解这个式子,有点困难,所以最早的一篇 WGAN 的 Paper,最早使用 Wasserstein 的那一篇 Paper,它说了它做了一个比较 Rough,比较粗糙的处理的方法
 
-![image-20221009160022795](./06Generation.assets/image-20221009160022795.png)
+![image-20221009160022795](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160022795.png)
 
 它是说我就 Train Network,那 Train Network 的时候,如果我 Training 的那个参数,我就要求它放得在 C 跟 -C 之间,如果超过 C,用 Gradient Descent Update 以后超过 C,就设為 C,Gradient Descent Update 以后小於 -C,就直接设為 -C
 
@@ -900,7 +900,7 @@ WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence �
 
 所以接下来就有其它的想法,有一个想法叫做 Gradient Penalty
 
-![image-20221009160052399](./06Generation.assets/image-20221009160052399.png)
+![image-20221009160052399](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160052399.png)
 
 Gradient Penalty 是出自,Improved WGAN 这篇 Paperhttps://arxiv.org/abs/1704.00028,那 Improve WGAN 这边paper 是说
 
@@ -914,7 +914,7 @@ Gradient Penalty 是出自,Improved WGAN 这篇 Paperhttps://arxiv.org/abs/1704.
 
 那我就把它的论文https://arxiv.org/abs/1802.05957放在这边给大家参考,那如果你要 Train 真的非常好的 GAN,你可能会需要用到 Spectral Normalizaion
 
-![image-20221009160152470](./06Generation.assets/image-20221009160152470.png)
+![image-20221009160152470](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160152470.png)
 
 ## Other tips
 
@@ -925,11 +925,11 @@ Gradient Penalty 是出自,Improved WGAN 这篇 Paperhttps://arxiv.org/abs/1704.
 - Discriminator 做的事情,是要分辨真的图片跟產生出来的,也就是假的图片的差异
 - 而 Generator 在做的事情,它是要去產生假的图片,骗过 Discriminator
 
-![image-20221009160217336](./06Generation.assets/image-20221009160217336.png)
+![image-20221009160217336](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160217336.png)
 
 而事实上这两个 Network,这个 Generator 跟 Discriminator,它们是互相砥砺,才能互相成长的,只要其中一者,发生什麼问题停止训练,另外一者就会跟著停下训练,就会跟著变差
 
-![image-20221009160231318](./06Generation.assets/image-20221009160231318.png)
+![image-20221009160231318](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160231318.png)
 
 - 假设你在 Train Discriminator 的时候,一下子没有 Train 好
 
@@ -964,13 +964,13 @@ Train GAN 最难的其实是要拿 GAN 来生成文字
 
 如果你要生成一段文字,那你可能会有一个,Sequence To Sequence 的 Model,你有一个 Decoder
 
-![image-20221009160448144](./06Generation.assets/image-20221009160448144.png)
+![image-20221009160448144](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160448144.png)
 
 那这个 Decoder 会產生一段文字,那我们现在这个,Sequence To Sequence 的 Model就是我们的 Generator,这个在过去,在讲 Transformer 的时候,这是一个 Decoder,那它现在,在 GAN 裡面,它就扮演了 Generator 的角色,负责產生我们要它產生的东西,比如说一 段文字
 
 那你说这个会跟原来的 GAN,在影像上的 GAN 有什麼不同？就最 High Level 来看,就演算法来看,可能没有太大的不同,因為接下来,你就是训练一个 Discriminator
 
-![image-20221009160646856](./06Generation.assets/image-20221009160646856.png)
+![image-20221009160646856](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009160646856.png)
 
 Discriminator 把这段文字读进去,去判断说这段文字是真正的文字,还是机器產生出来的文字,而 Decoder 就是想办法去骗过 Discriminator,Generator 就是想办法去骗过 Discriminator
 
@@ -1002,7 +1002,7 @@ Discriminator 把这段文字读进去,去判断说这段文字是真正的文�
 
 但是就算是不能做 Gradient Descent,你也不用害怕,记不记得我们上週有讲说,**遇到不能用 Gradient Descent Train 的问题,就当做 Reinforcement Learning的问题,硬做一下就结束了,**所以你确实可以用 Reinforcement Learning,来 Train 你的 Generator,在你要產生一个 Sequence 的时候,你可以用 Reinforcement Learning,来 Train 你的 Generator
 
-![image-20221009161258699](./06Generation.assets/image-20221009161258699.png)
+![image-20221009161258699](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161258699.png)
 
 但Reinforcement Learning 是以难 Train 而闻名,GAN 也是以难 Train 而闻名,这样的东西加在一起,就大炸裂这样 Train 不起来,非常非常地难训练
 
@@ -1010,7 +1010,7 @@ Discriminator 把这段文字读进去,去判断说这段文字是真正的文�
 
 直到有一篇 Paper 叫做 ScrachGAN
 
-![image-20221009161326435](./06Generation.assets/image-20221009161326435.png)
+![image-20221009161326435](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161326435.png)
 
 它的 Title 就开宗明义跟你炫耀说,它可以 Train Language GANs Form Scrach,**Form Scrach 就是不用 Pretrain 的意思**
 
@@ -1032,11 +1032,11 @@ Discriminator 把这段文字读进去,去判断说这段文字是真正的文�
 
 # GAN_Full Version & Other Generative Models
 
-![image-20221009161407132](./06Generation.assets/image-20221009161407132.png)
+![image-20221009161407132](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161407132.png)
 
 那其实有关 Generative 的 Model,不是只有 GAN 而已，还有其他的,比如说 VAE,比如说 FLOW-Based Model,那我在这边也列了两个影片的连结,给大家参考
 
-![image-20221009161418421](./06Generation.assets/image-20221009161418421.png)
+![image-20221009161418421](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161418421.png)
 
 强调一下就是,这边的影片连结并不是一定要看过这些影片连结,才能够学习接下来的内容,因為机器学习可以讲的东西实在太多了,所以如果,假设你没有太多的时间,那你唯一真正需要听的,上课讲的内容是 Self Content,它本身是 Consistent 的,你只要每一堂课都有听,你接下来的内容,你应该都可以依序听下去,应该都可以听懂
 
@@ -1060,7 +1060,7 @@ Discriminator 把这段文字读进去,去判断说这段文字是真正的文�
 
 如果我们今天的目标就是,输入一个 Gaussian 的 Random 的 Variable,输入一个 Gaussian,从 Gaussian 的这个 Random Variable,Sample 出来的 Vector,把它变成一张图片,那我们能不能够用,Supervised Learning的方法来做？
 
-![image-20221009161729311](./06Generation.assets/image-20221009161729311.png)
+![image-20221009161729311](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161729311.png)
 
 也就说我有一堆图片,我把这些图片拿出来,每一个图片都去配一个 Vector,都去配一个,从 Gaussian Distribution,Sample 出来的 Vector，接下来就当做 Supervised Learning 的方法,硬做就结束了,
 
@@ -1088,7 +1088,7 @@ Gradient Origin Networks, https://arxiv.org/abs/2007.02798
 
 那有一个方法,是一样跑一个影像的分类系统,把你的 GAN 產生出来的图片,丢到一个的影像的分类系统裡面,看它產生什麼样的结果
 
-![image-20221009161934277](./06Generation.assets/image-20221009161934277.png)
+![image-20221009161934277](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009161934277.png)
 
 影像分类系统输入是一张图片,我们这边叫做 y,输出,是一个机率分布,我们这边叫它 P ( c│y ),P ( c│y ) 是一个机率的分布
 
@@ -1104,7 +1104,7 @@ Gradient Origin Networks, https://arxiv.org/abs/2007.02798
 
 但是光用这个评估的方法会被一个,叫做 Mode Collapse 的问题骗过去,Mode Collapse 是说,你在 Train GAN 的时候,你有时候 Train 著 Train 著,就会遇到一个状况是
 
-![image-20221009162108367](./06Generation.assets/image-20221009162108367.png)
+![image-20221009162108367](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162108367.png)
 
 - 假设这些蓝色的星星,是真正的资料的分布
 - 红色的星星是你的 GAN,你的 Generative 的 Model,它的分布
@@ -1113,7 +1113,7 @@ Gradient Origin Networks, https://arxiv.org/abs/2007.02798
 
 那以下是一个 Mode Collapse 的例子啦,就是我们在这个上週有看到说,我就 Train 了一个 Generator,让它產生二次元的人物,那 Train 著 Train 著 Train 到最后,我就发现变成这样的一个状况,这一张脸越来越多
 
-![image-20221009162145237](./06Generation.assets/image-20221009162145237.png)
+![image-20221009162145237](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162145237.png)
 
 越来越多,而且它还有不同的髮色,这个髮色比较偏红,这个髮色比较偏黄,越来越多,最后就通通都是这张脸,那这就是一种 Mode Collapse 的现象
 
@@ -1127,15 +1127,15 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 但是有另外一种更难被侦测到的问题,叫做 Mode Dropping,Mode Dropping 的意思是说,你的真实的资料分布可能是这个样子,但是你的產生出来的资料,只有真实资料的一部分,单纯看產生出来的资料,你可能会觉得还不错,而且分布,它的这个多样性也够
 
-![image-20221009162248241](./06Generation.assets/image-20221009162248241.png)
+![image-20221009162248241](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162248241.png)
 
 但你不知道说真实的资料,它的多样性的分布,其实是更大的,我这边举一个例子,好 那这边,是一个真实的例子,就有个同学,他 Train 了这个人脸生成的 GAN,那它在某一个 Iteration 的时候,它的 Generator 產生出这些人脸
 
-![image-20221009162259170](./06Generation.assets/image-20221009162259170.png)
+![image-20221009162259170](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162259170.png)
 
 你会觉得说,没有问题,而且人脸的多样性也够,有男有女,有向左看,有向右看,各式各样的人脸都有,好 这个是第 T 个 Iteration 的时候 Generator,你也不觉得,它的多样性有问题,但如果你再看下一个 Iteration,Generator 產生出来的图片是这样子的
 
-![image-20221009162315646](./06Generation.assets/image-20221009162315646.png)
+![image-20221009162315646](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162315646.png)
 
 它的肤色有问题,所以它之前,你看有男有女没有问题,但是它肤色偏白,这边肤色偏黄,你没弄好人家都觉得,你的 Generator 有种族歧视
 
@@ -1149,7 +1149,7 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 过去有一个做法,一样是藉助我们的 Image Classifier,你就把一堆图片,就很像你的 Generator 產生 1000 张图片,把这 1000 张图片裡,都丢到 Image Classify 裡面,看它被判断成哪一个 Class
 
-![image-20221009162358278](./06Generation.assets/image-20221009162358278.png)
+![image-20221009162358278](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162358278.png)
 
 每张图片,都会给我们一个 Distribution,你把所有的 Distribution 平均起来,接下来看看平均的 Distribution 长什麼样子
 
@@ -1157,7 +1157,7 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 那如果另外一个 Case,不同张图片丢进去,不同张,你的 Generator 產生出来的图片,丢到 Image Classifier 的时候,它產生出来的输出的分布,都非常地不同
 
-![image-20221009162417056](./06Generation.assets/image-20221009162417056.png)
+![image-20221009162417056](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162417056.png)
 
 你平均完以后发现,平均完后的结果是非常平坦的,那这个时候代表什麼,这个时候代表说,也许你的多样性是足够的,那你会发现说在评估的标準上
 
@@ -1178,7 +1178,7 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 在我们的作业中,会採取另外一个 Evaluation 的 Measure,叫 Fréchet Inception Distance,它的缩写叫做 FID,这个东西是什麼,你先把你產生出来的二次元的人物,丢到 Inception Net 裡面
 
-![image-20221009162757669](./06Generation.assets/image-20221009162757669.png)
+![image-20221009162757669](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162757669.png)
 
 把这个二次元人物一路丢到最后,让那个 Inception Network 输出它的类别,那你得到的可能就是人脸,那每一张二次元的人物看起来都是人脸,那我们不要拿那个类别
 
@@ -1186,7 +1186,7 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 那如果我们拿出来的是一个向量,而不是最后的类别,那虽然最后分类的类别可能是一样的,但是在决定最后的类别之前,这个向量就算都是人脸,可能还是不一样的,可能会随著肤色 髮型,这个向量还是会有所改变的,所以我们就不取最后的类别,只取这个 Inception Network 中间的,其实是最后一层的这个 Hidden Layer 的输出,来代表一张图片
 
-![image-20221009162830195](./06Generation.assets/image-20221009162830195.png)
+![image-20221009162830195](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162830195.png)
 
 所有红色的点,代表你把真正的图片,丢到 Inception Network 以后,拿出来的向量,那这个向量其实非常高维度,是上千维的，我们就把它假设,我们可以把它画在二维的平面上,
 
@@ -1210,7 +1210,7 @@ BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator �
 
 FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs Created Equal,A Large Scale Study
 
-![image-20221009162945121](./06Generation.assets/image-20221009162945121.png)
+![image-20221009162945121](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009162945121.png)
 
 那你可以想见说这个也是 Google 做的啦,那就是爆做了各式各样不同的 GAN,有,那个时候它就列举了好多不同的,各式各样的 GAN,那每一个 GAN,当然它的这个训练的这个 Objective,训练的那个 Loss 有点不太一样,我这边就不细讲,各式各样的 GAN,每一种 GAN,它都用不同的 Random Seed,去跑过很多次以后,看看结果怎麼样
 
@@ -1234,7 +1234,7 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 你想想看以下的状况,假设这是你的真实资料
 
-![image-20221009163211077](./06Generation.assets/image-20221009163211077.png)
+![image-20221009163211077](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163211077.png)
 
 你不知道怎麼回事,训练了一个 Generator,它產生出来的 Data,跟你的真实资料一模一样
 
@@ -1248,13 +1248,13 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 但是那如果我问另外一个问题,假设你的 Generator 学到的是,把所有训练资料裡面的图片都左右反转,那它也是什麼事都没有做
 
-![image-20221009163240800](./06Generation.assets/image-20221009163240800.png)
+![image-20221009163240800](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163240800.png)
 
 假设它学到就是,把训练资料裡面所有的图片都左右翻转,那你会觉得,嗯 它看起来很棒,它实际上也是什麼事都没有做,但问题是你比相似度的时候,又比不出来,所以 GAN 的 Evaluation是非常地困难的,还甚至 光要如何评估,一个 Generator 做得好不好这件事情,都是一个可以研究的题目
 
 如果你真的很有兴趣的话,这边放了一篇相关的文章啦https://arxiv.org/abs/1802.03446,裡面就列举了二十几种,GAN Generator 的评估的方式
 
-![image-20221009163301877](./06Generation.assets/image-20221009163301877.png)
+![image-20221009163301877](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163301877.png)
 
 # Conditional Generation
 
@@ -1262,11 +1262,11 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 刚才我们讲的那个 Generator,到目前為止我们讲的 Generator,它输入都是一个随机的分布而已,那这个不见得非常有用
 
-![image-20221009163337556](./06Generation.assets/image-20221009163337556.png)
+![image-20221009163337556](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163337556.png)
 
 我们现在想要更进一步的是,我们可以操控 Generator 的输出,我们给它一个 Condition x,让它根据 x 跟 z 来產生 y,那这样的 Conditional Generation
 
-![image-20221009163353830](./06Generation.assets/image-20221009163353830.png)
+![image-20221009163353830](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163353830.png)
 
 有什麼样的应用,比如说你可以做文字对图片的生成
 
@@ -1274,7 +1274,7 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 那如果你要做文字对图片的生成,它其实是一个 Supervised Learning 的问题,你需要一些 Label 的 Data,你需要去蒐集一些图片,蒐集一些人脸,然后这些人脸都要有文字的描述,告诉我们说,这个是红眼睛,这个是黑头髮,这个是黄头髮,这个是有黑眼圈等等,告诉我们这样子,我们要这样的 Label 的资料,才能够训练这种 Conditional 的 Generation
 
-![image-20221009163407035](./06Generation.assets/image-20221009163407035.png)
+![image-20221009163407035](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163407035.png)
 
 所以在 Text To Image 这样的任务裡面,我们的 x 就是一段文字,那你可能问说,一段文字怎麼输入给 Generator ,那就要问你自己了,你要怎麼做都可以
 
@@ -1282,7 +1282,7 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 那你期待说你输入 Red Eyes,然后,机器就可以画一个红眼睛的角色,但每次画出来的角色都不一样,那这个画出来什麼样的角色,取决於什麼,取决於你 Sample 到什麼样的 z,Sample 到不一样的 z,画出来的角色就不同,但是通通都是红眼睛的,这个就是 Text To Image 想要做的事情
 
-![image-20221009163446407](./06Generation.assets/image-20221009163446407.png)
+![image-20221009163446407](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163446407.png)
 
 这学期虽然没有,但过去有这个作业,就是输入红头髮,这个是之前助教做的结果,输入红头髮,输入绿眼睛,那產生的结果就是这个样子,產生各式各样红头髮 绿眼睛的角色,输入蓝头髮 红眼睛,就產生各式各样蓝头髮 红眼睛的角色,你发现,那个有时候机器也是会犯错的啦,比如说这边有一个异色瞳,虽然说要画红眼睛,但它觉得画一隻红色的眼睛就可以矇混过去,另外一隻眼睛仍然是蓝色的
 
@@ -1290,11 +1290,11 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 我们现在的 Generator 有两个输入,一个是从 Normal Distribution,Sample 出来的 z,另外一个是 x,也就是一段文字
 
-![image-20221009163523732](./06Generation.assets/image-20221009163523732.png)
+![image-20221009163523732](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163523732.png)
 
 那我们的 Generator 会產生一张图片 y,那我们需要一个 Discriminator,那如果按照我们过去所学过的东西,Discriminator,它就是吃一张图片 y 当作输入,输出一个数值,这个数值代表输入的图片,多像真实的图片
 
-![image-20221009163537777](./06Generation.assets/image-20221009163537777.png)
+![image-20221009163537777](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163537777.png)
 
 是真实的,还是生成的,那怎麼训练这个 Discriminator ,你就说如果看到真实的图片,你就输出 1,如果看到生成的图片,就输出 0,你就可以训练 Discriminator,然后 Discriminator 跟 Generator 反覆训练
 
@@ -1302,7 +1302,7 @@ FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs
 
 它会產生清晰的图片,但是跟输入完全没有任何关係,因為对 Generator 来说,它只要產生清晰的图片,就可以骗过 Discriminator 了,它何必要去管 Input 文字叙述是什麼
 
-![image-20221009163604337](./06Generation.assets/image-20221009163604337.png)
+![image-20221009163604337](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163604337.png)
 
 你的 Discriminator 又不看文字的叙述,所以它根本就不需要管文字的叙述,你不管输入什麼文字,就无视这个 x,反正就是產生一个图片,可以骗过 Discriminator 就结束了,但这显然不是我们要的
 
@@ -1318,7 +1318,7 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
 那你需要文字跟影像成对的资料,所以 **Conditional GAN,一般的训练,是需要这个 Pair 的 Data 的,是需要有标註的资料的,是需要成对资料的**
 
-![image-20221009163705125](./06Generation.assets/image-20221009163705125.png)
+![image-20221009163705125](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163705125.png)
 
 有这些成对资料,那你就告诉你的 Discriminator 说,看到这些真正的成对的资料,就给它一分,看到 Red Eyes,但是搭配,可能 Red Eyes 跟机器產生出来的图片,那就是给 0 分,然后训练下去,就可以產生,就可以做到 Conditional GAN,
 
@@ -1326,7 +1326,7 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
 你还需要加上一种不好的状况是,已经產生好的图片,但是文字叙述配不上的状况
 
-![image-20221009163723678](./06Generation.assets/image-20221009163723678.png)
+![image-20221009163723678](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163723678.png)
 
 所以你通常会把你的训练资料拿出来,然后故意把文字跟图片乱配,故意配一些错的,然后告诉你的 Discriminator 说,看到这种状况,你也要说是不好的,用这样子的资料,你才有办法把 Discriminator 训练好,然后 Generator 跟 Discriminator,反覆的训练,你最后才会得到好的结果,这个就是 Conditional GAN
 
@@ -1334,7 +1334,7 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
  在目前的例子裡面都是,看一段文字產生图片,那 Conditional GAN 的应用,不只看一段文字產生图片啦,也可以看一张图片,產生图片
 
-![image-20221009163739874](./06Generation.assets/image-20221009163739874.png)
+![image-20221009163739874](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163739874.png)
 
 那看一张图片產生图片,也有很多的应用,比如说
 
@@ -1352,7 +1352,7 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
 在文献上你会发现说,如果你用 Supervised Learning 的方法,你得不到非常好的结果,通常你用 Supervised Learning 的方法,训练一个图片生图片的 Generator,你產生出来的结果可能是这个样子
 
-![image-20221009163835093](./06Generation.assets/image-20221009163835093.png)
+![image-20221009163835093](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163835093.png)
 
 就是这是你的 Generator 的输入,那这个是你 Generator 的输出,那你会发现说它非常地模糊,為什麼它非常地模糊,你可以直觉想成说,因為同样的输入,可能对应到不一样的输出,就好像我们在讲 GAN 刚开始的,开场的时候讲的那个例子,今天在同一个转角,那个小精灵可能左转,也可能右转,最后学到的,就是同时左转跟右转
 
@@ -1360,13 +1360,13 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
 所以这个时候我们需要用 GAN 来 Train,你需要加一个 Discriminator,Discriminator 它是输入一张图片,还有输入 Condition,然后它会同时看这个图片跟这个 Condition,有没有匹配,来决定它的输出,那这个是文献上用 GAN 的输出,从右上角这篇 Paper 截取出来的
 
-![image-20221009163930128](./06Generation.assets/image-20221009163930128.png)
+![image-20221009163930128](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009163930128.png)
 
 那你会发现说,如果单纯用 GAN 的话,它有一个小问题,所以它產生出来的图片,比较真实,但是它的问题是它的创造力,想像力过度丰富,它会產生一些输入没有的东西,没有叫它输入的东西,举例来说,这是一个房子,左上角明明没有其他东西,这边它却在屋顶上,加了一个不知道是烟囱还是窗户的东西
 
 那文献上如果你要做到最好,往往就是 GAN 跟 Supervised Learning,同时使用
 
-![image-20221009164005749](./06Generation.assets/image-20221009164005749.png)
+![image-20221009164005749](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164005749.png)
 
 那同时使用,往往可以给你最好的结果,那所谓同时使用的意思就是,Generator 在训练的时候,一方面它要去骗过 Discriminator,这是它的一个目标,但同时它又想要產生一张图片,跟标準答案越像越好,它同时去做这两件事,那往往產生出来的结果是最好的
 
@@ -1374,7 +1374,7 @@ Discriminator 给高分的时候,一方面图片要好,另外一方面,这个图
 
 Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应用,就是给 GAN ,听一段声音,然后它產生一个对应的图片啦
 
-![image-20221009164116071](./06Generation.assets/image-20221009164116071.png)
+![image-20221009164116071](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164116071.png)
 
 比如说给它听一段狗叫声,看它能不能够画出一隻狗啦,好 那我刚才讲说 Conditional GAN 需要这个,Label 的资料,需要成对的资料
 
@@ -1382,7 +1382,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 那这个是我们实验室有个同学做的,这个是一个那个真正的 Demo 
 
-![image-20221009164151185](./06Generation.assets/image-20221009164151185.png)
+![image-20221009164151185](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164151185.png)
 
 那机器听这样的声音,好 这听起来有点像是这个电视机坏掉的声音,那机器觉得它听到什麼,刚才那一段声音机器觉得,它听到一个小溪,听到一个小瀑布
 
@@ -1394,7 +1394,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 不过我要承认,这个其实是稍微 Cherry Pick 的结果,就稍微挑过的结果,很多时候觉得 Generator 產生出来的东西,就是这个样子啦,不知所云这样,这就给它一个钢琴声,然后它好像想画一个钢琴,但又没有很清楚,这个是给它听狗叫声啦,好像想画一个动物,但又不知道要画些什麼,这个是声音到影像的產生,好 那我看到最近最惊人的,Conditional GAN 的应用,是有人用 Conditional GAN 產生会动的图片
 
-![image-20221009164213815](./06Generation.assets/image-20221009164213815.png)
+![image-20221009164213815](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164213815.png)
 
 我们知道在哈利波特裡面,那些人物的画像是会动的,是会说话的,那 Samsung ,就做了一个类似的应用,用 GAN 做的,给它一张图片,比如说蒙娜丽莎的画像,然后就可以让蒙娜丽莎开始讲话,这个是 Conditional GAN 的其中一个应用,我把论文放在这边给大家参考
 
@@ -1408,11 +1408,11 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 我们要训练一个Network,Network的输入叫做X输出叫做Y,我们需要成对的资料,才有办法训练这样子的Network,
 
-![image-20221009164337528](./06Generation.assets/image-20221009164337528.png)
+![image-20221009164337528](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164337528.png)
 
 但是你可能会遇到一个状况是,**我们有一堆X我们有一堆Y,但X跟Y是不成对的,在这种状况下,我们有没有办法拿这样的资料,来训练Network呢,像这一种没有成对的资料,我们就叫做unlabeled的资料**
 
-![image-20221009164409395](./06Generation.assets/image-20221009164409395.png)
+![image-20221009164409395](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164409395.png)
 
 其实在作业三跟作业五裡面,都提供给你两个例子,我们就把这个怎麼用,没有标註的资料,怎麼做Semi-supervised Learning,这件事情放在作业裡面,如果你有兴致的话就可以来,体验一下semi-supervised Learning,到底可以带多大的帮助
 
@@ -1436,7 +1436,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 这个是我们之前在讲,unconditional的generation的时候,你看到的generator的架构
 
-![image-20221009164509624](./06Generation.assets/image-20221009164509624.png)
+![image-20221009164509624](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164509624.png)
 
 输入是一个Gaussian的分佈,输出可能是一个复杂的分佈
 
@@ -1452,7 +1452,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 那我们现在如果,输入是X domain的distribution,我们只要改成可以,从X domain sample就结束了,那你有没有办法,从X domain sample呢
 
-![image-20221009164535171](./06Generation.assets/image-20221009164535171.png)
+![image-20221009164535171](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009164535171.png)
 
 可以 你就从人脸的照片裡面,真实的人脸裡面随便挑一张出来,这是一个死臭酸宅(老师本人)然后就结束了,你就可以从X domain,sample照片出来,你把这个照片丢到generator裡面,让它產生另外一张图片,產生另外一个distribution裡面的图片
 
@@ -1532,7 +1532,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 那这个Cycle GAN可以是双向的,我们刚才有一个generator,输入Y domain的图片,输出X domain的图片,我们是先把X domain的图片转成Y,在把Y转回X
 
-![image-20221009165005019](./06Generation.assets/image-20221009165005019.png)
+![image-20221009165005019](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165005019.png)
 
 在训练cycle GAN的时候,你可以同时做另外一个方向的训练,也就是
 
@@ -1545,7 +1545,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 那除了Cycle GAN以外,你可能也听过很多其他的,可以做风格转换的GAN
 
-![image-20221009165057935](./06Generation.assets/image-20221009165057935.png)
+![image-20221009165057935](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165057935.png)
 
 比如说Disco GAN 比如说Dual GAN,他们跟Cycle GAN有什麼不同呢,就是没有半毛钱的不同这样子
 
@@ -1555,7 +1555,7 @@ Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应
 
 除了Cycle GAN以外,还有另外一个更进阶的,可以做影像风格转换的版本,叫做StarGAN
 
-![image-20221009165127891](./06Generation.assets/image-20221009165127891.png)
+![image-20221009165127891](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165127891.png)
 
 Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它可以在多种风格间做转换,不过这个就不是我们接下来,想要细讲的重点
 
@@ -1563,7 +1563,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 这个真实的人脸转二次元的任务,实际上能不能做呢,实际上可以做了
 
-![image-20221009165448350](./06Generation.assets/image-20221009165448350.png)
+![image-20221009165448350](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165448350.png)
 
 右上角这边放了一个连结,这个应该是一个韩国团队,他们做了一个网站,你可以上传一张图片,它可以帮你变成二次元的人物,他们实际上用的不是Cycle GAN啦,他们用的也是GAN的技术,但是是一个进阶版的东西,那我们这边就不细讲,我就把论文的连结,放在这边给大家参考
 
@@ -1581,7 +1581,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 比如说,把一句负面的句子转成正面的句子,当然如果你要做一个模型,输入一个句子输出的句子,这个模型就是要能够,吃一个sequence 输出一个sequence,所以它等於是一个,sequence to sequence的model
 
-![image-20221009165533140](./06Generation.assets/image-20221009165533140.png)
+![image-20221009165533140](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165533140.png)
 
 你可能就会用到,我们在作业五裡面的,Transformer的架构,来做这个文字风格转换的问题,我们在作业五做的是翻译嘛,输入一个语言输出另外一个语言嘛
 
@@ -1593,7 +1593,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 那接下来呢,完全套用Cycle GAN的方法,完全没有任何不同
 
-![image-20221009165615973](./06Generation.assets/image-20221009165615973.png)
+![image-20221009165615973](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165615973.png)
 
 这边就不需要再细讲 很快讲过
 
@@ -1609,7 +1609,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 那做出来的结果怎麼样呢,这个是真正的demo，就是真的拿PTT的推文,当正面的句子,嘘文当负面的句子,那你就可以给它一个负面的句子,它就帮你转成正面的句子,做起来像是这个样子
 
-![image-20221009165721837](./06Generation.assets/image-20221009165721837.png)
+![image-20221009165721837](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165721837.png)
 
 ,你可能问说这个系统有什麼用,就是没有任何用处 没半点用处,但是如果你觉得,你的老闆说话特别坏的话,就可以把这个系统,装在你的耳机裡面,把所有的负面的句子,转成正面的句子,你的人生可能就会,过得特别快乐一点
 
@@ -1617,7 +1617,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 那其实像这一种文字风格转换,还有很多其他的应用,不是只有正面句子转负面句子
 
-![image-20221009165738366](./06Generation.assets/image-20221009165738366.png)
+![image-20221009165738366](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165738366.png)
 
 举例来说 假设我有很多长的文章,我有另外一堆摘要,这些摘要不是这些长的文章的摘要,是不同的来源,一堆长的文章 一堆摘要,让机器学习文字风格的转换,你可以让机器学会把长的文章,变成简短的摘要,让它学会怎麼精简的写作,让它学会把长的文章变成短的句子
 
@@ -1627,7 +1627,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 ## Concluding Remarks 
 
-![image-20221009165901703](./06Generation.assets/image-20221009165901703.png)
+![image-20221009165901703](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/06Generation.assets/image-20221009165901703.png)
 
 
 

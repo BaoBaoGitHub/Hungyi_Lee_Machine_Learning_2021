@@ -6,7 +6,7 @@ CNN以后,我们要讲另外一个常见的Network架构,这个架构叫做Self-
 
 到目前為止,我们的Network的Input都是一个向量,不管是在预测这个,YouTube观看人数的问题上啊,还是影像处理上啊,我们的输入都可以看作是一个向量,然后我们的输出,可能是一个数值,这个是Regression,可能是一个类别,这是**Classification**
 
-![image-20221008091438003](./04Sequence as input.assets/image-20221008091438003.png)
+![image-20221008091438003](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091438003.png)
 
 但假设我们遇到更復杂的问题呢,假设我们说输入是多个向量,而且这个输入的向量的数目是会改变的呢
 
@@ -18,13 +18,13 @@ CNN以后,我们要讲另外一个常见的Network架构,这个架构叫做Self-
 
 假设我们今天要Network的输入是一个句子,每一个句子的长度都不一样,每个句子裡面词汇的数目都不一样
 
-![image-20221008091533046](./04Sequence as input.assets/image-20221008091533046.png)
+![image-20221008091533046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091533046.png)
 
 如果我们把一个句子裡面的每一个词汇,都描述成一个向量,那我们的Model的输入,就会是一个Vector Set,而且这个Vector Set的大小,每次都不一样,句子的长度不一样,那你的Vector Set的大小就不一样
 
 **那怎麼把一个词汇表示成一个向量,最简单的做法是One-Hot的Encoding**
 
-![image-20221008091638692](./04Sequence as input.assets/image-20221008091638692.png)
+![image-20221008091638692](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091638692.png)
 
 你就开一个很长很长的向量,这个向量的长度跟世界上存在的词汇的数目是一样多的,每一个维度对应到一个词汇,Apple就是100,Bag就是010,Cat就是001,以此类推
 
@@ -32,7 +32,7 @@ CNN以后,我们要讲另外一个常见的Network架构,这个架构叫做Self-
 
 **有另外一个方法叫做Word Embedding**
 
-![image-20221008091659417](./04Sequence as input.assets/image-20221008091659417.png)
+![image-20221008091659417](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091659417.png)
 
 Word Embedding就是,我们会给每一个词汇一个向量,而这个向量是有语义的资讯的
 
@@ -44,7 +44,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 一段声音讯号其实是一排向量,怎麼说呢,**我们会把一段声音讯号取一个范围,这个范围叫做一个Window**
 
-![image-20221008091752083](./04Sequence as input.assets/image-20221008091752083.png)
+![image-20221008091752083](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091752083.png)
 
 把这个Window裡面的资讯描述成一个向量,这个向量就叫做一个Frame,**在语音上,我们会把一个向量叫做一个Frame**,通常这个Window的长度就是25个Millisecond
 
@@ -52,7 +52,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 一小段25个Millisecond裡面的语音讯号,為了要描述一整段的声音讯号,你会把这个Window往右移一点,通常移动的大小是10个Millisecond
 
-![image-20221008091844792](./04Sequence as input.assets/image-20221008091844792.png)
+![image-20221008091844792](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008091844792.png)
 
 一段声音讯号,你就是用一串向量来表示,而因為每一个Window啊,他们往右移都是移动10个Millisecond,所以一秒鐘的声音讯号有100个向量,所以一分鐘的声音讯号,就有这个100乘以60,就有6000个向量
 
@@ -62,7 +62,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 一个Graph 一个图,也是一堆向量,我们知道说Social Network就是一个Graph
 
-![image-20221008092041878](./04Sequence as input.assets/image-20221008092041878.png)
+![image-20221008092041878](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008092041878.png)
 
 在Social Network上面每一个节点就是一个人,然后节点跟节点之间的edge就是他们两个的关系连接,比如说是不是朋友等等
 
@@ -74,7 +74,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 一个分子,它也可以看作是一个Graph
 
-![image-20221008092154001](./04Sequence as input.assets/image-20221008092154001.png)
+![image-20221008092154001](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008092154001.png)
 
 现在Drug Discovery的应用非常地受到重视,尤其是在Covid-19这一段时间,很多人都期待,也许用机器学习,可以在Drug Discovery上面做到什麼突破,那这个时候,你就需要把一个分子,当做是你的模型的输入
 
@@ -90,7 +90,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 当你的模型,看到输入是四个向量的时候,它就要输出四个Label,而每一个Label,它可能是一个数值,那就是Regression的问题,如果每个Label是一个Class,那就是一个Classification的问题
 
-![image-20221008092342932](./04Sequence as input.assets/image-20221008092342932.png)
+![image-20221008092342932](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008092342932.png)
 
 - 举例来说 在文字处理上,假设你今天要做的是POS Tagging,POS Tagging就是词性标註,你要让机器自动决定每一个词汇 它是什麼样的词性,它是名词 还是动词 还是形容词等等
 
@@ -112,7 +112,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 ### 2. 一整个Sequence,只需要输出一个Label
 
-![image-20221008092929687](./04Sequence as input.assets/image-20221008092929687.png)
+![image-20221008092929687](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008092929687.png)
 
 - 举例来说,如果是文字的话,我们就说Sentiment Analysis
 
@@ -128,7 +128,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 我们不知道应该输出多少个Label,机器要自己决定,应该要输出多少个Label,可能你输入是N个向量,输出可能是N'个Label,為什麼是N',机器自己决定
 
-![image-20221008093417250](./04Sequence as input.assets/image-20221008093417250.png)
+![image-20221008093417250](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008093417250.png)
 
 这种任务又叫做sequence to sequence的任务,那我们在作业五会有sequence to sequence的作业,所以这个之后我们还会再讲
 
@@ -145,7 +145,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 那直觉的想法就是我们就拿个**Fully-Connected的Network**
 
-![image-20221008093912822](./04Sequence as input.assets/image-20221008093912822.png)
+![image-20221008093912822](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008093912822.png)
 
 然后虽然这个输入是一个Sequence,但我们就各个击破,不要管它是不是一个Sequence,把每一个向量,分别输入到Fully-Connected的Network裡面
 
@@ -159,11 +159,11 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 所以怎麼办,有没有可能让Fully-Connected的Network,考虑更多的,比如说上下文的Context的资讯呢？这是有可能的,你就**把前后几个向量都串起来,一起丢到Fully-Connected的Network就结束了**
 
-![image-20221008094025933](./04Sequence as input.assets/image-20221008094025933.png)
+![image-20221008094025933](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094025933.png)
 
 在作业二裡面,我们不是只看一个Frame,去判断这个Frame属於哪一个Phonetic,也就属於哪一个音标,而是看这个Frame的前面五个加后面五个,也就总共看十一个Frame,来决定它是哪一个音标
 
-![image-20221008094052659](./04Sequence as input.assets/image-20221008094052659.png)
+![image-20221008094052659](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094052659.png)
 
 所以我们可以给Fully-Connected的Network,一整个Window的资讯,让它可以考虑一些上下文的,跟我现在要考虑的这个向量,相邻的其他向量的资讯
 
@@ -171,7 +171,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 但是真正的问题,**但是如果今天我们有某一个任务,不是考虑一个Window就可以解决的,而是要考虑一整个Sequence才能够解决的话,那要怎麼办呢**
 
-![image-20221008094125203](./04Sequence as input.assets/image-20221008094125203.png)
+![image-20221008094125203](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094125203.png)
 
 那有人可能会想说这个很容易，我就把Window开大一点啊,大到可以把整个Sequence盖住就结束了
 
@@ -187,7 +187,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 Self-Attention的运作方式就是,**Self-Attention会吃一整个Sequence的资讯**
 
-![image-20221008094227511](./04Sequence as input.assets/image-20221008094227511.png)
+![image-20221008094227511](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094227511.png)
 
 然后你Input几个Vector,它就输出几个Vector,比如说你这边Input一个深蓝色的Vector,这边就给你一个另外一个Vector
 
@@ -201,7 +201,7 @@ Self-Attention的运作方式就是,**Self-Attention会吃一整个Sequence的�
 
 **Self-Attention不是只能用一次,你可以叠加很多次**
 
-![image-20221008094332287](./04Sequence as input.assets/image-20221008094332287.png)
+![image-20221008094332287](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094332287.png)
 
 可以Self-Attention的输出,通过Fully-Connected Network以后,再做一次Self-Attention,Fully-Connected的Network,再过一次Self-Attention,再重新考虑一次整个Input Sequence的资讯,再丢到另外一个Fully-Connected的Network,最后再得到最终的结果
 
@@ -216,7 +216,7 @@ Self-Attention的运作方式就是,**Self-Attention会吃一整个Sequence的�
 
 有关Self-Attention,最知名的相关的文章,就是《Attention is all you need》.那在这篇Paper裡面呢,Google提出了Transformer这样的Network架构,那Transformer就是变形金刚,所以提到这个Network的时候呢,我们就会有变形金刚这个形象
 
-![image-20221008094419990](./04Sequence as input.assets/image-20221008094419990.png)
+![image-20221008094419990](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094419990.png)
 
 Transformer我们今天还不会讲到,但我们之后会讲到,Transformer裡面一个最重要的Module就是Self-Attention,它就是变形金刚的火种源
 
@@ -232,7 +232,7 @@ Transformer我们今天还不会讲到,但我们之后会讲到,Transformer裡�
 
 Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整个Network的Input,它也可能是某个Hidden Layer的Output,所以我们这边不是用$x$来表示它,
 
-![image-20221008094619751](./04Sequence as input.assets/image-20221008094619751.png)
+![image-20221008094619751](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094619751.png)
 
 我们用$a$来表示它，代表它有可能是前面已经做过一些处理,它是某个Hidden Layer的Output,那Input一排a这个向量以后,Self-Attention要Output另外一排b这个向量
 
@@ -244,13 +244,13 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 这里有一个特别的机制,这个机制是根据$a^1$这个向量,找出整个很长的sequence裡面,到底哪些部分是重要的,哪些部分跟判断$a^1$是哪一个label是有关係的,哪些部分是我们要决定$a^1$的class,决定$a^1$的regression数值的时候,所需要用到的资讯
 
-![image-20221008094750904](./04Sequence as input.assets/image-20221008094750904.png)
+![image-20221008094750904](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094750904.png)
 
 每一个向量跟$a^1$的关联的程度,用一个数值叫α来表示
 
 这个self-attention的module,怎麼自动决定两个向量之间的关联性呢,你给它两个向量$a^1$跟$a^4$,它怎麼决定$a^1$跟$a^4$有多相关,然后给它一个数值α呢,那这边呢你就需要一个计算attention的模组
 
-![image-20221008094806260](./04Sequence as input.assets/image-20221008094806260.png)
+![image-20221008094806260](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008094806260.png)
 
 这个计算attention的模组,就是拿两个向量作為输入,然后它就直接输出α那个数值,
 
@@ -274,7 +274,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 那你就要把这边的$a^1$去跟这边的$a^2 a^3 a^4$,分别都去计算他们之间的关联性,也就是计算他们之间的α
 
-![image-20221008095202759](./04Sequence as input.assets/image-20221008095202759.png)
+![image-20221008095202759](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095202759.png)
 
 你把$a^1$乘上$W^q $得到$q^1$,那这个q有一个名字,我们叫做Query,它就像是你搜寻引擎的时候,去搜寻相关文章的问题,就像搜寻相关文章的关键字,所以这边叫做Query
 
@@ -284,13 +284,13 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 接下来也要跟$a^3 a^4$来计算， 把$a_3$乘上$W^k$,得到另外一个Key也就是$k^3$,$a^4$乘上$W^k$得到$k^4$,然后你再把$k^3$这个Key,跟$q^1$这个Query做Inner-Product,得到1跟3之间的关联性,得到1跟3的Attention,你把$k^4$跟$q^1$做Dot-Product,得到$α_{1,4}$,得到1跟4之间的关联性
 
-![image-20221008095317712](./04Sequence as input.assets/image-20221008095317712.png)
+![image-20221008095317712](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095317712.png)
 
 其实一般在实作时候,**$q^1$也会跟自己算关联性**,自己跟自己计算关联性这件事情有多重要,你可以自己在做作业的时候试试看,看这件事情的影响大不大了
 
 计算出,a1跟每一个向量的关联性以后,接下来这边会**接入一个Soft-Max**
 
-![image-20221008095345572](./04Sequence as input.assets/image-20221008095345572.png)
+![image-20221008095345572](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095345572.png)
 
 这个Soft-Max跟分类的时候的那个Soft-Max是一模一样的,所以Soft-Max的输出就是一排α,所以本来有一排α,通过Soft-Max就得到$α'$
 
@@ -300,7 +300,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 接下来得到这个$α'$以后,我们就要根据这个$α'$去抽取出这个Sequence裡面重要的资讯,根据这个α我们已经知道说,哪些向量跟$a^1$是最有关係的,怎麼抽取重要的资讯呢,
 
-![image-20221008095537215](./04Sequence as input.assets/image-20221008095537215.png)
+![image-20221008095537215](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095537215.png)
 
 - 首先把$a^1$到$a^4$这边每一个向量（这里的a是经过softmax的，都是处于0到1之间的数值）,乘上$W^v $得到新的向量,这边分别就是用$v^1 v^2 v^3 v^4$来表示
 
@@ -322,13 +322,13 @@ $$
 
 
 
-![image-20221008095919642](./04Sequence as input.assets/image-20221008095919642.png)
+![image-20221008095919642](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095919642.png)
 
 从这一排 vector 得到 $b^1$,跟从这一排 vector 得到 $b^2$,它的操作是一模一样的.要强调一点是,这边的 $b^1$ 到 $b^4$,它们并不需要依序產生,它们是一次同时被计算出来的
 
 怎麼计算这个 $b^2$？我们现在的主角,就变成 $a^2$
 
-![image-20221008095935249](./04Sequence as input.assets/image-20221008095935249.png)
+![image-20221008095935249](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008095935249.png)
 
 - 把 $a^2$ 乘上一个 matrix,变成 $q^2$
 
@@ -343,7 +343,7 @@ $$
 
 - 接下来拿这四个数值,分别乘上 $v^1  \space  v^2 \space  v^3 \space  v^4$
 
-  ![image-20221008100023694](./04Sequence as input.assets/image-20221008100023694.png)
+  ![image-20221008100023694](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100023694.png)
 
   - 把 $α'_{2,1}$乘上 $v^1$
   - 把 $α'_{2,2}$ 乘上 $v^2$
@@ -362,13 +362,13 @@ $$
 
 我们现在已经知道每一个 a 都產生 q k v
 
-![image-20221008100117911](./04Sequence as input.assets/image-20221008100117911.png)
+![image-20221008100117911](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100117911.png)
 
 如果要用矩阵运算表示这个操作的话,是什麼样子呢
 
 我们每一个 a,都乘上一个矩阵,我们这边用 $W^q$ 来表示它,得到 $q^i$,每一个 a 都要乘上 $W^q$,得到$q^i$,**这些不同的 a 你可以把它合起来,当作一个矩阵来看待**
 
-![image-20221008100203650](./04Sequence as input.assets/image-20221008100203650.png)
+![image-20221008100203650](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100203650.png)
 
 一样$a^2\space a^3\space a^4 $也都乘上 $W^q$ 得到$q^2 q^3 $跟 $q^4$,那你可以把 a1 到 a4 拼起来,看作是一个矩阵,这个矩阵我们用 I 来表示，这个矩阵的四个 column 就是 $a^1$ 到 $a^4$
 
@@ -378,7 +378,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 接下来產生 k 跟 v 的操作跟 q 是一模一样的
 
-![image-20221008100250259](./04Sequence as input.assets/image-20221008100250259.png)
+![image-20221008100250259](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100250259.png)
 
 所以每一个 a 得到 q k v ,其实就是把输入的这个,vector sequence 乘上三个不同的矩阵,你就得到了 q,得到了 k,跟得到了 v
 
@@ -388,7 +388,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 那得到 attention 分数这一件事情,如果从矩阵操作的角度来看,它在做什麼样的事情呢
 
-![image-20221008100318424](./04Sequence as input.assets/image-20221008100318424.png)
+![image-20221008100318424](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100318424.png)
 
 你就是把 $q^1$ 跟 $k^1$ 做 inner product,得到 $α_{1,1}$,所以 $α_{1,1}$就是 $q^1$ 跟$k^1$ 的 inner product,那这边我就把这个,$k^1$它背后的这个向量,把它画成比较宽一点代表说它是 transpose
 
@@ -396,13 +396,13 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 那这个四个步骤的操作,你其实可以把它拼起来,看作是矩阵跟向量相乘
 
-![image-20221008100403418](./04Sequence as input.assets/image-20221008100403418.png)
+![image-20221008100403418](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100403418.png)
 
 这四个动作,你可以看作是我们把 $k^1$ 到 $k^4$ 拼起来,当作是一个矩阵的四个 row
 
 那我们刚才讲过说,我们不只是 $q^1$,要对$k^1$ 到 $k^4$ 计算 attention,$q^2,q^3,q^4$也要对 $k^1$ 到 $k^4$ 计算 attention,操作其实都是一模一样的
 
-![image-20221008100522709](./04Sequence as input.assets/image-20221008100522709.png)
+![image-20221008100522709](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100522709.png)
 
 所以这些 attention 的分数可以看作是两个矩阵的相乘,一个矩阵它的 row,就是 $k^1$ 到 $k^4$,另外一个矩阵它的 column 
 
@@ -414,7 +414,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 那我们把这个$v^1$ 到 $v^4$乘上这边的 α 以后,就可以得到 b
 
-![image-20221008100603651](./04Sequence as input.assets/image-20221008100603651.png)
+![image-20221008100603651](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100603651.png)
 
 你就把$v^1$ 到 $v^4$ 拼起来,你把 $v^1$ 到 $v^4$当成是V 这个矩阵的四个 column,把它拼起来,然后接下来你把 v 乘上,$A'$ 的第一个 column 以后,你得到的结果就是 $b^1$
 
@@ -426,7 +426,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 如果你是用矩阵操作的角度来看它,就是把$ A'$ 的第一个 column 乘上 V,就得到 $b^1$,然后接下来就是以此类推
 
-![image-20221008100728973](./04Sequence as input.assets/image-20221008100728973.png)
+![image-20221008100728973](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100728973.png)
 
 就是以此类推,把 $A'$ 的第二个 column 乘上 V,就得到 $b^2$,$A'$ 的第三个 column 乘上 V 就得到 $b^3$,$A'$ 的最后一个 column 乘上 V,就得到 $b^4$
 
@@ -438,7 +438,7 @@ $I$ 乘上 $W^q$ 就得到另外一个矩阵,我们用 $Q$ 来表示它,这个 $
 
 我们再复习一下我们刚才看到的矩阵乘法
 
-![image-20221008100746773](./04Sequence as input.assets/image-20221008100746773.png)
+![image-20221008100746773](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100746773.png)
 
 - I 是 Self-attention 的 input,Self-attention 的 input 是一排的vector,这排 vector 拼起来当作矩阵的 column,就是 I
 
@@ -470,7 +470,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 所以假设你要做 Multi-head Self-attention 的话,你会怎麼操作呢?
 
-![image-20221008100954677](./04Sequence as input.assets/image-20221008100954677.png)
+![image-20221008100954677](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008100954677.png)
 
 - 先把 a 乘上一个矩阵得到 q
 - 再把 q 乘上另外两个矩阵,分别得到 $q^1$ 跟 $q^2$,那这边还有 这边是用两个上标,i 代表的是位置,然后这个 1 跟 2 代表是,这个位置的第几个 q,所以这边有 $q^{i,1}$ 跟 $q^{i,2}$,代表说我们有两个 head
@@ -483,7 +483,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 只是现在$q^1$,它在算这个 attention 的分数的时候,它就不要管那个 $k^2$ 了
 
-![image-20221008101124472](./04Sequence as input.assets/image-20221008101124472.png)
+![image-20221008101124472](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101124472.png)
 
 - 所以 $q_{i,1}$ 就跟 $k^{i,1}$ 算 attention
 
@@ -493,7 +493,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 这边只用了其中一个 head,那你会用另外一个 head,也做一模一样的事情
 
-![image-20221008101203528](./04Sequence as input.assets/image-20221008101203528.png)
+![image-20221008101203528](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101203528.png)
 
 所以 $q^2$ 只对 $k^2$ 做 attention,它们在做 weighted sum 的时候,只对 $v^2$ 做 weighted sum,然后接下来你就得到 $b^{i,2}$
 
@@ -501,7 +501,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 然后接下来你可能会把 $b^{i,1}$ 跟 $b^{i,2}$,把它接起来,然后再通过一个 transform
 
-![image-20221008101311328](./04Sequence as input.assets/image-20221008101311328.png)
+![image-20221008101311328](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101311328.png)
 
 也就是再乘上一个矩阵,然后得到 bi,然后再送到下一层去,那这个就是 Multi-head attention,一个这个 Self-attention 的变形
 
@@ -523,7 +523,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 可是在我们到目前為止,讲的 Self-attention 的操作裡面,根本就没有位置的资讯,所以怎麼办呢,所以你做 Self-attention 的时候,如果你觉得位置的资讯是一个重要的事情,那你可以把位置的资讯把它塞进去,怎麼把位置的资讯塞进去呢,这边就要用到一个叫做,positional encoding的技术
 
-![image-20221008101537055](./04Sequence as input.assets/image-20221008101537055.png)
+![image-20221008101537055](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101537055.png)
 
 你為每一个位置设定一个 vector,叫做 positional vector,这边用 $e^i$ 来表示,上标 i 代表是位置,每一个不同的位置,就有不同的 vector,就是 $e^1$ 是一个 vector,$e^2$ 是一个vector,$e^{128}$ 是一个vector,不同的位置都有一个它专属的 e,然后把这个 e 加到 $a^i$ 上面,就结束了
 
@@ -531,7 +531,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 最早的这个 transformer,就 Attention Is All You Need 那篇 paper 裡面,它用的 $ e^i$长的是这个样子
 
-![image-20221008101732204](./04Sequence as input.assets/image-20221008101732204.png)
+![image-20221008101732204](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101732204.png)
 
 这边这个图上面,每一个 column 就代表一个 e,第一个位置就是 $e^1$,第二个位置就是 $e^2$,第三个位置就是 $e^3$,以此类推
 
@@ -547,7 +547,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 那有关 positional encoding,你可以再参考一下文献,这个是一个尚待研究的问题,比如说我这边引用了一篇,这个是去年放在 arxiv 上的论文,所以可以想见这其实都是很新的论文
 
-![image-20221008101825423](./04Sequence as input.assets/image-20221008101825423.png)
+![image-20221008101825423](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101825423.png)
 
 裡面就是比较了跟提出了,新的 positional encoding
 
@@ -561,7 +561,7 @@ Self-attention 有一个进阶的版本,叫做 Multi-head Self-attention, Multi-
 
 Self-attention 当然是用得很广,我们已经提过很多次 transformer 这个东西
 
-![image-20221008101859426](./04Sequence as input.assets/image-20221008101859426.png)
+![image-20221008101859426](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101859426.png)
 
 那我们大家也都知道说,在 NLP 的领域有一个东西叫做 BERT,BERT 裡面也用到 Self-attention,所以 Self-attention 在 NLP 上面的应用,是大家都耳熟能详的
 
@@ -573,7 +573,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 因為一般语音的,如果你要把一段声音讯号,表示成一排向量的话,这排向量可能会非常地长,
 
-![image-20221008101926927](./04Sequence as input.assets/image-20221008101926927.png)
+![image-20221008101926927](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101926927.png)
 
 而每一个向量,其实只代表了 10 millisecond 的长度而已,所以如果今天是 1 秒鐘的声音讯号,它就有 100 个向量了,5 秒鐘的声音讯号,就 500 个向量了,你随便讲一句话,都是上千个向量了
 
@@ -581,7 +581,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 你想想看,我们今天在**计算这个 attention matrix 的时候,它的 计算complexity 是长度的平方**
 
-![image-20221008101947224](./04Sequence as input.assets/image-20221008101947224.png)
+![image-20221008101947224](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008101947224.png)
 
 计算这个 attention matrix A′你需要做 L 乘以 L 次的 inner product,那如果这个 L 的值很大的话,它的计算量就很可观,你也需要很大的这个 memory,才能够把这个矩阵存下来
 
@@ -589,7 +589,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 **在做语音的时候,有一招叫做 Truncated Self-attention**
 
-![image-20221008102033773](./04Sequence as input.assets/image-20221008102033773.png)
+![image-20221008102033773](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102033773.png)
 
 **Truncated Self-attention 做的事情就是,我们今天在做 Self-attention 的时候,不要看一整句话,就我们就只看一个小的范围就好**
 
@@ -607,7 +607,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 一张图片啊,我们把它看作是一个很长的向量,那其实一张图片,我们也可以换一个观点,把它看作是一个 vector 的 set
 
-![image-20221008102142958](./04Sequence as input.assets/image-20221008102142958.png)
+![image-20221008102142958](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102142958.png)
 
 这个是一个解析度 5 乘以 10 的图片,那这一张图片呢,可以看作是一个 tensor,这个 tensor 的大小是 5 乘以 10 乘以 3,3 代表 RGB 这 3 个 channel
 
@@ -615,7 +615,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 所以我们其实可以换一个角度,影像这个东西,其实也是一个 vector set,它既然也是一个 vector set 的话,你完全可以用 Self-attention 来处理一张图片,那有没有人用 Self-attention 来处理一张图片呢,是有的
 
-![image-20221008102204015](./04Sequence as input.assets/image-20221008102204015.png)
+![image-20221008102204015](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102204015.png)
 
 那这边就举了两个例子,来给大家参考,那现在把 Self-attention 用在影像处理上,也不算是一个非常石破天惊的事情,
 
@@ -623,7 +623,7 @@ Self-attention 当然是用得很广,我们已经提过很多次 transformer 这
 
 Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Self-attention 来处理,所以 Self-attention 也可以用在 Graph 上面,但是当我们把 Self-attention,用在Graph 上面的时候,有什麼样特别的地方呢,、
 
-![image-20221008103557924](./04Sequence as input.assets/image-20221008103557924.png)
+![image-20221008103557924](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103557924.png)
 
 在 Graph 上面,每一个 node 可以表示成一个向量,但不只有 node 的资讯,还有 edge 的资讯,我们知道哪些 node 之间是有相连的,也就是哪些 node 是有关联的
 
@@ -641,7 +641,7 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 那我知道 GNN,现在也是一个很 fancy 的题目,那我不会说 Self-attention 就要囊括了,所有 GNN 的各种变形了,但把 Self-attention 用在 Graph 上面,是某一种类型的 Graph Neural Network,那这边呢,一样我们也没有办法细讲了,GNN 这边坑也是很深啊,这边水是很深,那就放一下助教之前上课的连结
 
-![image-20221008103700321](./04Sequence as input.assets/image-20221008103700321.png)
+![image-20221008103700321](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103700321.png)
 
 大概花了快三个小时,在讲GNN,而且其实还没有讲完,就告诉你说这个 Graph Neural Network,也是有非常深的技术,这边水也是很深,那这不是我们今天这一堂课可以讲的内容
 
@@ -653,13 +653,13 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 如果我们今天,是用 Self-attention 来处理一张图片,代表说,假设这个是你要考虑的 pixel,那它產生 query,其他 pixel 產生 key,
 
-![image-20221008102303659](./04Sequence as input.assets/image-20221008102303659.png)
+![image-20221008102303659](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102303659.png)
 
 你今天在做 inner product 的时候,你考虑的不是一个小的receptive field的信息,而是整张影像的资讯
 
 但是今天在做 CNN 的时候,,会画出一个 receptive field,每一个 filter,每一个 neural,只考虑 receptive field 范围裡面的资讯
 
-![image-20221008102322946](./04Sequence as input.assets/image-20221008102322946.png)
+![image-20221008102322946](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102322946.png)
 
 - 所以如果我们比较 CNN 跟 Self-attention 的话,**CNN 可以看作是一种简化版的 Self-attention**，因為在做CNN的时候,我们只考虑 receptive field 裡面的资讯,而在做 Self-attention 的时候,我们是考虑整张图片的资讯,所以 CNN,是简化版的 Self-attention
 
@@ -675,13 +675,13 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 其实你可以读一篇 paper,叫做 On the Relationship,between Self-attention and Convolutional Layers
 
-![image-20221008102611780](./04Sequence as input.assets/image-20221008102611780.png)
+![image-20221008102611780](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102611780.png)
 
 在这篇 paper 裡面,会用数学的方式严谨的告诉你说,其实这个 CNN就是 Self-attention 的特例,Self-attention 只要设定合适的参数,它可以做到跟 CNN 一模一样的事情
 
 所以 self attention,是更 flexible 的 CNN,而 CNN 是有受限制的 Self-attention,Self-attention 只要透过某些设计,某些限制,它就会变成 CNN
 
-![image-20221008102715027](./04Sequence as input.assets/image-20221008102715027.png)
+![image-20221008102715027](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102715027.png)
 
 那这也不是很旧的 paper,你发现它放到网路上的时间呢,是 19 年的 11 月,所以你知道这些,我们今天上课裡面讲的东西,其实都是很新的资讯
 
@@ -693,7 +693,7 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 如果你今天用不同的 data 量,来训练 CNN 跟 Self-attention,你确实可以看到我刚才讲的现象
 
-![image-20221008102742921](./04Sequence as input.assets/image-20221008102742921.png)
+![image-20221008102742921](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008102742921.png)
 
 那这个实验结果,来自於 An image is worth 16 乘以 16 的 words,这个是 Google 的 paper,它就是把这个 Self-attention,apply 在影像上面
 
@@ -716,7 +716,7 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 但是 RNN 是什麼呢,假设你想知道的话,那这边很快地三言两语把它带过去,RNN 跟 Self-attention 一样,都是要处理 input 是一个 sequence 的状况
 
-![image-20221008103209317](./04Sequence as input.assets/image-20221008103209317.png)
+![image-20221008103209317](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103209317.png)
 
 在 RNN 裡面呢
 
@@ -733,7 +733,7 @@ Graph 也可以看作是一堆 vector,那如果是一堆 vector,就可以用 Sel
 
 Recurrent Neural Network跟 Self-attention 做的事情其实也非常像,它们的 input 都是一个 vector sequence
 
-![image-20221008103321707](./04Sequence as input.assets/image-20221008103321707.png)
+![image-20221008103321707](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103321707.png)
 
 Self-attention output 是另外一个 vector sequence,这裡面的每一个 vector,都考虑了整个 input sequence 以后,再给 fully connected network 去做处理
 
@@ -751,7 +751,7 @@ Self-attention output 是另外一个 vector sequence,这裡面的每一个 vect
 
 还有另外一个更主要的不同是,RNN 今天在处理的时候, input 一排 sequence,output 一排 sequence 的时候,**RNN 是没有办法并行化的**
 
-![image-20221008103425848](./04Sequence as input.assets/image-20221008103425848.png)
+![image-20221008103425848](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103425848.png)
 
 RNN 它今天 input 一排是 vector,output 另外一排 vector 的时候,它没有办法一次处理,没有办法平行处理所有的 output
 
@@ -763,7 +763,7 @@ RNN 它今天 input 一排是 vector,output 另外一排 vector 的时候,它没
 
 所以今天讲的都是一些很新的研究成果,那 RNN 的部分呢,我们这门课就不会提到,假设你对 RNN 有兴趣的话,以下是这一门课之前的上课录影,那 RNN 的部分,因為这一次不会讲到,所以特别有做了英文的版本,RNN 呢 是中文英文版本,都同时有放在 YouTube 上面
 
-![image-20221008103532357](./04Sequence as input.assets/image-20221008103532357.png)
+![image-20221008103532357](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103532357.png)
 
 
 
@@ -771,7 +771,7 @@ RNN 它今天 input 一排是 vector,output 另外一排 vector 的时候,它没
 
 其实Self-attention 有非常非常多的变形,你可以看一篇 paper 叫做,Long Range Arena,裡面比较了各种不同的 Self-attention 的变形
 
-![image-20221008103729718](./04Sequence as input.assets/image-20221008103729718.png)
+![image-20221008103729718](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/04Sequence as input.assets/image-20221008103729718.png)
 
 因為 Self-attention 它最大的问题就是,**它的运算量非常地大**,所以怎麼样减少 Self-attention 的运算量,是一个未来的重点,可以看到这边有,各种各式各样 Self-attention 的变形
 

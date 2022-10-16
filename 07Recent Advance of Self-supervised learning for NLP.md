@@ -4,13 +4,13 @@
 
 **supervised learning**是从有标签的数据中去学习，以便将来可以根据数据predict标签。
 
-![image-20221009200824590](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221009200824590.png)
+![image-20221009200824590](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221009200824590.png)
 
 
 
 **unsupervised learning**不需要数据的标签，它的目的是去自动寻找数据中的结构、特征或模式。
 
-![image-20221009200516707](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221009200516707.png)
+![image-20221009200516707](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221009200516707.png)
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-![image-20221010173450756](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010173450756.png)
+![image-20221010173450756](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010173450756.png)
 
 - 每个人都应该熟悉监督学习，当我们做监督学习时，我们只有一个模型，这个模型的输入是x，输出是y。
 
@@ -45,7 +45,7 @@ Self-supervised Learning是什么意思呢，我们直接拿BERT模型来说。
 
 首先，**BERT是一个transformer的Encoder**，我们已经讲过transformer了，我们也花了很多时间来介绍Encoder和Decoder，transformer中的Encoder它实际上是BERT的架构，它和transformer的Encoder完全一样，里面有很多Self-Attention和Residual connection，还有Normalization等等，那么，这就是BERT。
 
-![image-20221010173817522](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010173817522.png)
+![image-20221010173817522](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010173817522.png)
 
 如果你已经忘记了Encoder里有哪些部件，你需要记住的关键点是，**BERT可以输入一串向量，然后输出另一串向量，输出的向量个数与输入相同**。 
 
@@ -55,11 +55,11 @@ BERT一般用于自然语言处理，用于文本场景，所以一般来说，�
 
 接下来我们需要做的是，随机盖住一些输入的文字，被mask的部分是随机决定的，例如，我们输入100个token，什么是token？在中文文本中，我们通常把一个汉字看作是一个token，当我们输入一个句子时，其中的一些词会被随机mask。
 
-![image-20221010174552046](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174552046.png)
+![image-20221010174552046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174552046.png)
 
 mask的具体实现有两种方法。
 
-![image-20221010174611096](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174611096.png)
+![image-20221010174611096](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174611096.png)
 
 - 第一种方法是，用一个特殊的符号替换句子中的一个词，我们用 "MASK "标记来表示这个特殊符号，你可以把它看作一个新字，这个字完全是一个新词，它不在你的字典里，这意味着mask了原文。
 - 另外一种方法，随机把某一个字换成另一个字。中文的 "湾"字被放在这里，然后你可以选择另一个中文字来替换它，它可以变成 "一 "字，变成 "天 "字，变成 "大 "字，或者变成 "小 "字，我们只是用随机选择的某个字来替换它
@@ -70,7 +70,7 @@ mask的具体实现有两种方法。
 
 mask后，一样是输入一个序列，我们把BERT的相应输出看作是另一个序列，接下来，我们在输入序列中寻找mask部分的相应输出，然后，这个向量将通过一个Linear transform。
 
-![image-20221010174650076](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174650076.png)
+![image-20221010174650076](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010174650076.png)
 
 所谓的**Linear transform是指，输入向量将与一个矩阵相乘，然后做softmax，输出一个分布**。
 
@@ -78,7 +78,7 @@ mask后，一样是输入一个序列，我们把BERT的相应输出看作是另
 
 在训练过程中。我们知道被mask的字符是什么，而BERT不知道，我们可以用一个one-hot vector来表示这个字符，并使输出和one-hot vector之间的交叉熵损失最小。
 
-![image-20221010181511074](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181511074.png)
+![image-20221010181511074](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181511074.png)
 
 或者说得简单一点，我们实际上是在解决一个分类问题。现在，BERT要做的是，预测什么被盖住。被掩盖的字符，属于 "湾"类。
 
@@ -90,7 +90,7 @@ mask后，一样是输入一个序列，我们把BERT的相应输出看作是另
 
 它的意思是，我们从数据库中拿出两个句子，这是我们通过在互联网上抓取和搜索文件得到的大量句子集合，我们在这两个句子之间添加一个特殊标记。这样，BERT就可以知道，这两个句子是不同的句子，因为这两个句子之间有一个分隔符。
 
-![image-20221010181617786](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181617786.png)
+![image-20221010181617786](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181617786.png)
 
 我们还将在句子的开头添加一个特殊标记，这里我们用CLS来表示这个特殊标记。
 
@@ -98,7 +98,7 @@ mask后，一样是输入一个序列，我们把BERT的相应输出看作是另
 
 我们将只看CLS的输出，我们将把它乘以一个Linear transform。
 
-![image-20221010181719069](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181719069.png)
+![image-20221010181719069](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010181719069.png)
 
 现在它必须做一个二分类问题，有两个可能的输出：是或不是。这个方法被称为Next Sentence Prediction ，所以我们需要预测，第二句是否是第一句的后续句。
 
@@ -124,7 +124,7 @@ mask后，一样是输入一个序列，我们把BERT的相应输出看作是另
 
 所以总的来说，BERT它学会了如何填空。BERT的神奇之处在于，在你训练了一个填空的模型之后，它还可以用于其他任务。这些任务不一定与填空有关，也可能是完全不同的任务，但BERT仍然可以用于这些任务，这些任务是BERT实际使用的任务，它们被称为Downstream Tasks(下游任务)，以后我们将谈论一些Downstream Tasks 的例子。
 
-![image-20221010182008517](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010182008517.png)
+![image-20221010182008517](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010182008517.png)
 
 所谓的 "Downstream Tasks  "是指，你真正关心的任务。但是，当我们想让BERT学习做这些任务时，我们仍然需要一些标记的信息。
 
@@ -140,13 +140,13 @@ mask后，一样是输入一个序列，我们把BERT的相应输出看作是另
 
 好的，在我们谈论如何微调BERT之前，我们应该先看看它的能力。今天，为了测试Self-supervised学习的能力，通常，你会在多个任务上测试它。因为我们刚才说，BERT就像一个胚胎干细胞，它要分化成各种任务的功能细胞，我们通常不会只在一个任务上测试它的能力，你会让这个BERT分化成各种任务的功能细胞，看看它在每个任务上的准确性，然后我们取其平均值，得到一个总分。这种不同任务的集合，，我们可以称之为任务集。**任务集中最著名的基准被称为GLUE，它是General Language Understanding Evaluation的缩写。**
 
-![image-20221010183035415](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183035415.png)
+![image-20221010183035415](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183035415.png)
 
 在GLUE中，总共有9个任务。一般来说，你想知道像BERT这样的模型是否被训练得很好。所以，你实际上会得到9个模型，用于9个单独的任务。你看看这9个任务的平均准确率，然后，你得到一个值。这个值代表这个Self-supervised模型的性能。
 
 让我们看看BERT在GLUE上的性能。
 
-![image-20221010183054602](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183054602.png)
+![image-20221010183054602](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183054602.png)
 
 有了BERT，GLUE得分，也就是9个任务的平均得分，确实逐年增加。在这张图中，,横轴表示不同的模型，这里列出了，你可以发现，除了ELMO和GPT，其他的还有很多BERT，各种BERT。 
 
@@ -172,7 +172,7 @@ BERT到底是怎么用的呢？我们将给出4个关于BERT的应用案例，
 
 比如说Sentiment analysis情感分析，就是给机器一个句子，让它判断这个句子是正面的还是负面的。
 
-![image-20221010183215908](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183215908.png)
+![image-20221010183215908](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183215908.png)
 
 对于BERT来说，它是如何解决情感分析的问题的？
 
@@ -191,7 +191,7 @@ BERT到底是怎么用的呢？我们将给出4个关于BERT的应用案例，
 
 我们为什么要这样做呢？为什么要用学过填空的BERT，再放到这里呢？最直观和最简单的原因是，它比随机初始化新参数的网络表现更好。当你把学会填空的BERT放在这里时，它将获得比随机初始化BERT更好的性能。
 
-![image-20221010183506564](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183506564.png)
+![image-20221010183506564](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183506564.png)
 
 在这里有篇文章中有一个例子。横轴是训练周期，纵轴是训练损失，到目前为止，大家对这种图一定很熟悉，随着训练的进行，损失当然会越来越低，这个图最有趣的地方是，有各种任务。我们不会解释这些任务的细节，我只想说明有各种任务。
 
@@ -209,7 +209,7 @@ BERT到底是怎么用的呢？我们将给出4个关于BERT的应用案例，
 
 第二个案例是，输入一个序列，然后输出另一个序列，而输入和输出的长度是一样的。我们在讲Self-Attention的时候，也举了类似的例子。 例如，POS tagging。
 
-![image-20221010183651997](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183651997.png)
+![image-20221010183651997](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183651997.png)
 
 POS tagging的意思是词性标记。你给机器一个句子，它必须告诉你这个句子中每个词的词性，即使这个词是相同的，也可能有不同的词性。
 
@@ -225,7 +225,7 @@ POS tagging的意思是词性标记。你给机器一个句子，它必须告诉
 
 在案例3中，模型输入两个句子，输出一个类别。好了，第三个案例以两个句子为输入，输出一个类别，什么样的任务采取这样的输入和输出？ 最常见的是Natural Language Inference ，它的缩写是NLI
 
-![image-20221010183741673](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183741673.png)
+![image-20221010183741673](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183741673.png)
 
 机器要做的是判断，是否有可能从前提中推断出假设。这个前提与这个假设相矛盾吗？或者说它们不是相矛盾的句子？
 
@@ -237,7 +237,7 @@ POS tagging的意思是词性标记。你给机器一个句子，它必须告诉
 
 BERT是如何解决这个问题的？你只要给它两个句子，我们在这两个句子之间放一个特殊的标记，并在最开始放CLS标记。
 
-![image-20221010183850221](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183850221.png)
+![image-20221010183850221](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183850221.png)
 
 这个序列是BERT的输入。但我们只把CLS标记作为Linear transform的输入。它决定这两个输入句子的类别。对于NLI，你必须问，这两个句子是否是矛盾的。它是用一些预先训练好的权重来初始化的。
 
@@ -249,13 +249,13 @@ BERT是如何解决这个问题的？你只要给它两个句子，我们在这�
 
 在这个任务中，一个输入序列包含一篇文章和一个问题，文章和问题都是一个序列。对于中文来说，每个d代表一个汉字，每个q代表一个汉字。你把d和q放入QA模型中，我们希望它输出两个正整数s和e。根据这两个正整数，我们可以直接从文章中截取一段，它就是答案。这个片段就是正确的答案。
 
-![image-20221010183932520](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183932520.png)
+![image-20221010183932520](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183932520.png)
 
 这听起来很疯狂，但是，这是现在使用的一个相当标准的方法。六年前，当我第一次听说这个机制可以解决QA任务时，我简直不敢相信。但是，无论如何，这是今天一个非常普遍的方法。
 
 好吧，如果你仍然不明白我在说什么，更具体地说，这里有一个问题和一篇文章，正确答案是 "gravity"。机器如何输出正确答案？
 
-![image-20221010183949102](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183949102.png)
+![image-20221010183949102](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010183949102.png)
 
 你的保证模型应该输出，s等于17，e等于17，来表示gravity。因为它是整篇文章中的第17个词，所以s等于17，e等于17，意味着输出第17个词作为答案。
 
@@ -265,7 +265,7 @@ BERT是如何解决这个问题的？你只要给它两个句子，我们在这�
 
 
 
-![image-20221010184038675](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184038675.png)
+![image-20221010184038675](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184038675.png)
 
 这个解决方案是这样的。对于BERT来说，你必须向它展示一个问题，一篇文章，以及在问题和文章之间的一个特殊标记，然后我们在开头放一个CLS标记。
 
@@ -273,7 +273,7 @@ BERT是如何解决这个问题的？你只要给它两个句子，我们在这�
 
 假设BERT的输出是768维的向量，这两个向量也是768维的向量。那么，如何使用这两个向量？
 
-![image-20221010184130767](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184130767.png)
+![image-20221010184130767](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184130767.png)
 
 - 首先,计算这个橙色向量和那些与文件相对应的输出向量的内积,由于有3个代表文章的标记,它将输出三个向量,计算这三个向量与橙色向量的内积,你将得到三个值,然后将它们通过softmax函数,你将得到另外三个值。
 
@@ -281,7 +281,7 @@ BERT是如何解决这个问题的？你只要给它两个句子，我们在这�
 
 - 蓝色部分做的是完全一样的事情。
 
-  ![image-20221010184222294](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184222294.png)
+  ![image-20221010184222294](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184222294.png)
 
   蓝色部分代表答案的终点，我们计算这个蓝色向量与文章对应的黄色向量的内积，然后，我们在这里也使用softmax，最后，找到最大值，如果第三个值是最大的，e应该是3，正确答案是d2和d3。
 
@@ -311,7 +311,7 @@ BERT是这样一个著名的模型，它可以做任何事情，那么你可能�
 
 你可能会说这30亿个数据，30亿个词似乎有很多数据。实际上，因为它是无标签数据，所以你只是从互联网上整理了一堆文本，有相同的信息量。所以你要**爬上这个级别的信息并不难，难的是训练过程**
 
-![image-20221010184639213](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184639213.png)
+![image-20221010184639213](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184639213.png)
 
 好的，这个横轴是训练过程，参数更新多少次，大约一百万次的更新，需要多长时间，用TPU运行8天，所以你的TPU要运行8天，如果你在Colab上做，这个至少要运行200天，你甚至可能到明年才能得到结果。
 
@@ -325,7 +325,7 @@ BERT是这样一个著名的模型，它可以做任何事情，那么你可能�
 
 其实是想建立BERT胚胎学。"BERT胚胎学是什么意思？"
 
-![image-20221010184707085](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184707085.png)
+![image-20221010184707085](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010184707085.png)
 
 我们知道在BERT的训练过程中需要非常大的计算资源，所以我们想知道有没有可能，节省这些计算资源？有没有可能让它训练得更快？,要知道如何让它训练得更快，也许我们可以从观察它的训练过程开始。
 
@@ -341,7 +341,7 @@ BERT在学习填空的过程中，学到了什么？"它在这个过程中何时
 
 我们补充一点，上述的任务都不包括，Seq2Seq模型，如果我们要解决，Seq2Seq模型呢？BERT只是一个预训练Encoder，有没有办法预训练Seq2Seq模型的Decoder？
 
-![image-20221010185050119](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185050119.png)
+![image-20221010185050119](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185050119.png)
 
 有，你就说我有一个Seq2Seq模型，有一个transformer，还有一个Encoder和Decoder。输入是一串句子，输出是一串句子，中间用Cross Attention连接起来，然后你故意在Encoder的输入上做一些**干扰来破坏它**，我以后会具体告诉你我说的 "破坏 "是什么意思
 
@@ -351,7 +351,7 @@ Encoder看到的是被破坏的结果，那么Decoder应该输出句子被破坏
 
 有一篇论文叫MASS
 
-![image-20221010185059874](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185059874.png)
+![image-20221010185059874](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185059874.png)
 
 在MASS中，它说破坏的方法是，就像BERT做的那样，只要遮住一些地方就可以了，然后有各种方法来破坏它，比如，删除一些词，打乱词的顺序，旋转词的顺序。或者插入一个MASK，再去掉一些词。总之，有各种方法。在破坏了输入的句子之后，它可以通过Seq2Seq模型来恢复它。
 
@@ -361,7 +361,7 @@ Encoder看到的是被破坏的结果，那么Decoder应该输出句子被破坏
 
 你可能会问,有那么多的mask方法,哪种方法更好呢?也许你想自己做一些实验来试试,让我告诉你,你不需要做,谷歌为你做的,有一篇论文叫T5。
 
-![image-20221010185130905](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185130905.png)
+![image-20221010185130905](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185130905.png)
 
 T5的全称是Transfer Text-To-Text Transformer，有五个T，所以叫T5。在这个T5里面，它只是做了各种尝试，它做了你能想象的所有组合。这篇论文有67页，你可以回去读一下，看看结论。
 
@@ -381,13 +381,13 @@ C4是一个公共数据集，你可以下载它，它是公共的，但是它的
 
 最常见的解释是，当输入一串文本时，每个文本都有一个对应的向量。对于这个向量，我们称之为embedding。
 
-![image-20221010185231557](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185231557.png)
+![image-20221010185231557](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185231557.png)
 
 它的特别之处在于，这些向量代表了输入词的含义。例如，模型输入 "台湾大学"（国立台湾大学），输出4个向量。这4个向量分别代表 "台"、"湾"、"大 "和 "学"
 
 更具体地说，如果你把这些词所对应的向量画出来，或者计算它们之间的距离
 
-![image-20221010185301998](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185301998.png)
+![image-20221010185301998](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185301998.png)
 
 你会发现，意思比较相似的词，它们的向量比较接近。例如，水果和草都是植物，它们的向量比较接近。但这是一个假的例子，我以后会给你看一个真正的例子。"鸟 "和 "鱼 "是动物，所以它们可能更接近。
 
@@ -397,7 +397,7 @@ C4是一个公共数据集，你可以下载它，它是公共的，但是它的
 
 现在我们看一个真实的例子。假设我们现在考虑 "苹果 "这个词，我们会收集很多有 "苹果 "这个词的句子，比如 "喝苹果汁"、"苹果Macbook "等等。然后，我们把这些句子放入BERT中。
 
-![image-20221010185327958](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185327958.png)
+![image-20221010185327958](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185327958.png)
 
 接下来，我们将计算 "苹果 "一词的相应embedding。输入 "喝苹果汁"，得到一个 "苹果 "的向量。为什么不一样呢？在Encoder中存在Self-Attention，所以根据 "苹果 "一词的不同语境，得到的向量会有所不同。接下来，我们计算这些结果之间的cosine similarity，即计算它们的相似度。
 
@@ -405,7 +405,7 @@ C4是一个公共数据集，你可以下载它，它是公共的，但是它的
 
 结果是这样的，这里有10个句子
 
-![image-20221010185401538](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185401538.png)
+![image-20221010185401538](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185401538.png)
 
 - 前5个句子中的 "苹果 "代表可食用的苹果。例如，第一句是 "我今天买了苹果吃"，第二句是 "进口富士苹果平均每公斤多少钱"，第三句是 "苹果茶很难喝"，第四句是 "智利苹果的季节来了"，第五句是 "关于进口苹果的事情"，这五个句子都有 "苹果 "一词，
 
@@ -425,7 +425,7 @@ BERT的这些向量是输出向量，每个向量代表该词的含义。BERT在
 
 那么接下来你可能会问，"为什么BERT有如此神奇的能力？",为什么......,为什么它能输出代表输入词含义的向量？ 这里，约翰-鲁伯特-弗斯，一位60年代的语言学家，提出了一个假说。他说，要知道一个词的意思，我们需要看它的 "Company"，也就是经常和它一起出现的词汇，也就是它的上下文。
 
-![image-20221010185434108](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185434108.png)
+![image-20221010185434108](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185434108.png)
 
 一个词的意思，取决于它的上下文
 
@@ -437,7 +437,7 @@ BERT的这些向量是输出向量，每个向量代表该词的含义。BERT在
 
 这样的想法在BERT之前已经存在了**。在word embedding中，有一种技术叫做CBOW。**
 
-![image-20221010185454746](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185454746.png)
+![image-20221010185454746](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185454746.png)
 
 CBOW所做的，与BERT完全一样。做一个空白，并要求它预测空白处的内容。这个CBOW，这个word embedding技术，可以给每个词汇一个向量，代表这个词汇的意义。
 
@@ -449,7 +449,7 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 但是，这个答案，它真的是真的吗？这是你在文献中听到最多的答案。当你和别人讨论BERT时，这是大多数人都会告诉你的理由。它真的是真的吗？这里有一个难以理解的，由我们实验室的一个学生做的实验。实验是这样的：我们应用为文本训练的BERT对蛋白质、DNA链和音乐进行分类。
 
-![image-20221010185839853](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185839853.png)
+![image-20221010185839853](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185839853.png)
 
 让我们以DNA链的分类为例。DNA是一系列的脱氧核团核酸，有四种，分别用A、T、C和G表示，所以一条DNA链是这样的。
 
@@ -459,7 +459,7 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 神奇的部分来了，DNA可以用ATCG来表示，现在，我们要用BERT来对DNA进行分类
 
-![image-20221010185859165](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185859165.png)
+![image-20221010185859165](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185859165.png)
 
 例如，"A "是 "we"，"T "是 "you"，"C "是 "he"，"G "是 "she"。对应的词并不重要，你可以随机生成。"A "可以对应任何词汇，"T"、"C "和 "G "也可以，这并不重要，对结果影响很小。只是这串文字无法理解。
 
@@ -475,7 +475,7 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 蛋白质有三种分类，那么蛋白质是由氨基酸组成的，有十种氨基酸，只要给每个氨基酸一个随机的词汇，那么DNA是一组ATCG，音乐也是一组音符，给它每个音符一个词汇，然后，把它作为一个文章分类问题来做。
 
-![image-20221010185939877](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185939877.png)
+![image-20221010185939877](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010185939877.png)
 
 你会发现，如果你不使用BERT，你得到的结果是蓝色部分，如果你使用BERT，你得到的结果是红色部分，这实际上更好，你们大多数人现在一定很困惑。
 
@@ -489,7 +489,7 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 你今天学到的关于BERT的知识，只是沧海一粟。我会把一些视频的链接放在这里。
 
-![image-20221010190026742](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190026742.png)
+![image-20221010190026742](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190026742.png)
 
 如果你想了解更多关于BERT的知识，你可以参考这些链接。你的作业不需要它，,这学期剩下的时间也不需要。我只想告诉你，BERT还有很多其他的变种。
 
@@ -497,7 +497,7 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 接下来，我要讲的是，一种叫做Multi-lingual BERT的BERT。Multi-lingual BERT有什么神奇之处？
 
-![image-20221010190038661](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190038661.png)
+![image-20221010190038661](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190038661.png)
 
 它是由很多语言来训练的，比如中文、英文、德文、法文等等，用填空题来训练BERT，这就是Multi-lingual BERT的训练方式。
 
@@ -505,11 +505,11 @@ CBOW是一个非常简单的模型，它使用两个变换，是一个非常简�
 
 google训练了一个Multi-lingual BERT，它能够做这104种语言的填空题。神奇的地方来了，如果你用英文问答数据训练它，它就会自动学习如何做中文问答
 
-![image-20221010190101720](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190101720.png)
+![image-20221010190101720](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190101720.png)
 
 我不知道你是否完全理解我的意思，所以这里有一个真实的实验例子。
 
-![image-20221010190112067](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190112067.png)
+![image-20221010190112067](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190112067.png)
 
 这是一些训练数据。他们用SQuAD进行fine-tune。这是一个英文Q&A数据集。中文数据集是由台达电发布的，叫DRCD。这个数据集也是我们在作业中要用到的数据集。
 
@@ -523,7 +523,7 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 你们中的一些人可能会说："它在预训练中读过104种语言，104种语言中的一种是中文，是吗？ 如果是，这并不奇怪。"但是在预训练中，学习的目标是填空。它只能用中文填空。有了这些知识，再加上做英文问答的能力，不知不觉中，它就自动学会了做中文问答。
 
-![image-20221010190221081](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190221081.png)
+![image-20221010190221081](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190221081.png)
 
 听起来很神奇，那么BERT是怎么做到的呢？一个简单的解释是：也许对于多语言的BERT来说，不同的语言并没有那么大的差异。无论你用中文还是英文显示，对于具有相同含义的单词，它们的embedding都很接近。汉语中的 "跳 "与英语中的 "jump "接近，汉语中的 "鱼 "与英语中的 "fish "接近，汉语中的 "游 "与英语中的 "swim "接近，也许在学习过程中它已经自动学会了。
 
@@ -533,7 +533,7 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 更好的Alignment意味着，具有相同含义但来自不同语言的词将被转化为更接近的向量。**如果MRR高，那么具有相同含义但来自不同语言的词的向量就更接近。**
 
-![image-20221010190314862](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190314862.png)
+![image-20221010190314862](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190314862.png)
 
 这条深蓝色的线是谷歌发布的104种语言的Multi-lingual BERT的MRR，它的值非常高，这说明不同语言之间没有太大的差别。Multi-lingual BERT只看意思，不同语言对它没有太大的差别。
 
@@ -547,13 +547,13 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 训练了两天后，什么也没发生，损失甚至不能减少，就在我们要放弃的时候，损失突然下降了
 
-![image-20221010190755761](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190755761.png)
+![image-20221010190755761](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190755761.png)
 
 用了8个V100来训练，我们的实验室也没有8个V100，是在NCHC（国家高性能计算中心）的机器上运行的，训练了两天后，损失没有下降，似乎失败了。当我们要放弃的时候，损失下降了。
 
 这是某个学生在Facebook上发的帖子，我在这里引用它来告诉你，我当时心里的感叹。整个实验，必须运行一个多星期，才能把它学好，每一种语言1000K的数据。
 
-![image-20221010190820747](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190820747.png)
+![image-20221010190820747](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190820747.png)
 
 所以看起来，数据量是一个非常关键的因素，关系到能否成功地将不同的语言排列在一起。所以有时候，神奇的是，很多问题或很多现象，只有在有足够的数据量时才会显现出来。它可以在A语言的QA上进行训练，然后直接转移到B语言上，从来没有人说过这一点
 
@@ -561,7 +561,7 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 最后一个神奇的实验，我觉得这件事很奇怪
 
-![image-20221010190841388](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190841388.png)
+![image-20221010190841388](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190841388.png)
 
 你说BERT可以把不同语言中含义相同的符号放在一起，使它们的向量接近。但是，当训练多语言的BERT时，如果给它英语，它可以用英语填空，如果给它中文，它可以用中文填空，它不会混在一起
 
@@ -571,13 +571,13 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 后来我们发现，语言信息并没有隐藏得很深。一个学生发现，我们把所有英语单词的embedding，放到多语言的BERT中，取embedding的平均值，我们对中文单词也做同样的事情。在这里，我们给Multi-lingual BERT一个英语句子，并得到它的embedding。我们在embedding中加上这个蓝色的向量，这就是英语和汉语之间的差距。
 
-![image-20221010190942588](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190942588.png)
+![image-20221010190942588](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190942588.png)
 
 这些向量，从Multi-lingual BERT的角度来看，变成了汉语。有了这个神奇的东西，你可以做一个奇妙的无监督翻译。
 
 例如，你给BERT看这个中文句子。
 
-![image-20221010190953548](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190953548.png)
+![image-20221010190953548](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010190953548.png)
 
 这个中文句子是，"能帮助我的小女孩在小镇的另一边，，没人能够帮助我"，现在我们把这个句子扔到Multi-lingual BERT中。
 
@@ -591,7 +591,7 @@ google训练了一个Multi-lingual BERT，它能够做这104种语言的填空�
 
 除了BERT以外,还有下一个,也是鼎鼎有名的模型,就是GPT系列的模型
 
-![image-20221010191102328](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191102328.png)
+![image-20221010191102328](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191102328.png)
 
 BERT做的是填空题,GPT就是改一下我们现在在,self-supervised learning的时候,要模型做的任务
 
@@ -603,7 +603,7 @@ GPT要做的任务是,预测接下来,会出现的token是什麼
 
 你给它BOS这个token,然后GPT output一个embedding,然后接下来,你用这个embedding去预测下一个,应该出现的token是什麼
 
-![image-20221010191129042](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191129042.png)
+![image-20221010191129042](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191129042.png)
 
 那在这个句子裡面,根据这笔训练资料,下一个应该出现的token是"台",所以你要训练你的模型,根据第一个token,根据BOS给你的embedding,那它要输出"台"这个token
 
@@ -611,7 +611,7 @@ GPT要做的任务是,预测接下来,会出现的token是什麼
 
 好那接下来要做的事情,就是以此类推了,你给你的GPT,"BOS"跟"台",它產生embedding,接下来它会预测,下一个出现的token是什麼,那你告诉它说,下一个应该出现的token,是"湾"
 
-![image-20221010191248542](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191248542.png)
+![image-20221010191248542](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191248542.png)
 
 好 再反覆继续下去,你给它BOS "台"跟"湾",然后预测下一个应该出现的token,它应该要预测"大"
 
@@ -623,13 +623,13 @@ GPT要做的任务是,预测接下来,会出现的token是什麼
 
 那这边有一个小小的,应该要跟大家说的地方,是说这个GPT的模型,它像是一个transformer的decoder,不过拿掉BOS的attention这个部分,也就是说,你会做那个mask的attention
 
-![image-20221010191506713](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191506713.png)
+![image-20221010191506713](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191506713.png)
 
 就是你现在在预测给BOS,预测台的时候,你不会看到接下来出现的词汇,给它台要预测湾的时候,你不会看到接下来要输入的词汇,以此类推 这个就是GPT
 
 那这个GPT最知名的就是,因為**GPT可以预测下一个token,那所以它有生成的能力,**你可以让它不断地预测下一个token,產生完整的文章,所以我每次提到GPT的时候,它的形象都是一隻独角兽
 
-![image-20221010191541384](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191541384.png)
+![image-20221010191541384](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191541384.png)
 
 GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的新闻,因為他放一个假新闻,然后那个假新闻裡面说,在安地斯山脉发现独角兽等等,一个活灵活现的假新闻
 
@@ -649,7 +649,7 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 这个更狂的使用方式和人类更接近,你想想看假设你去考,譬如说托福的听力测验,你是怎麼去考
 
-![image-20221010191718819](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191718819.png)
+![image-20221010191718819](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010191718819.png)
 
 - 首先你会看到一个题目的说明,告诉你说现在要考选择题,请从ABCD四个选项裡面,选出正确的答案等等
 
@@ -665,7 +665,7 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 举例来说假设要GPT这个模型做翻译
 
-![image-20221010193623126](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010193623126.png)
+![image-20221010193623126](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010193623126.png)
 
 - 你就先打Translate English to French
 
@@ -685,11 +685,11 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 当然你也可以给GPT更大的挑战,我们在考托福听力测验的时候,都只给一个例子而已,那GPT可不可以只看一个例子,就知道它要做翻译这件事,这个叫One-shot Learning
 
-![image-20221010194437263](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194437263.png)
+![image-20221010194437263](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194437263.png)
 
 还有更狂的,是Zero-shot Learning,直接给它一个叙述,说我们现在要做翻译了,GPT能不能够自己就看得懂,就自动知道说要来做翻译这件事情呢,那如果能够做到的话,那真的就非常地惊人了,那GPT系列,到底有没有达成这个目标呢,这个是一个见仁见智的问题啦
 
-![image-20221010194454377](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194454377.png)
+![image-20221010194454377](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194454377.png)
 
 它不是完全不可能答对,但是正确率有点低,相较於你可以微调模型,正确率是有点低的,那细节你就再看看GPT那篇文章
 
@@ -697,7 +697,7 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 目前看起来状况是,有些任务它还真的学会了,举例来说2这个加减法,你给它一个数字加另外一个数字,它真的可以得到,正确的两个数字加起来的结果,但是有些任务,它可能怎麼学都学不会,譬如说一些跟逻辑推理有关的任务,它的结果就非常非常地惨,好 那有关GPT3的细节,这个就留给大家再自己研究,然后这边有一个过去上课的录影,我把连结放在这边给大家参考
 
-![image-20221010194527231](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194527231.png)
+![image-20221010194527231](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194527231.png)
 
 ## Beyond Text
 
@@ -705,7 +705,7 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 在CV,CV就是computer vision,也就是影像,在语音跟影像的应用上也都可以用,self-supervised learning的技术,那其实今天,self-supervised learning的技术,非常非常地多,我们讲的BERT跟GPT系列,它只是三个类型的,这个self-supervised learning的方法,的其中一种,它们是属於prediction那一类
 
-![image-20221010194549104](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194549104.png)
+![image-20221010194549104](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194549104.png)
 
 那其实还有其他的类型,那就不是我们这一堂课要讲的,那接下来的课程,你可能会觉得有点流水帐,就是我们每一个主题呢,就是告诉你说这个主题裡面,有什麼 但是细节这个更多的知识,就留给大家自己来做更进一步的研究,所以这些投影片,只是要告诉你说,在self-supervised learning这个部分,我们讲的只是整个领域的其中一小块,那还有更多的内容,是等待大家去探索的
 
@@ -713,13 +713,13 @@ GPT系列最知名的一个例子,就是用GPT写了一篇,跟独角兽有关的
 
 好那有关影像的部分呢,我们就真的不会细讲,我这边就是放两页投影片带过去,告诉你说有一招非常有名的,叫做SimCLR,它的概念也不难,我相信你自己读论文,应该也有办法看懂它
 
-![image-20221010194656482](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194656482.png)
+![image-20221010194656482](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194656482.png)
 
 ### Image - BYOL
 
 那还有很奇怪的,叫做BYOL
 
-![image-20221010194612048](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194612048.png)
+![image-20221010194612048](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194612048.png)
 
 BYOL这个东西呢,我们是不太可能在上课讲它,為什麼呢,因為根本不知道它為什麼会work,不是 这个是很新的论文,这个是去年夏天的论文,那这个论文是,假设它不是已经发表的文章,然后学生来跟我提这个想法,我一定就是,我一定不会让他做,这不可能会work的,这是个不可能会实现的想法,不可能会成功的,这个想法感觉有一个巨大的瑕疵,但不知道為什麼它是work的,而且还曾经一度得到,state of the art的结果,deep learning就是这麼神奇,
 
@@ -727,7 +727,7 @@ BYOL这个东西呢,我们是不太可能在上课讲它,為什麼呢,因為根�
 
 那在语音的部分,你也完全可以使用,self-supervised learning的概念
 
-![image-20221010194623610](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194623610.png)
+![image-20221010194623610](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194623610.png)
 
 你完全可以试著训练,语音版的BERT
 
@@ -741,7 +741,7 @@ BYOL这个东西呢,我们是不太可能在上课讲它,為什麼呢,因為根�
 
 但在语音上 到目前為止,还没有类似的基準的资料库,所以我们实验室就跟其他的研究团队,共同开发了一个语音版的GLUE
 
-![image-20221010194731654](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194731654.png)
+![image-20221010194731654](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194731654.png)
 
 我们叫做SUPERB,它是Speech processing Universal,PERformance Benchmark的缩写,你知道今天你做什麼模型,都一定要硬凑梗才行啦,所以这边也是要硬凑一个梗,把它叫做SUPERB
 
@@ -751,7 +751,7 @@ BYOL这个东西呢,我们是不太可能在上课讲它,為什麼呢,因為根�
 
 而且我们还有一个Toolkit,这个Toolkit裡面就包含了,各式各样的,self-supervised learning的模型
 
-![image-20221010194806662](./07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194806662.png)
+![image-20221010194806662](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/07Recent Advance of Self-supervised learning for NLP.assets/image-20221010194806662.png)
 
 还有这些,self-supervised learning的模型,它可以做的,各式各样语音的下游的任务,然后把连结放在这边给大家参考
 
