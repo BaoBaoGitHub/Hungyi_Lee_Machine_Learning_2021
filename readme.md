@@ -1,4 +1,4 @@
-1. 笔记中图片超链接使用的是相对路径，下载以后使用typora直接打开md文件即可食用。
+1. 笔记中图片超链接使用的是相对路径，下载以后使用typora直接打开md文件即可食用。  
    计划从第10课开始使用github图床，将来或许会全部更新为github图床。
 
 2. 2021年李宏毅机器学习网址：https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.php  
