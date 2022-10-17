@@ -183,7 +183,7 @@ Word Embedding，如果你有兴趣的话,可以看一下以下的录影https://
 
 **所以有没有更好的方法,来考虑整个Input Sequence的资讯呢,这就要用到我们接下来要跟大家介绍的,Self-Attention这个技术**
 
-## Self-Attention for Sequence Labeling!
+## Self-Attention for Sequence Labeling !
 
 Self-Attention的运作方式就是,**Self-Attention会吃一整个Sequence的资讯**
 
@@ -240,7 +240,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 那接下来呢就是要跟大家说明,怎麼產生$b^1$这个向量,那你知道怎麼產生$b^1$这个向量以后,你就知道怎麼產生剩下$b^1 b^2 b^3 b^4$剩下的向量
 
-### Attention Score
+#### Attention Score
 
 这里有一个特别的机制,这个机制是根据$a^1$这个向量,找出整个很长的sequence裡面,到底哪些部分是重要的,哪些部分跟判断$a^1$是哪一个label是有关係的,哪些部分是我们要决定$a^1$的class,决定$a^1$的regression数值的时候,所需要用到的资讯
 
@@ -296,7 +296,7 @@ Self-Attention的Input,它就是一串的Vector,那这个Vector可能是你整�
 
 这边你不一定要用Soft-Max,用别的替代也没问题,比如说有人尝试过说做个ReLU,这边通通做个ReLU,那结果发现还比Soft-Max好一点,所以这边你不一定要用Soft-Max,这边你要用什麼Activation Function都行,你高兴就好,你可以试试看,那Soft-Max是最常见的,那你可以自己试试看,看能不能试出比Soft-Max更好的结果
 
-### Extract Information Based on Attention Score
+#### Extract Information Based on Attention Score
 
 接下来得到这个$α'$以后,我们就要根据这个$α'$去抽取出这个Sequence裡面重要的资讯,根据这个α我们已经知道说,哪些向量跟$a^1$是最有关係的,怎麼抽取重要的资讯呢,
 

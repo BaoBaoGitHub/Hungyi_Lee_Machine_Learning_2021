@@ -308,7 +308,7 @@ $$
 
 这个FC network做完residual以后,还不是结束 你要把residual的结果,再做一次layer normalization,得到的输出,才是residual network裡面,一个block的输出,所以这个是挺复杂的
 
-
+### BERT
 
 所以我们这边讲的 这一个图,其实就是我们刚才讲的那件事情
 
