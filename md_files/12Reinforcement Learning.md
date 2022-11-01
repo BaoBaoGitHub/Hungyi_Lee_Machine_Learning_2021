@@ -890,9 +890,173 @@ A5: 我想你这个 Distribution 问的是那个,Actor 的 Distribution 啦 对�
 
 # Reward Shaping
 
+好 这个接下来想要跟大家分享的是一个叫做 Reward Shaping 的概念
 
+什么是 Reward Shaping 呢？到目前为止我们学到的东西是，我们把我们的 Actor 拿去跟环境互动，得到一堆  Reward，那把这些 Reward 做某些的整理以后，得到这边的分数 A，有了这边的分数 A，你就可以去教你的 Actor，该做什么 不做什么。
+
+![image-20221101200329872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101200329872.png)
+
+但是在这个 Reinforcement Learning 里面，我们很怕遇到一种状况是，假设 Reward 永远都是 0 的时候怎么办呢，假设多数的时候 Reward 都是 0，只有非常低的机率，你会得到一个巨大的 Reward 的时候，那怎么办呢？
+
+假设 Reward 几乎都是0，那意味着什么，意味着说你今天这个 A 不管怎么算都是 0。对每一个 Action 都是差不多的，反正不管执行什么 Action，得到的 Reward 都是 0 嘛，所以执行这个 Action 执行那个 Action根本没差
+
+那如果不管执行什么 Action，Reward 几乎都是 0 的话，那你根本没有办法去 Train 你的 Actor。那讲到这种 Sparse Reward 的问题，也许有人马上会想到的是 ，下围棋也许是一个 Sparse Reward 的问题。因为在下围棋的时候，你每落一，你并没有得到 Reward，你并没有得到 Positive 或 Negative 的 Reward，只有在整场游戏结束，落完最后一子的时候 在中盘，在落完最后一子游戏结束的时候。你赢了才会得到 Positive 的 Reward，你输了才会得到 Negative 的 Reward。
+
+ 但是我觉得相较于有一些其他任务，这个下围棋，还算是比较有 Reward 的 RL 的问题。举例来说假设今天的问题是：你要教机械手臂去拴螺丝。而教机械手臂拴螺丝这个问题，你合理的 Reward 的定义是，假设今天机械手臂成功把螺丝拴进去，它就得到 Positive Reward，没有把螺丝拴进去，Reward 就是0。
+
+但是你想想看 一开始你的机械手臂，它里面的 Actor 的参数是随机的，所以它就在空中随便挥舞，怎么挥舞 Reward 都是 0，不像是下围棋，你至少整场游戏玩完，你还有正面的或负面的 Reward，而像机械手臂，你要叫机械手臂去拴螺丝，除非它正好非常巧合的拿起一个螺丝，再把它拴进去它得到正向的 Reward。不管它做什么事情都没差，得到的 Reward 通通都是 0 分，好 那遇到这种状况的时候怎么办呢？
+
+遇到这种状况的时候有一个解法就是，我们想办法去提供额外的 Reward来引导我们的 Agent 学习，也就是说在原来的 Reward，也就是我们，真正要 Agent 去 Maximize 的 Reward 之外，我们再定义一些额外的 Reward，我们定义这些额外的 Reward来帮助我们的 Agent 学习。那这种订额外的 Reward来帮助 Agent 学习这种事情呢，就叫做 Reward Shaping。
+
+那你知道我们人呢其实也很擅长做 Reward Shaping。举例来说这让我想到一个这个妙法莲华金钟的故事。这个故事呢，出自妙法莲华金钟的化城喻品，这个故事就是有一个领队，然后带一群人呢 去找宝藏，然后宝藏呢 在五百由旬之外，那由旬是什么单位我也忘了，那你就当做很远就对了，就当500 万公里之外。然后呢这群人呢 走到半路，已经过了半途了，觉得很累 不想再往前走了，那大家就坐在地上哀嚎 不想再往前走了。那领队看大家不想再往前走 怎么办呢，他就跟大家说再往前 10 公里有一个五星级的饭店，大家就可以去休息了，大家就看到五星级的饭店就很高兴。就去休息了然后隔天早上饭店就不见了。然后领队说那个饭店呢是我用法力变出来的，为了鼓励大家再继续往前走，免得大家半途而废
+
+这妙法莲华经说这个故事是为了表示说，佛最后希望大家成就的是佛道，但佛道非常的长，所以中间呢，设了小圣 中圣 大圣等不同的位阶来引导大家前进。那如果对应到比较生活化的例子就是，比如说现在叫你念博士，你可能觉得你要博士毕业才能够拿到博士学位才能够得到 Reward。那你就会觉得哇 这个路呢 非常的长然后就不想要念博班了。但是如果告诉你说 你先修个课就可以得到 Reward然后做一点专题虽然可能也没有做出什么厉害的成果。但老师就会说你好棒 你也得到 Reward。然后最后先发一个 Second Tier 的 Conference得到 Reward，再发表 Top-tier Conference再就得到 Reward，然后最后你就可以博班毕业。这样一步一步的往前走，最终你就可以达成最终的目标这样。
+
+好 那这个呢 就是 Reward Shaping 的概念
+
+## Example
+
+好 那我们接下来呢。就举一个 Reward Shaping真正实际使用在 RL 里面的例子
+
+给大家参考。
+
+那这边举的例子呢是用 VizDoom 来跟大家举例，那因为怕大家不知道 VizDoom 是什么。所以这边呢还是放一个影片给大家看一下https://www.youtube.com/watch?v=73YyF1gmIus&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=33&ab_channel=Hung-yiLee六分十四秒开始。
+
+这边的每一个选手 都不是人，每一个选手通通都是机器，所以你仔细看一下会发现说，有些人的行为很奇怪，比如说右上角这个人，它还蛮容易卡墙的
+
+好 这个是让你知道一下 VizDoom，大概是什么样的游戏，那这个影片非常长，它是个长达两小时的史诗级的战斗，你有兴趣再慢慢把它看完。在当年那个VizDoom 的比赛里面，第一名的队伍就有用到了 Reward Shaping 的概念。那在 VizDoom 这个游戏里面，你被敌人杀掉 你就扣分，你杀了敌人就加分，但如果你光凭着这个游戏里面真正的 Reward，来训练 Agent你是很难把它训练起来的。所以呢 在这一篇文章里面就使用了一些 Reward Shaping 的概念，那我们就来看一下它是怎么定这些 Reward 的
+
+举例来说这个第一点呢 我们等一下再看
+
+我们先看第二点。第二点 它说如果今天有扣血，那你就得到负的 Reward，那其实在游戏里面扣血并没有惩罚，扣血并不会扣分，你要死掉才扣分，但是如果机器要到死掉，才知道它得到负的 Reward，那它可能要很花很久的时间，才能学到扣血跟死掉之间的关联性，所以这边直接告诉机器不可以扣血，扣血是坏的事情。好 然后这边是如果损失弹药就扣一点分数，然后捡到这个医药包就加分，捡到弹药的补给包就加分，那这些事情在游戏里面是不会影响分数的。但是我们人 我们 Developer另外强加给机器来引导机器学习。
+
+好 接下来就是一些比较有趣的 Reward 了。举例来说 它说呢如果你的 Agent 总是待在原地那就要扣分，为什么需要这样的 Reward 呢，因为如果你没有这样的 Reward，对 Agent 来说一开始它非常弱，它出去走呢 随便走两步就被敌人杀死了，所以对它来说 对一开始很弱的 Agent 来说，可以得到比较高 Reward 的做法，也许就是待在原地，待在原地至少 Reward 是 0 。那出去碰到敌人还要被扣血那多划不来，所以为了避免 Machine 最后什么都没有学到，就只会待在原地，所以强制告诉它说，你只要待在原地就直接扣分，然后还告诉它说如果你动， 就给你一个很小的分数，这边你只要每动一下就给你 9 乘以 10 的 -5 次方，一个非常小的 但是是 Positive 的 Reward。
+
+好 但是光是要求机器动是不够的，所以这边又多加了一个非常有趣的 Reward这个 Reward 是每次如果 Agent 活着，Agent 每活着 它就要被扣分。你可能觉得很奇怪 活着不是一件好事吗？为什么活着反而应该要被扣分呢，那是因为假设现在活着没有扣分，或者是什至是一件正面的事情，对 Agent 来说，它会学到的可能就是边缘 OB ，你虽然有要求它动，那你要求它动没有关系，它就在边缘一直自转就好，它在边缘一直转圈圈就好，然后看到敌人就躲开，不要跟敌人做任何的正面交锋，那对你的 Agent 来说，也许这样是一个最安全的做法，但是为了强迫 Agent 学习去杀敌人，所以反而告诉它说你只要活着就是扣分。你要想办法不可以活太久，你要想办法去跟别人交手，所以这是一个非常有趣的Reward Shaping 的方式
+
+那看到这些 Reward Shaping 你就会发现说，Reward Shaping 这一件事情呢，其实是需要花 Domain Knowledge 的。它其实是需要凭借着人类对你现在环境的理解来强加上去
+
+那今天再举另外一个 Reward Shaping  的例子
+
+![image-20221101201702246](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101201702246.png)
+
+假设你今天要训练一个机器手臂，那这个机器手臂的工作呢，就是把这个蓝色的板子，插到这个棍子上，好 那像这样子的任务，你要凭着 RL 的方法让机器凭空学会，把蓝色的板子插到这个棍子上，没有那么容易。但是你可能会想到一个，很直觉的 Reward Shaping 的方法是，假设今天这个蓝色的板子，离这个棍子越近，那我们得到的 Reward 就越大，但是如果你仔细想想会发现说，单纯让蓝色的板子离这个棍子越近是不够的，为什么让蓝色的板子离棍子近是不够的呢，你可以看看这个像右边这两个 Case，机械手臂也是想把蓝色的板子挪进棍子。但它做的事情，其实就是去打那个棍子。从侧面接近从侧面接近是没有用的，把蓝色的板子从侧面接近棍子，并不能够达到你最终的目标。所以如果我们单纯只是说，现在你的蓝色的板子离这个棍子越近，它的 Reward 就越大，你用 Reward Shaping 的方法。把蓝色的板子跟棍子之间的距离。当做一个新的 Reward但可能对你最终想要解决问题本身，是不一定有帮助的所以 Reward Shaping 这个东西。你在用的时候必须要小心。它需要你对这个问题本身有足够的理解。你才有办法使用 Reward Shaping 这样的招数
+
+## Curiosity Based 的 Reward Shaping
+
+好 那 Reward Shaping 里面
+
+有一个特别有趣而知名的做法叫做
+
+Curiosity Based 的 Reward Shaping
+
+![image-20221101201904667](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101201904667.png)
+
+也就是呢 给机器加上好奇心。所谓好奇心的意思就是要去探索新的事物，所以在原来的 Reward 之外，我们加上一个 Reward这个 Reward 是，如果机器它在活动的过程中看到新的东西，它就被加分。但这边 又有一点要强调的是，新的东西必须是有意义的新，不是无谓的新。什么叫做有意义的新 不是无谓的新呢。那这个我们等一下再解释。
+
+好 那这个 Curiosity based 的这个 Reinforcement Learning 它来自于 ICML 2017 的这一篇文章。那这篇文章里面有一个非常惊人的 Demo，那我们来播一下这个 Demo。https://www.youtube.com/watch?v=73YyF1gmIus&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=33&ab_channel=Hung-yiLee 13分12秒
+
+ 我想稍微解释一下刚才那个影片的意思。刚才那个影片的意思是说， 我把它停下来 等我一下， 就是它让机器玩玛利欧，那他甚至在玛利欧这个游戏里面。没有任何的 Reward，他甚至没有告诉机器说，破关就可以得到 Positive 的 Reward。那其实你告诉机器破关可以得到 Positive Reward 也没用啦。这种 Reward 太 Sparse 了，大概很难拿来训练 Agent，它只告诉机器说，你要不断地看到新东西。那光是这一件事情就可以让机器学会，破玛利欧的其中一些关卡，那当然这样子的方法，也许对玛利欧而言是最合适的，你知道玛利欧是横向卷轴游戏嘛。那你要破关就是要不断地往右走嘛，那机器它要看到新的东西，就不断地需要往右走嘛，所以机器会光藉由 Curiosity 这件事，就可以学到破解玛利欧的一些关卡。不过它有尝试说训练在前面几关，然后直接测直接把 Agent 放在那个地下的关卡，然后就发现说做不起来。在地下关卡还是要微调一些 Network，微调一下 Network 才做得起来
+
+好 那这个影片还有后半段啦，我们我们直接从某个地方开始看好了。他接下来是直接叫机器去玩那个 VizDoom 。直接叫机器去玩 VizDoom。我们也来放一下 VizDoom 的部分好了。好 那最后那一个背景有一堆杂讯，有点像是那个电视机坏掉那种杂讯的那个画面，你可能有点不知道它这个影片想要表达什么，那那个部分就是我想要。我刚才在最前面讲到的有意义的新这件事情。有意义的新这件事情就是假设我们要求 Agent，要一直看到新的东西。那如果你的画面背景有一个杂讯，那杂讯会不断地变化，所以对 Agent 来说杂讯是新的东西，也许它就不会学到去探索新的环境了，反正光站在那边看杂讯就够了，它会觉得它不断地看到新的东西。所以其实，在 Curiosity Based 的这个 RL 里面，也有想办法克服这种没意义的新，这种看到杂讯的问题，至于实际上怎么做，那你再参考他的论文
 
 
 
 # No Reward : Learning from Demonstration
 
+好那有关RL的最后一个部分，我想要跟大家分享的是，假设今天，如果我们连Reward都没有，该怎么办呢？
+
+在刚才的课程里面，我们是有Reward的，只是有时候Reward非常地Sparse，所以你要做Reward Shaping。但是假设今天，连Reward都没有的话，到底该怎么办呢？
+
+那为什么有时候会连Reward都没有呢？其实像Reward这种东西，往往只在一些比较artifisial的环境，比如说游戏里面，特别容易被定义出来。在游戏里面，有一个记分板，所以你特别容易去定义说在游戏里面，怎么样的行为是好的，怎么样的行为是不好的，某一个行为有多好，或某一个行为有多不好。但是在真实的环境里面，你要定义Reward这件事情，有可能是非常地困难的，假设你今天要用RL的方法来学，学叫自驾车学会在路上走，那到底在路上走，做什么样的事情，会得到什么样的Reward呢？它礼让行人，就给它加100分吗，还是应该加1000分，那闯红灯，应该扣50分，还是扣50000分呢，那像这种东西，你根本不知道要怎么定。所以在更真实，在真实的环境中，有时候我们根本不知道要怎么定义，Reward这个东西，而且有时候，那你说，虽然我们不知道怎么定Reward，但我们可以凭着人类的智慧，去想一些Reward出来，来Guide一个Machine，像我们刚才讲的那种RewardShaping，不就是一个很好的例子吗？我们自己想一些Reward出来，来叫Machine学，但有时候你在想Reward教Machine学的时候，如果你的Reward没想好，Machine可能会产生非常奇怪的行为，你无法预期的行为，那这边举一个比较极端的例子。
+
+![image-20221101203456273](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203456273.png)
+
+有一个电影，叫做机械公敌，在机械公敌里面呢，当然这就未来的世界啦，有一大堆机器人，那些机器人的行为，必须符合三条原则，这三条原则是，第一条不能够伤害人类，也不能够坐视人类被伤害。第二条是，在不违反第一条的前提之下，机器必须要听从人类的命令。那第三条是机器必须要保护自己，在不违反第一条跟第二条的前提之下。所以你可以想像，这三条Law，这三条规则，就代表说，机器如果不违反这三条规则，就得到PositiveRewards，违反这三条规则，就得到非常Negative的Reward。然后有了这三条规则以后，机器呢，就自己去发展，自己去学习，但是最终呢，机器就得到神逻辑，在不违反这三条规则的前提之下，要得到最大Reward的方式，就是把人类监禁起来，因为人类会自我伤害，所以应该把人类监禁起来，避免他们自我伤害，这样机器就可以得到最高的Reward，所以这个例子告诉我们说，光订Reward是不够的，机器可能会有神逻辑，展现出你意想不到的行为。
+
+当然机械公敌里面是一个比较极端的例子，那举一个比较有可能发生的例子是，假设你训练机器去，比如说收盘子，那这个是我在文献上实际看过的例子啦，那你知道在文献上有很多文献是，要用ReinforcementLearning的方法，来训练机械手臂嘛，假设你今天要训练这个机器，把盘子摆到一个固定的位置，它把盘子放到指定的位置，就得到PositiveRewards，这个是你定义的Reward。然后你用Reinforcement Learning去学，发现机器会把盘子放到指定的位置，但它都非常大力用摔的，然后结果盘子都被摔破了，那是因为你根本没有告诉机器说，不能把盘子摔破。所以如果，你就会发现说，机器没有告诉它不能把盘子摔破的前提之下，它为了达成目标，可能就把盘子摔破了。这个时候你只要赶快再订新的Reward说，如果摔破盘子就要扣100分，但问题是，盘子已经被摔破了，已经来不及了，所以有时候，人订的Reward，不见得是最好的。
+
+## Limitation Learning
+
+所以怎么办呢，在没有Reward的情况下，我们要怎么训练一个Agent去跟环境互动呢？
+
+![image-20221101203714437](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203714437.png)
+
+那在没有Reward的状况下，让机器跟环境互动，其中一个方法，叫做Imtation的Learning，那在ImtationLearning里面，我们假设Actor，它仍然可以跟环境互动，但它不会从环境得到Reward，Environment仍然会送出Observation给Actor，Actor仍然会做出回应，Environment仍然会随着Actor的回应，给不同的Observation，但是没有Reward这个东西。
+
+![image-20221101203801243](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203801243.png)
+
+没有Reward这个东西要怎么学呢？虽然没有Reward，但是我们有另外一个东西，这个东西，是Expert的示范，我们找很多Expert，通常是人类，我们找很多人类，也来跟这个环境互动，把人类跟环境的互动记录下来，这些东西就是，这些纪录就是Expert的示范，就是Expert的示范，然后把这些Expert的示范呢，叫做$τ$，我们用这个这个上标，来代表人类的Expert的示范，那我们现在呢，就是要凭借着这些示范，还有跟环境的互动，来进行学习。这样讲也许有点抽象，什么叫做Expert的示范呢，假设你今天呢，要教机器开自驾车，那人类驾驶的行驶纪录，那就是Expert的示范。人类驾驶的行驶纪录可以告诉机器说，在这个路口，你应该打一下方向盘等等，那这些就是Expert的示范，或者是，你想要叫机器做一些指定的动作，比如说倒水排碗盘，你可能会先拉着机械的手臂示范一次，那人去拉着机械手臂示范一次。这件事情，就是Expert的Demonstration，就是这边的$τ$，那Lmtation Learning要做的事情，就是从这些$τ$，还有与环境的互动，进行学习。
+
+那讲到这边可能有同学就会想说，欸这个问题听起来好像挺简单的，这个不就是Supervised Learning吗，我们就把它当作Supervised Learning的问题，来看待就好啦。
+
+![image-20221101204417046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204417046.png)
+
+假设我们今天要训练自驾车，你又有人类驾驶的纪录，也就是你有记录说，欸人看到这样子的路的画面，那人就会采取某一种Action，比如说他就会踩刹车，或者是踩油门等等，欸你有这样子的一堆的纪录，我们不是直接就用Supervised Learning，来Learn我们的Agent就好了吗。你就说，你已经有人类给的资料说，看到s1这样的画面，最好的行为就是a1，s2这样的画面，人类的行为就是a2，你已经有这样子的训练资料，那你就直接叫机器，去模仿人类的行为就好啦，今天机器给它看si，然后它输出ai，你要让它的Actionai，跟人类的Actionai越接近越好，你就让机器去模仿人类的行为。那没错，当你有这个Expert的示范的时候，这是一个做法，那这种做法呢，叫做Behavior的Cloning，就是去复制人类的行为。
+
+![image-20221101204435274](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204435274.png)
+
+但是光是让机器去复制人类的行为，有可能有什么样的问题呢？
+
+一个可能的问题是，因为人类跟机器，他们可能可以观察到的$s$，会是不一样的。什么意思呢，举例来说，假设我们一样要叫机器学习开自驾车，那它是跟人类的Expert去学，人类的Expert在转弯的时候，都可以轻松地转过这个弯道，没有人出车祸，没有人任何马路三宝，每个人都顺利地，每一个Expert都可以顺利地向右转，所以对机器来说，它从来没有看过失败的状态，它从来没有看过一个车子快要撞墙的状态，如果它从来没有看过一个车子快要撞墙的状态，它训练资料里面，就没有这种东西，它就不知道，假设车子快要撞墙的时候，应该要怎么处理，因为所有Expert都太厉害了，根本就不会让车子靠近墙边，根本就不会犯这种错误，那机器就不会学到说，在这一种人类平常不会经历的状态下，到底应该要怎么处理。所以这是第一个可能遇到的问题。
+
+第二个Behavior Cloning可能遇到的问题是，虽然人类在开车的时候可能很厉害，但也许不是每一个行为，机器都需要亦步亦趋地去完全模仿，也许有一些行为需要模仿，有一些行为是人类个人的特质，根本不需要模仿，但是机器，它不知道什么行为该模仿，什么行为不该模仿，它只能完全复制人类的行为。那什么叫做完全复制人类，完全复制老师的行为呢，以下就是一个完全复制老师行为的一个例子，那以下这个影片，出自TheBigBangTheory，我就播给大家看一下，https://www.youtube.com/watch?v=75rZwxKBAf0&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=33&ab_channel=Hung-yiLee 9:30开始。
+
+好，所以刚才我们就是看到了一个，Behavior Cloning的例子，那对机器来说，它就跟穿绿色衣服的Sheldon一样，它的老师教什么，它就会有一模一样的示范，那它不知道什么东西是需要学的，什么东西是不需要学的.那如果机器，只是跟它老师采取一模一样的行为，也许还没有什么问题，因为它跟老师采取一模一样的行为，就跟老师做一模一样的事情，虽然它可能会有一些多余的行为，但也许是无伤大雅。但是我觉得更惨的另外一个状况是，机器的能力，可能是有限的，今天也许机器没有办法完全模仿老师的行为，它只能选择部分的行为，来进行模仿。就好像说有一个人呢，他想要变得跟贾伯斯一样，然后他就去看了贾伯斯传，然后把贾伯斯传里面，贾伯斯的所有的特质都列出来，比如说列了20个，包括有创意，然后脾气暴躁，然后不修边幅等等，但他觉得说，这些特质太多了，他只决定模仿一个而已，因为他能力有限，他只模仿一个而已，那如果他选择有创意也许是好的，但也许他选到的是不修边幅，那就没有什么用。所以假设机器能力是有限的情况下，Behavior Cloning，也许会造成更大的问题，所以怎么办呢？
+
+## Inverse Reinforcement Learning
+
+有另外一个技术，叫做Inverse的Reinforcement Learning。接下来Inverse Reinforcement Learning，就是要让机器自己来订Reward啦，那怎么做呢，我们先看原来的Reinforcement Learning，是怎么运作的。原来的Reinforcement Learning是，我们有Reward，有环境，然后呢，用RL的Algorithm，跟环境还有Reward互动，然后你就学出一个Actor，但现在，我们没有Reward了，我们有的只有Expert专家的示范。
+
+![image-20221101204845152](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204845152.png)
+
+我们现在要做的事情，是一个叫，Inverse Reinforcement Learning的Algorithm，它是跟原来的Reinforcement Learning是相反的。它要做的事情，并不是根据Reward去学习，而是从Expert的Demonstration，还有Environment，去反推Reward应该长什么样子。也就是这边的RewardFuntion，是学出来的。那学出一个Reward Funtion以后，你就可以直接用一般的Reinforcement Learning，来学你的Actor。
+
+![image-20221101204939121](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204939121.png)
+
+所以在Inverse Reinforcement Learning里面，我们的概念就是，本来不知道Reward Funtion，从Expert的示范，去反推Reward Funtion应该长什么样子，有了Reward Funtion以后，我们就可以再训练一个Optimal的Actor，去根据这些Reward Funtion，来进行学习。
+
+那讲到这边，也许有人会有的疑惑是，欸这个Reward Funtion是学出来的，它会不会太简单了呢，我们会不会没有办法学出，非常复杂的Reward Funtion呢。但是简单的RewardFuntion，并不代表，根据这个RewardFuntion学出来的Actor，一定也会是简单的。举例来说，对一个人类而言，也许人类的Reward，是非常简单的。也许人类的RewardFuntion就只有一条，就是活下来，但是是不是这样子，就是一个见仁见智的问题啦。那也许人类的RewardFuntion只有，活下来这件事，但是光是人类想活下来这件事情，就可以让人类的行为有千变万化，所以简单的Reward Funtion，并不代表你一定会学出简单的Actor。有可能简单的Reward Funtion，但学出来的Actor，仍然是复杂的，那这个是Inverse Reinforcement Learning。
+
+Inverse Reinforcement Learning的基本概念，是什么呢，怎么找出RewardFuntion呢？这边最基本的概念就是，老师的行为，是最棒的。但是我这边要强调一下所谓最棒，并不代表，你要完全去模仿老师的行为，而是你假设老师的行为，可以取得最高的Reward。那老师的行为，可以取得最高的Reward这个假设，跟完全模仿老师的行为，这两件事情并不是等价的。也许我们看完这个Algorithm，你会更清楚我想表达的意思。
+
+![image-20221101205128863](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205128863.png)
+
+好，现在呢，我们有一个Actor，它一开始是什么都不会，然后呢，在每一个Iteration里面，这个Actor会去跟环境进行互动，学习搜集一些Actor自己的Trajectories。然后接下来呢，我们要定义一个Reward Funtion，这个Reward Funtion怎么定义呢？这个RewardFuntion定义的条件，这个Reward，Learn这个Reward Funtion的条件是，今天老师的行为，得到的Reward，必须要高于学生的行为，就老师也有跟环境互动，我们得到一堆老师的Demonstration，我们得到一堆老师的Trajectory。当你用你Learn出来的Reward Funtion，去计算老师的Trajectory的时候，我们要订一个RewardFuntion，我们要订一个Reward Funtion，这个Reward Funtion，去评估老师的Trajectory的时候，要给比较高的分数，去评估Actor的Trajectory的时候，要给它比较低的分数。然后接下来呢，你再去更新你的Actor，你要去重新训练你的Actor，更新你Update，更新你的Actor的参数，让它去Maximize我们会得到的Reward，然后接下来呢，就反覆执行这个步骤，你有新的Actor，它会有新的Trajectory，你再更新一次Reward Funtion，让这个RewardFuntion评估，这个老师的分数比较高，评估Actor的分数比较低，然后呢，Actor呢，再想办法去Maximize Reward Funtion，然后就反覆这个循环，最终你就会得到一个RewardFuntion。那这个，就是我们用InverseReinforcementLearning，Learn出来的RewardFuntion。
+
+![image-20221101205312626](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205312626.png)
+
+好那如果刚才那个Algorithm，你没有看的很懂的话，那这边是用图像化的方法，来讲一下Inverse Reinforcement Learning，那它的缩写呢，是IRL。好那现在呢，有Expert的Demonstration，写成$\hat{τ}$，有Actor跟环境的互动，写成$τ$。那接下来你要定一个Reward Funtion，这个RewardFuntion呢，会给$\hat{τ}$，也就是Expert的Demonstration比较高的分数，给$τ$，也就是你的Actor的Trajectory比较低的分数。
+
+![image-20221101205700988](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205700988.png)
+
+那有了这一个R以后，你再去训练你的Actor，去Maximize这个Reward Funtion，怎么训练Actor去Maximize这个，刚学出来的RewardFuntion呢？这边你就要透过，ReinforcementLearning的方法。接下来，你有了新的Actor，新的Actor有新的行为，但这些新的行为，仍然要得到比老师低的分数，你会去更新你的Reward Funtion，让老师得到的分数，仍然高过于Actor得到的分数。然后就反覆反覆这一个回圈，反覆反覆这个循环，最终，你就可以把一个Reward Funtion Learn出来。
+
+那这整个Framework，你听起来有没有觉得有点熟悉呢？我们可以把Actor，想像成是GAN，Generative Adversarial Network，里面的Generator。把RewardFuntion，想像成是GAN里面的Discriminator，我们来很快复习一下GAN的Framework。
+
+![image-20221101205818872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205818872.png)
+
+在GAN的Framework里面，你有一个Generator，它会产生比较差的图片，然后有一个Discriminator，它要想办法给真正的图片高分，Generator产生的图片低分，然后呢，你的这个Generator，会去想办法骗过Discriminator，产生新的图片，Discriminator又会Update它的参数，想办法去，评价好的图片跟Generator产生出来图片的差别。然后这个Discriminator，跟这个Generator，就会反覆地Update，那这个是GAN。
+
+![image-20221101210408997](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101210408997.png)
+
+Inverse Reinforcement Learning跟GAN，其实根本就是一样的东西。只是把Generator，跟Discriminator的名字换掉而已。Actor产生一些行为，然后你要去订一个Reward Funtion，给Expert的Trajectories高分，给Actor的Trajectories低分，然后接下来，Actor想办法去，在这个RewardFuntion得到高分，那有了新的Actor，有了新的行为，RewardFuntion又会被Update，想办法给Expert高分，给Actor低分，所以RewardFuntion，完全可以对应到Discriminator，Actor可以对应到Generator。所以你会发现，GAN跟IRL，Inverse Reinforcement Learning。它们有异曲同工之妙，好像是同一个Framework，用不同的方法，不同的角度来描述。好，那像IRL这种方法，常常被用来训练机械手臂。那过去，在如果你不是用Reinforcement Learning，来训练机械手臂的话，可能看起来，是什么样子呢，以下又是从TheBigBangTheory，里面撷出来的一段https://www.youtube.com/watch?v=75rZwxKBAf0&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=33&ab_channel=Hung-yiLee 19分36秒
+
+好那这个影片想要告诉大家的事情是说，假设你今天想要用写程式的方法，来操控一个机械手臂，虽然对人来说，我们要伸自己的手臂来做什么事情，都是一件很简单的事情，但是你要把这么简单的行为程式化，把它写成程式，去操控机械手臂的每一个关节，做出某一些指定的动作，往往不是那么容易。那这个时候，你就可以使用，Inverse Reinforcement Learning的技术，你就示范给机器看，示范给它一次你要它做的行为，看看它能不能就借此学会，我们要它做的行为。所以以下，就是用Inverse Reinforcement Learning，其中的某一个技术达到的结果。
+
+https://www.youtube.com/watch?v=75rZwxKBAf0&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=34&ab_channel=Hung-yiLee 21分50秒
+
+我这边是不是有点卡顿，我跳出来再跳进去好了，好那我们继续吧，好那就播一下这个影片，在教机器摆盘子，先示范给它看，这边会示范个20次，那这个是示范，这个是教机器那个倒东西，然后这个也是示范20次。好那这个影片是想要告诉大家说，未来我们可能可以用Demonstrate的方法，来教机器事情，好那事实上呢，如果你要教机械手臂一些行为，现在还有一个更潮的做法。那这个更潮的做法呢，是你直接给机器一个画面，然后让机器呢，做出这个画面中的行为，那这个部分我们就不细讲，我这边就是列举了一篇，NIPS的Paper，跟一篇ICML的Paper给大家参考。
+
+![image-20221101210851486](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101210851486.png)
+
+那它的基本概念是说，就给机器一个画面，告诉它说，你就去达到这个目标，然后机器就会自己想办法达到目标。那怎么训练机器有这个能力，看到一个画面，就知道怎么达到目标呢，这个训练的过程也非常地有意思，这个训练过程是，机器会自己创造目标。它自己在心里呢，想像一些画面，然后呢，再想办法去达到这些画面，这个就好像是说，有人告诉你说，欸那你要念一个博班，你要拿一个博士学位，那你就会去想办法呢，拿到这个博士学位。那中间的过程是怎么样，不知道，你要自己想办法去Figure Out。可是怎么训练自己，有拿到博士学位的能力呢，你就会自己给自己先设定一些目标。比如说你先设定说，我要成为一个YouTuber，然后要做做做，做一些事情，然后成为一个YouTuber，你就知道说，嗯我有达成目标的能力，那再设定一些别的，别的各式各样的目标，然后都想办法去达成它，就可以培养自己达成目标的能力。那之后有人告诉你说，你现在的目标是拿一个博士学位，那你就会知道要怎么拿一个博士学位这样。
+
+# Concluding Reamrks
+
+![image-20221101211230905](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101211230905.png)
+
+好那这个有关RL的部分呢，大概就，有关RL的部分呢，就讲到这边。
+
+Q：好，有同学问说，使用IRL这类的方法的话，是不是就没办法找到比人类更好的方法，有没有办法让机器青出于蓝，欸我觉得这是一个好问题。
+A：使用IRL这个做法，我们要注意一下，机器并不是去完全模仿人类的行为，所以机器的Solution，跟人的Solution，不一定会是一样的。所以，所以今天，如果我们要让机器，它得到的结果比人类更好的话，我觉得有一个可能的方法是，我们先用IRL，先Learn出一个Reward Funtion，然后在这个Reward Funtion上面，再加上额外的限制。举例来说，我们刚才看到的例子都是，你今天有示范给机器看，然后机器就可以Learn出一个Reward Funtion，知道说，你现在要叫它做的事情就是，摆盘子，那我们现在可以再加上新的Reward说，你摆盘子的速度要越快越好，如果你摆盘子的速度也很快的话，那你一样，你会得到额外的Reward，那这样也许就有机会让机器学一些，原来人类示范的时候，做不到的事情，所以我觉得，IRL还是有机会做得比人类更好的。
