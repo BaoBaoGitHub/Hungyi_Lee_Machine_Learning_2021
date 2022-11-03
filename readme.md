@@ -19,7 +19,7 @@
    }
    ```
 
-6. **内容还在不断更新中，争取可以周更，欢迎多多star、fork~，也欢迎大家指出项目中的问题~，如果很着急，可以联系baoxuanlin@cqu.edu.cn**
+6. **内容还在不断更新中，争取可以周更，欢迎多多star、fork~，也欢迎大家指出项目中的问题~**
 
 7. md文件中的图片都在https://github.com/BaoBaoGitHub/imgs 的Hungyi_Lee_Machine_Learning_2021文件夹中，如果感兴趣可以下载到本地。
 

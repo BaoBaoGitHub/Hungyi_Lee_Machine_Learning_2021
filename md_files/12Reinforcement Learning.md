@@ -10,7 +10,7 @@
 
 那什么是 Reinforcement Learning 呢,到目前为止啊,我们讲的几乎都是 Supervised Learning,假设你要做一个 Image 的 Classifier,你不只要告诉机器,它的 Input 是什么,你还要告诉机器,它应该输出什么样的 Output,然后接下来呢,你就可以 Train 一个 Image 的 Classifier
 
-![image-20221030133624924](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030133624924.png)
+![image-20221030133624924](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030133624924.png)
 
 那在多数这门课讲到目前为止的技术,基本上都是基于 Supervised Learning 的方法,就算是我们在讲 Self Supervised Learning 的时候,我们其实也是,很类似 Supervised Learning 的方法,只是我们的 Label,不需要特别僱用人力去标记,它可以自动产生
 
@@ -20,7 +20,7 @@
 
 举例来说,假设你要叫机器学习下围棋
 
-![image-20221030133750358](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030133750358.png)
+![image-20221030133750358](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030133750358.png)
 
 用 Supervised Learning 的方法,好像也可以做,你就是告诉机器说,看到现在的盘势长这个样子的时候,下一步应该落子的位置在哪裡,但是问题是,下一步应该落子的位置到底应该在哪裡呢,哪一个是最好的下一步呢,哪一步是神之一手呢,可能人类根本就不知道
 
@@ -34,7 +34,7 @@
 
 好 那接下来呢,这是今天这份投影片的 Outline
 
-![image-20221030133900784](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030133900784.png)
+![image-20221030133900784](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030133900784.png)
 
 首先呢,我们会从最基本的 RL 的概念开始,那在介绍这个 RL 概念的时候,有很多不同的切入点啦,也许你比较常听过的切入点是这样,比如说从 Markov Decision Process 开始讲起
 
@@ -52,7 +52,7 @@
 
 那 Reinforcement Learning 裡面呢,我们会有一个Actor,还有一个 Environment,那这个 Actor 跟 Environment,会进行互动
 
-![image-20221029192536270](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029192536270.png)
+![image-20221029192536270](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029192536270.png)
 
 - 你的这个 Environment,你的这个环境啊,会给 Actor 一个 Observation,会给,那这个 Observation 呢,就是 Actor 的输入
 - 那 Actor 呢,看到这个 Observation 以后呢,它会有一个输出,这个输出呢,叫做 Action,那这个 Action 呢,会去影响 Environment
@@ -68,7 +68,7 @@
 
 在 Space Invader 裡面呢
 
-![image-20221029192710513](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029192710513.png)
+![image-20221029192710513](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029192710513.png)
 
 - 你要操控的是下面这个绿色的东西,这个下面这个绿色的东西呢,是你的太空梭,你可以採取的行为,也就是 Action 呢 有三个,左移 右移跟开火,就这三个行为,然后你现在要做的事情啊,就是杀掉画面上的这些外星人。画面上这些黄色的东西,也就是外星人啦,然后你开火,击中那些外星人的话,那外星人就死掉了。
 - 那前面这些东西是什么呢,那个是你的防护罩,如果你不小心打到自己的防护罩的话,你的防护罩呢,也是会被打掉的,那你可以躲在防护罩后面,你就可以挡住外星人的攻击
@@ -82,7 +82,7 @@
 
 现在你的 Actor 啊,Actor 虽然是一个机器,但是它是坐在人的这一个位置,它是站在人这一个角度,去操控摇杆,去控制那个母舰,去跟外星人对抗,而你的环境是什么,你的环境呢,是游戏的主机,游戏的主机这边去操控那些外星人,外星人去攻击你的母舰,所以 Observation 是游戏的画面
 
-![image-20221029192845173](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029192845173.png)
+![image-20221029192845173](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029192845173.png)
 
 所以对 Actor 来说,它看到的,其实就跟人类在玩游戏的时候,看到的东西是一样的,就看到一个游戏的画面
 
@@ -114,17 +114,17 @@
 
 那假设现在你的 Actor,决定要落子在这个地方
 
-![image-20221029193147549](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193147549.png)
+![image-20221029193147549](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193147549.png)
 
 那这一个结果,就会输入给你的环境,那其实就是一个棋士,然后呢 这个环境呢,就会再产生新的 Observation,因为这个李世石这个棋士呢,也会再落一子,那现在看到的环境又不一样了,那你的 Actor 看到这个新的 Observation,它就会产生新的 Action,然后就这样反覆继续下去
 
-![image-20221029193211858](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193211858.png)
+![image-20221029193211858](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193211858.png)
 
 你就可以让机器做下围棋这件事情,好 那在这个,在这个下围棋这件事情裡面的 Reward,是怎麽计算的呢
 
 在下围棋裡面,你所採取的行为,几乎都没有办法得到任何 Reward,在下围棋这个游戏裡,在下围棋这件事情裡面呢,你会定义说,如果赢了,就得到 1 分,如果输了就得到 -1 分
 
-![image-20221029193242046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193242046.png)
+![image-20221029193242046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193242046.png)
 
 也就是说在下围棋这整个,这个你的 Actor 跟环境互动的过程中,其实只有游戏结束,只有整场围棋结束的最后一子,你才能够拿到 Reward,就你最后,最后 Actor 下一子下去,赢了,就得到 1 分,那最后它落了那一子以后,游戏结束了,它输了,那就得到 -1 分,那在中间整个互动的过程中的 Reward,就都算是 0 分,没有任何的 Reward,那这个 Actor 学习的目标啊,就是要去最大化,它可能可以得到的 Reward
 
@@ -134,7 +134,7 @@
 
 开学第一堂课就告诉你说,Machine Learning 就是三个步骤
 
-![image-20221029193329001](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193329001.png)
+![image-20221029193329001](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193329001.png)
 
 1. 第一个步骤,你有一个 Function,那个 Function 裡面有一些未知数,Unknown 的 Variable,这些未知数是要被找出来的
 2. 第二步,订一个 Loss Function,第三步,想办法找出未知数去最小化你的 Loss
@@ -148,7 +148,7 @@
 
 那在过去啊,在还没有把 Deep Learning 用到 RL 的时候,通常你的 Actor 是比较简单的,它不是 Network,它可能只是一个 Look-Up-Table,告诉你说看到什么样的输入,就产生什么样的输出,那今天我们都知道要用 Network,来当做这个 Actor,那这个 Network,其实就是一个很複杂的 Function
 
-![image-20221029193524555](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193524555.png)
+![image-20221029193524555](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193524555.png)
 
 这个複杂的 Function 它的输入是什么呢,它的输入就是游戏的画面,就是游戏的画面,这个游戏画面上的 Pixel,像素,就是这一个 Actor 的输入
 
@@ -182,7 +182,7 @@
 
 首先有一个初始的游戏画面,这个初始的游戏画面,被作为你的 Actor 的输入
 
-![image-20221029193946781](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029193946781.png)
+![image-20221029193946781](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029193946781.png)
 
 你的 Actor 那就输出了一个 Action,比如说向右,输入的游戏画面呢,我们叫它 $s_1$,然后输出的 Action 呢,就叫它 $a_1$
 
@@ -194,7 +194,7 @@
 
 接下来你会看到新的游戏画面,那机器又会採取新的行为,那这个互动的过程呢,就会反覆持续下去,直到机器在採取某一个行为以后,游戏结束了,那什么时候游戏结束呢,就看你游戏结束的条件是什么嘛
 
-![image-20221029194042922](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029194042922.png)
+![image-20221029194042922](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029194042922.png)
 
 举例来说,採取最后一个行为以后,比如说向右移,正好被外星人的子弹打中,那你的飞船就毁了,那游戏就结束了,或者是最后一个行为是开火,把最后一隻外星人杀掉,那游戏也就结束了,就你执行某一个行为,满足游戏结束的条件以后,游戏就结束了
 
@@ -206,7 +206,7 @@
 
 但是我知道说,很快你就会忘记 Reward 跟 Return 的差别了,所以我们等一下就不要再用 Return 这个词彙,我们直接告诉你说,整场游戏的 Reward 的总和,就是 Total 的 Reward,而这个 Total 的 Reward 啊,就是我们想要去最大化的东西,就是我们训练的目标
 
-![image-20221029194146990](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029194146990.png)
+![image-20221029194146990](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029194146990.png)
 
 那你可能会说,欸 这个跟 Loss 不一样啊,Loss 是要越小越好啊,这个 Total Reward 是要越大越好啊,所以有点不一样吧,但是我们可以说在 RL 的这个情境下,我们把那个 Total Reward 的负号,负的 Total Reward,就当做我们的 Loss,Total Reward 是要越大越好,那负的 Total Reward,当然就是要它越小越好吧,就我们完全可以说负的 Total Reward,就是我们的 Loss,就是 RL 裡面的 Loss
 
@@ -214,7 +214,7 @@
 
 那我们再把这个环境跟,Agent 互动的这一件事情啊,再用不一样的图示,再显示一次
 
-![image-20221029194409482](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029194409482.png)
+![image-20221029194409482](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029194409482.png)
 
 这个是你的环境,你的环境呢,输出一个 Observation,叫做 $s_1$
 
@@ -250,13 +250,13 @@
 
 第一个问题是,**你的 Actor 的输出是有随机性的**
 
-![image-20221029194721060](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029194721060.png)
+![image-20221029194721060](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029194721060.png)
 
 这个 $a_1$ 它是用 Sample 产生的,你定同样的 $s_1$ 每次产生的 $a_1$ 不一定会一样,所以假设你把 Environment Actor 跟 Reward,合起来当做是一个巨大的 Network 来看待,这个 Network 可不是一般的 Network,这个 Network 裡面是有随机性的,这个 Network 裡面的某一个 Layer 是,每次产生出来结果是不一样的,这个 Network 裡面某一个 Layer 是,它的输出每次都是不一样的
 
 另外还有一个更大的问题就是,**你的 Environment 跟 Reward,它根本就不是 Network 啊,它只是一个黑盒子而已**,
 
-![image-20221029194815958](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029194815958.png)
+![image-20221029194815958](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029194815958.png)
 
 你根本不知道裡面发生了什么事情,Environment 就是游戏机,那这个游戏机它裡面发生什么事情你不知道,你只知道说你输入一个东西会输出一个东西,你採取一个行为它会有对应的回应,但是到底是怎麽产生这个对应的回应,我们不知道,它只是一个黑盒子,
 
@@ -290,11 +290,11 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 那你其实完全可以把它想成一个分类的问题,也就是说假设你要让 Actor 输入 s,输出就是 $\hat{a}$,假设 $\hat{a}$ 就是向左好了,假设你要让,假设你已经知道,假设你就是要教你的 Actor 说,看到这个游戏画面向左就是对的,你就是给我向左,那你要怎麽让你的 Actor 学到这件事呢
 
-![image-20221029195553629](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029195553629.png)
+![image-20221029195553629](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029195553629.png)
 
 那也就说 s 是 Actor 的输入,$\hat{a}$ 就是我们的 Label,就是我们的 Ground Truth,就是我们的正确答案,而接下来呢,你就可以计算你的 Actor,它的输出跟 Ground Truth 之间的 Cross-entropy,那接下来你就可以定义一个 Loss
 
-![image-20221029195620423](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029195620423.png)
+![image-20221029195620423](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029195620423.png)
 
 假设你希望你的 Actor,它採取 $\hat{a}$ 这个行为的话,你就定一个 Loss,这个 Loss 等于 Cross-entropy
 
@@ -306,7 +306,7 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 但是假设你想要让你的 Actor,不要採取某一个行为的话,那要怎麽做呢,假设你希望做到的事情是,你的 Actor 看到某一个 Observation s 的时候,我就千万不要向左的话怎麽做呢,其实很容易,你只需要把 Loss 的定义反过来就好
 
-![image-20221029195650022](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029195650022.png)
+![image-20221029195650022](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029195650022.png)
 
 你希望你的 Actor 採取 $\hat{a}$ 这个行为,你就定义你的大 L 等于 Cross-entropy,然后你要 Minimize Cross-entropy,假设你要让你的 Actor,不要採取 $\hat{a}$ 这个行为的话,那你就把你就定一个 Loss,叫做负的 Cross-entropy,Cross-entropy 乘一个负号,那你去 Minimize 这个 L,你去 Minimize 这个 L,就是让 Cross-entropy 越大越好,那也就是让 a 跟 $\hat{a}$ 的距离越远越好,那你就可以避免你的 Actor 在看到 s 的时候,去採取 $\hat{a}$ 这个行为,所以我们有办法控制我们的 Actor,做我们想要做的事,只要我们给它适当的 Label 跟适当的 Loss,
 
@@ -316,13 +316,13 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 这个时候你就会说,Given s 这个 Observation,我们的 Ground Truth 叫做 $\hat{a}$,Given s' 这个 Observation 的时候,我们有个 Ground Truth 叫做 $\hat{a}$',那对这两个 Ground Truth, 我们都可以去计算 Cross-entropy,$e_1$ 跟 $e_2$
 
-![image-20221029195807010](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029195807010.png)
+![image-20221029195807010](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029195807010.png)
 
 然后接下来呢,我们就定义说我们的 Loss,就是 $e_1$ 减 $e_2$,也就是说我们要让这个 Case,它的 Cross-entropy 越小越好,这个 Case 它的 Cross-entropy 越大越好
 
 然后呢,我们去找一个 θ 去 Minimize Loss,得到 $θ^⋆$,那就是一个可以在 s,可以在看到 s 的时候採取 $\hat{a}$,看到 s' 的时候採取 $\hat{a}$' 的 Actor,所以藉由很像是在,Train 一个 Classifier 的这种行为,藉由很像是现在 Train 一个 Classifier,的这种 Data,我们可以去控制一个 Actor 的行为,
 
-![image-20221029195832702](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029195832702.png)
+![image-20221029195832702](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029195832702.png)
 
 
 
@@ -341,7 +341,7 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 那所以呢,如果我们要训练一个 Actor,我们其实就需要收集一些训练资料,就收集训练资料说,我希望在 $s_1$ 的时候採取 $\hat{a}$1,我希望在 $s_2$ 的时候不要採取 $\hat{a}$2
 
-![image-20221029200103174](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029200103174.png)
+![image-20221029200103174](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029200103174.png)
 
 但可能会问说,欸 这个训练资料哪来的,这个我们等一下再讲训练资料哪来的
 
@@ -355,7 +355,7 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 但是现在啊,我们改成**每一个 s 跟 a 的 Pair,它有对应的一个分数**,这个分数代表说,我们多希望机器在看到 $s_1$ 的时候,执行 $\hat{a}_1$ 这个行为
 
-![image-20221029200322922](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029200322922.png)
+![image-20221029200322922](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029200322922.png)
 
 那比如说这边第一笔资料跟第三笔资料,我们分别是定 +1.5 跟 +0.5,就代表说我们期待机器看到 $s_1$ 的时候,它可以做 $\hat{a}_1$,看到 $s_3$ 的时候它可以做 $\hat{a}_3$,但是我们期待它看到 $s_1$ 的时候,做 $\hat{a}_1$ 的这个期待更强烈一点,比看到 $s_3$ 做 $\hat{a}_3$ 的期待更强烈一点
 
@@ -369,7 +369,7 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 那接下来的难点就是,要怎麽定出这一个 a 呢,这个就是我们接下来的难点,就是我们接下来要面对的问题,我们还有另外一个要面对的问题是,怎麽产生这个 s 跟 a 的 Pair 呢,怎麽知道在 $s_1$ 的时候要执行 $a_1$,或在 $s_2$ 的时候不要执行 $a_2$ 呢,那这个也是等一下我们要处理的问题,
 
-![image-20221029200400805](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029200400805.png)
+![image-20221029200400805](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029200400805.png)
 
 
 
@@ -389,13 +389,13 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 你先把这个 Actor,想成就是一个随机的 Actor 好了,就它是一个,它就是一个随机的东西,那看到 $s1$,然后它执行的行为就是乱七八糟的,就是随机的,但是我们会把它在,每一个 s 执行的行为 a,通通都记录下来,好 那通常我们在这个收集资料的话,你不会只把 Actor 跟环境做一个 Episode,通常会做多个 Episode,然后期待你可以收集到足够的资料,比如说在助教 Sample Code裡面,可能就是跑了 5 个 Episode,然后才收集到足够的资料
 
-![image-20221029201016039](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201016039.png)
+![image-20221029201016039](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201016039.png)
 
 所以我们就是去观察,某一个 Actor 它跟环境互动的状况,那把这个 Actor,它在每一个 Observation,执行的 Action 都记录下来,然后接下来,我们就去评价每一个 Action,它到底是好还是不好,评价完以后,我们就可以拿我们评价的结果,来训练我们的 Actor
 
 那怎么评价呢,我们刚才有说,我们会用 A 这一个东西,来评价在每一个 Step,我们希不希望我们的 Actor,採取某一个行为,那最简单的评价方式是,假设在某一个 Step $s1$,我们执行了 $a1$,然后得到 Reward $r1$
 
-![image-20221029201106771](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201106771.png)
+![image-20221029201106771](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201106771.png)
 
 - 那 Reward 如果如果是正的,那也许就代表这个 Action 是好的
 - 那如果 Reward 是负的,那也许就代表这个 Action 是不好的
@@ -404,7 +404,7 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 那这个,那这个 Version 0,它并不是一个好的版本,为什么它不是一个好的版本呢,因为你用这一个方法,你把 $a1$ 设为 $r1$,A2 设为 $r2$,这个方法认出来的 Network,它是一个短视近利的 Actor,它就是一个只知道会一时爽的 Actor,它完全没有长程规划的概念
 
-![image-20221029201230272](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201230272.png)
+![image-20221029201230272](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201230272.png)
 
 - 我们知道说每一个行为,其实都会影响互动接下来的发展,也就是说 Actor 在 $s1$ 执行 $a1$ 得到 $r1$,这个并不是互动的全部,因为 $a1$ 影响了我们接下来会看到 $s2$,$s2$ 会影响到接下来会执行 a2,也影响到接下来会产生 $r2$,所以 $a1$ 也会影响到,我们会不会得到 $r2$,所以每一个行为并不是独立的,每一个行为都会影响到接下来发生的事情,
 
@@ -420,13 +420,13 @@ Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛
 
 在 Version 1 裡面,$a1$ 它有多好,不是在取决于 $r1$,而是取决于 $a1$ 之后所有发生的事情,我们会把 $a1$,执行完 $a1$ 以后,所有得到的 Reward,$r1$ $r2$ $r3$ 到 $rN$,通通集合起来,通通加起来,得到一个数值叫做 G1,然后我们会说 $a1$ 就等于 G1,我们拿这个 G1,来当作评估一个 Action 好不好的标准
 
-![image-20221029201539865](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201539865.png)
+![image-20221029201539865](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201539865.png)
 
 刚才是直接拿 $r1$ 来评估,现在不是,拿 G1 来评估,那接下来所有发生的 r 通通加起来,拿来评估 $a1$ 的好坏,因为我们执行完 $a1$ 以后,就发生这么一连串的事情,那这么一连串的事情加起来,也许就可以评估 $a1$,到底是不是一个好的 Action
 
 所以以此类推,a2 它有多好呢,就把执行完 a2 以后,所有的 r,$r2$ 到 $rN$,通通加起来得到 G2,然后那 a3 它有多好呢,就把执行完 a3 以后,所有的 r 通通加起来,就得到 G3,所以把这些东西通通都加起来,就把那 这些这个 G,叫做 Cumulated Reward,叫做累积的 Reward,把未来所有的 Reward 加起来,来评估一个 Action 的好坏,那像这样子的方法听起来就合理多了
 
-![image-20221029201700307](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201700307.png)
+![image-20221029201700307](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201700307.png)
 
 Gt 是什么呢,就是从 t 这个时间点开始,我们把 rt 一直加到 $rN$,全部合起来就是,Cumulated 的 Reward Gt,那当我们用,Cumulated 的 Reward 以后,我们就可以解决 Version 0 遇到的问题,因为你可能向右移动以后进行瞄准,接下来开火,就有打中外星人,那这样向右这件事情,它也有 Accumulate Reward,虽然向右这件事情没有立即的 Reward,假设 $a1$ 是向右,那 $r1$ 可能是 0,但接下来可能会因为向右这件事,导致有瞄准,导致有打到外星人,那 Cumulated 的 Reward 就会正的,那我们就会知道说,其实向右也是一个好的 Action,这个是 Version 1
 
@@ -438,13 +438,13 @@ Gt 是什么呢,就是从 t 这个时间点开始,我们把 rt 一直加到 $rN$
 
 有第二个版本的 Cumulated 的 Reward,我们这边用 G',来表示 Cumulated 的 Reward,好 这个我们会在 r 前面,乘一个 Discount 的 Factor
 
-![image-20221029201855903](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029201855903.png)
+![image-20221029201855903](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029201855903.png)
 
 这个 Discount 的 Factor γ,也会设一个小于 1 的值,有可能会设,比如说 0.9 或 0.99 之类的,所以这个 G'1 相较于 G1 有什么不同呢,G1 是 $r1$ 加 $r2$ 加 $r3$,那 G'1 呢,是 $r1$ 加 γ$r2$ 加 γ 平方 $r3$,就是距离採取这个 Action 越远,我们 γ 平方项就越多,所以 $r2$ 距离 $a1$ 一步,就乘个 γ,$r3$ 距离 $a1$ 两步,就乘 γ 平方,那这样一直加到 $rN$ 的时候,$rN$ 对 G'1 就几乎没有影响力了,因为你 γ 乘了非常非常多次了,γ 是一个小于 1 的值,就算你设 0.9,0.9 的比如说 10 次方,那其实也很小了
 
 所以你今天用这个方法,就可以把离 $a1$ 比较近的那些 Reward,给它比较大的权重,离我比较远的那些 Reward,给它比较小的权重,所以我们现在有一个新的 A,这个新的 A 这个评估,这个 Action 好坏的这个 A,我们现在用 G'1 来表示它,那它的式子可以写成这个样子,这个 G't 就是 Summention over,n 等于 t 到 N,然后我们把 $rN$ 乘上 γ 的 n-t 次方,所以离我们现在,採取的 Action 越远的那些 Reward,它的 γ 就被乘越多次,它对我们的 G' 的影响就越小,这是第二个版本,听到这边你是不是觉得合理多了呢 
 
-![image-20221029202011634](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202011634.png)
+![image-20221029202011634](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202011634.png)
 
 ## Q&A
 
@@ -480,11 +480,11 @@ Version 3 就是像刚才同学问的,要不要做标准化呢?
 
 所以如果我们只是单纯的把 G 算出来,你可能会遇到一个问题,假设这个游戏裡面,可能永远都是拿到正的分数,每一个行为都会给我们正的分数,只是有大有小的不同,那你这边 G 算出来通通都会是正的,有些行为其实是不好的,但是你 仍然会鼓励你的 Model,去採取这些行为
 
-![image-20221029202435157](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202435157.png)
+![image-20221029202435157](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202435157.png)
 
 所以怎么办,我们需要做一下标准化,**那这边先讲一个最简单的方法就是,把所有的 G' 都减掉一个 b,这个 b 在这边叫做,在 rl 的文献上通常叫做 Baseline,那这个跟我们作业的 Baseline 有点不像,但是反正在 rl 的文献上,就叫做 Baseline 就对了**,我们把所有的 G' 都减掉一个 b,目标就是让 G' 有正有负,特别高的 G' 让它是正的,特别低的 G' 让它是负的
 
-![image-20221029202514348](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202514348.png)
+![image-20221029202514348](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202514348.png)
 
 但是这边会有一个问题就是,那要怎么样设定这个 Baseline 呢,我们怎么设定一个好的 Baseline,让 G' 有正有负呢,那这个我们在接下来的版本裡面还会再提到,但目前为止我们先讲到这个地方
 
@@ -498,7 +498,7 @@ A: 对 需要个,就是说在下围棋的时候,假设今天你的 Reward 非常
 
 接下来就会实际告诉你说,Policy Gradient 是怎么操作的,那你可以仔细读一下助教的程式,助教就是这么操作的
 
-![image-20221029202631961](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202631961.png)
+![image-20221029202631961](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202631961.png)
 
 首先你要先 Random 初始化,随机初始化你的 Actor,你就给你的 Actor 一个随机初始化的参数,叫做 $θ^0$,然后接下来你进入你的 Training Iteration,假设你要跑 T 个 Training Iteration,好 那你就拿你的这个,现在手上有的 Actor,一开始是这个 $θ^0$， 一开始很笨 它什么都不会,它採取的行为都是随机的,但它会越来越好,你拿你的 Actor 去跟环境做互动,那你就得到一大堆的 s 跟 a,你就得到一大堆的 s 跟 a,就把它互动的过程记录下来,得到这些 s 跟 a,那接下来你就要进行评价,你用 $ A1$ 到 AN 来决定说,这些 Action 到底是好还是不好
 
@@ -512,11 +512,11 @@ A: 对 需要个,就是说在下围棋的时候,假设今天你的 Reward 非常
 
 但在 RL 裡面不是这样,你发现收集资料这一段,居然是在 For 循环裡面,假设这个 For 循环,你打算跑 400 次,那你就得收集资料 400 次,或者是我们用一个图像化的方式来表示
 
-![image-20221029202907132](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202907132.png)
+![image-20221029202907132](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202907132.png)
 
 这个是你收集到的资料,就是你观察了某一个 Actor,它在每一个 State 执行的 Action,然后接下来你给予一个评价,但要用什么评价 要用哪一个版本,这个是你自己决定的,你给予一个评价,说每一个 Action 是好或不好,你有了这些资料 这些评价以后,拿去训练你的 Actor,你拿这些评价可以定义出一个 Loss,然后你可以更新你的参数一次
 
-![image-20221029202930346](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029202930346.png)
+![image-20221029202930346](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029202930346.png)
 
 但是有趣的地方是,你只能更新一次而已,一旦更新完一次参数以后,接下来你就要重新去收集资料了,登记一次参数以后,你就要重新收集资料,才能更新下一次参数,所以这就是为什么 RL,往往它的训练过程非常花时间
 
@@ -528,7 +528,7 @@ A: 对 需要个,就是说在下围棋的时候,假设今天你的 Reward 非常
 
 那我们,那这边一个比较简单的比喻是,你知道一个人的食物,可能是另外一个人的毒药
 
-![image-20221029203113349](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203113349.png)
+![image-20221029203113349](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203113349.png)
 
 这些资料是由 $θ_{i-1}$ 所收集出来的,这是 $θ_{i-1}$ 跟环境互动的结果,这个是 $θ_{i-1}$ 的经验,这些经验可以拿来更新 $θ_{i-1}$,可以拿来 Update $θ_{i-1}$ 的参数,但它不一定适合拿来 Update $θ_{i}$ 的参数
 
@@ -536,17 +536,17 @@ A: 对 需要个,就是说在下围棋的时候,假设今天你的 Reward 非常
 
 这个是进藤光,然后他在跟佐为下棋,然后进藤光就下一步,在大马 现在在小马步飞,这小马步飞具体是什么,我其实也没有非常地确定,但这边有解释一下,就是棋子斜放一格叫做小马步飞,斜放好几格叫做大马步飞,好 阿光下完棋以后,佐为就说这个时候不要下小马步飞,而是要下大马步飞,然后阿光说为什么要下大马步飞呢,我觉得小马步飞也不错
 
-![image-20221029203137871](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203137871.png)
+![image-20221029203137871](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203137871.png)
 
 这个时候佐为就解释了,如果大马步飞有 100 手的话,小马步飞只有 99 手,接下来是重点,之前走小马步飞是对的,因为小马步飞的后续比较容易预测,也比较不容易出错,但是大马步飞的下法会比较複杂,但是阿光假设想要变强的话,他应该要学习下大马步飞,或者是阿光变得比较强以后,他应该要下大马步飞,所以你知道说同样的一个行为,同样是做下小马步飞这件事,对不同棋力的棋士来说,也许它的好是不一样的,对于比较弱的阿光来说,下小马步飞是对的,因为他比较不容易出错,但对于已经变强的阿光来说,应该要下大马步飞比较好,下小马步飞反而是比较不好的
 
-![image-20221029203222837](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203222837.png)
+![image-20221029203222837](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203222837.png)
 
 所以同一个 Action 同一个行为,对于不同的 Actor 而言,它的好是不一样的
 
 所以今天假设我们用 $θ_{i-1}$,收集了一堆的资料,这个是 $θ_{i-1}$ 的 Trajectory,这些资料只能拿来训练 $θ_{i-1}$,你不能拿这些资料来训练 $θ_{i}$,为什么不能拿这些资料来训练 $θ_{i}$ 呢
 
-![image-20221029203330686](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203330686.png)
+![image-20221029203330686](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203330686.png)
 
 因为假设 假设就算是从 $θ_{i-1}$ 跟 $θ_{i}$,它们在 $s1$ 都会採取 $a1$ 好了,但之后到了 $s2$ 以后,它们可能採取的行为就不一样了,所以假设对 θ,假设今天 $θ_{i}$,它是看 $θ_{i-1}$ 的这个 Trajectory,那 $θ_{i-1}$ 会执行的这个 Trajectory,跟 $θ_{i}$ 它会採取的行为根本就不一样,所以你拿著 $θ_{i-1}$ 接下来会得到的 Reward,来评估 $θ_{i}$ 接下来会得到的 Reward,其实是不合适的
 
@@ -558,7 +558,7 @@ A: 对 需要个,就是说在下围棋的时候,假设今天你的 Reward 非常
 
 刚才我们说,这个要被训练的 Actor,跟要拿来跟环境互动的 Actor,最好是同一个,**当我们训练的 Actor,跟互动的 Actor 是同一个的时候,这种叫做 On-policy  Learning**,那我们刚才示范的那个,Policy Gradient 的整个 Algorithm,它就是 On-policy 的 Learning,那但是**还有另外一种状况叫做,Off-policy Learning,**
 
-![image-20221029203550687](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203550687.png)
+![image-20221029203550687](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203550687.png)
 
 Off-policy 的 Learning 我们今天就不会细讲,Off-policy 的 Learning,期待能够做到的事情是,我们能不能够让要训练的那个 Actor,还有跟环境互动的那个 Actor,是分开的两个 Actor 呢,我们要训练的 Actor,能不能够根据其他 Actor 跟环境互动的经验,来进行学习呢
 
@@ -570,7 +570,7 @@ Off-policy 有一个非常显而易见的好处,你就不用一直收集资料�
 
 Off-policy 的重点就是,你在训练的那个 Network,要知道自己跟别人之间的差距,它要有意识的知道说,它跟环境互动的那个 Actor 是不一样的,那至于细节我们就不细讲,那我有留那个上课的录影的[连结](https://disp.cc/b/115-bLHe),在投影片的下方,等一下大家如果有兴趣的话,再自己去研究 PPO
 
-![image-20221029203822529](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029203822529.png)
+![image-20221029203822529](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029203822529.png)
 
 那如果要举个比喻的话,就好像是你去问克里斯伊凡 就是美国队长,怎么追一个女生,然后克里斯伊凡就告诉你说,他就示范给你看,他就是 Actor To Interact,他就是负责去示范的那个 Actor,他说他只要去告白,从来没有失败过,但是你要知道说,你跟克里斯伊凡其实还是不一样,人帅真好 人丑吃草,你跟克里斯伊凡是不一样的,所以克里斯伊凡可以採取的招数,你不一定能够採取,你可能要打一个折扣,那这个就是 Off-policy 的精神
 
@@ -582,7 +582,7 @@ Off-policy 的重点就是,你在训练的那个 Network,要知道自己跟别�
 
 而这个随机性其实非常地重要,很多时候你随机性不够,你会 Train 不起来,为什么呢,举一个最简单的例子,假设你一开始初始的 Actor,它永远都只会向右移动,它从来都不会知道要开火,如果它从来没有採取开火这个行为,你就永远不知道开火这件事情,到底是好还是不好,唯有今天某一个 Actor,去试图做开火这件事得到 Reward,你才有办法去评估这个行为好或不好,假设有一些 Action 从来没被执行过,那你根本就无从知道,这个 Action 好或不好
 
-![image-20221029204054690](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221029204054690.png)
+![image-20221029204054690](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221029204054690.png)
 
 所以你今天在训练的过程中,这个拿去跟环境的互动的这个 Actor,它本身的随机性是非常重要的,你其实会期待说跟环境互动的这个 Actor,它的随机性可以大一点,这样我们才能够收集到,比较多的 比较丰富的资料,才不会有一些状况,它的 Reward 是从来不知道,那为了要让这个 Actor 的随机性大一点,甚至你在 Training 的时候,你会刻意加大它的随机性
 
@@ -608,19 +608,19 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 那 Critic 有好多种不同的变形,有的 Critic 是只看游戏画面来判断,有的 Critic 是说采取某,看到某一个游戏画面,接下来又发现 Actor 採取某一个 Action,在这两者都具备的前提下,那接下来会得到多少 Reward
 
-![image-20221030182910077](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030182910077.png)
+![image-20221030182910077](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030182910077.png)
 
 那这样讲,还是有点抽象,所以我们讲的更具体一点,我们直接介绍一个,我们等一下会真的被用上,你在作业裡面真的派得上用场的,这个 Critic 叫做Value Function,那这个 Value Function,我们这边用大写的 $V^θ(S)$ 来表示
 
 它的输入是 s,也就是现在游戏的状况,比如说游戏的画面,那这边要特别注意一下 V,它是有一个上标 θ 的
 
-![image-20221030182952700](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030182952700.png)
+![image-20221030182952700](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030182952700.png)
 
 这个上标 θ 代表这个 V ,它观察的对象是 θ 这个 Actor,它观察的这个 Actor 它的参数是 θ,那这个 V ,$V^θ $就是一个 Function,它的输入是 S,那输出是一个 Scalar,这边用 $V^θ(S)$ 来表示这一个 Scalar
 
 那 Scalar这个数值的含义是,这一个 Actor θ,放在上标的这个 Actor θ,它如果看到 Observation S,如果看到输入的这个 S 的游戏画面,接下来它得到的,Discounted Cumulated Reward 是多少
 
-![image-20221030183028025](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183028025.png)
+![image-20221030183028025](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183028025.png)
 
 这个的 Value Function 它的工作,就是要去估测说,对某一个 Actor 来说,如果现在它已经看到某一个游戏画面,那接下来会得到的,Discounted Cumulated Reward 应该是多少
 
@@ -630,13 +630,13 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 举例来说,假设你给 Value Function 这一个游戏画面,它就要直接预测说,看到这个游戏画面,接下来应该会得到很高的 Cumulated Reward,为什麽,因为游戏,这个游戏画面裡面还有很多的外星人
 
-![image-20221030183054499](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183054499.png)
+![image-20221030183054499](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183054499.png)
 
 假设你的这个 Actor 它很厉害,它是一个好的 Actor,它是能杀得了外星人的 Actor,那接下来它就会得到很多的 Reward
 
 那像这个画面,这已经是游戏的中盘
 
-![image-20221030183103107](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183103107.png)
+![image-20221030183103107](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183103107.png)
 
 游戏的残局,游戏快结束了,剩下的外星人没几隻了,那可以得到的 Reward 就比较少,那这些数值,你把整场游戏玩完你也会知道,但是 Value Function 想要做的事情,就是未卜先知,在游戏没玩完之前,就先猜应该会得到多少的,Discounted Cumulated Reward
 
@@ -650,7 +650,7 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 那在讲 Critic 要怎麽被使用,在 Reinforcement Learning 之前,我们来讲一下 Critic 是怎麽被训练出来的,那有两种常用的训练方法,第一种方法,是 Monte Carlo Based 的方法,这边缩写成 MC
 
-![image-20221030183152558](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183152558.png)
+![image-20221030183152558](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183152558.png)
 
 如果是用 MC 的方法的话,你就把 Actor 拿去跟环境互动,互动很多轮,那 Actor 跟环境互动以后,Actor 去玩这个游戏以后,你就会得到一些游戏的记录
 
@@ -672,7 +672,7 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 这边举一个例子,我们先来看一下,$ V^θ(s_t)$ 跟 $ V^θ(s_{t+1})$ 它们之间的关係
 
-![image-20221030183247291](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183247291.png)
+![image-20221030183247291](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183247291.png)
 
 我们说$ V^θ(s_t)$,就是看到 $s_t$之后的 Cumulated Reward,所以$ V^θ(s_t)$ 就是 $rt + γr_{t+1} + γ²r_{t+2}$ 以此类推
 
@@ -684,7 +684,7 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 我们现在,有这样一笔资料以后,我们就可以拿来训练我们的 Value Function,希望 Value Function 可以满足,这边我们所写的这个式子
 
-![image-20221030183313359](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183313359.png)
+![image-20221030183313359](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183313359.png)
 
 那什麽意思,就假设我们现在有这样一笔资料,我们就把 St,代到 Value Function 裡面得到$ V^θ(s_t)$,我们有 $ s_{t+1}$ 代到 Value Function 裡面,得到 $ V^θ(s_{t+1})$,虽然我们不知道$ V^θ(s_t)$ 是多少,我们也不知道 $ V^θ(s_{t+1})$ 应该是多少,我们没有这两个东西的标准答案,但我们知道它们相减应该是多少
 
@@ -700,7 +700,7 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 那这边,就举一个例子,这个例子是这样子的,我们观察某一个 Actor,这个 Actor ,跟环境互动玩了某一个游戏八次,当然这边为了简化计算,我们假设这些游戏都非常简单,都一个回合,就到两个回合就结束了
 
-![image-20221030183347268](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183347268.png)
+![image-20221030183347268](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183347268.png)
 
 - 所以那个 Actor 第一次玩游戏的时候,它先看到 $s_a$ 这个画面,得到 Reware 0
 
@@ -728,13 +728,13 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 但如果你用 TD,你算出来的,可会是不一样的结果
 
-![image-20221030183452549](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183452549.png)
+![image-20221030183452549](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183452549.png)
 
 因为 $ V^θ(s_a) $ 跟 $ V^θ(s_b) $ 中间,有这样子的一个关係,这个 $ V^θ(s_a) $ 应该要等于 $ V^θ(s_b) $ 加上 Reward,就是你在看到 $s_a$ 之后得到 Reward,接下来进入 $s_b$,那这个  $ V^θ(s_a) $,应该等于 $ V^θ(s_b) $ 加上这一个 Reward
 
 所以按照这个想法,$ V^θ(s_b) $ 是3/4,这个 r 是 0,但 $ V^θ(s_a) $ 应该是 3/4 对不对,按照 TD 的想法,$ V^θ(s_a) $ 应该是 3/4
 
-![image-20221030183509192](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183509192.png)
+![image-20221030183509192](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183509192.png)
 
 你可能会问说,那到底 Monte-Carlo 跟 TD,谁算出来是对的,都可以说是对的,它们只是背后的假设是不同的,对 Monte-Carlo 而言,它就是直接看我们观察到的资料,$s_a$ 之后接 $s_b$ 得到的,Cumulated Reward 就是 0,所以 $ V^θ(s_a) $ 当然是 0
 
@@ -752,11 +752,11 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 这个在 s1 执行 A1 的时候多好,得到一个分数 A1,那我们说这个 A1 ,它是 Cumulative 的 Reward,那上週也有同学问到说,难道 Cumulative 的 Reward,不需要做 Normalization 吗,需要做 Normalization,所以我们说,这个减掉一个 b 当做 Normalization
 
-![image-20221030183605457](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183605457.png)
+![image-20221030183605457](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183605457.png)
 
 但这个 b 的值应该设多少,就不好说,那我这边 告诉大家说,一个 V 合理的设法,是把它设成 $V^θ(S)$
 
-![image-20221030183627169](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183627169.png)
+![image-20221030183627169](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183627169.png)
 
 你现在 Learn 出这个 Critic 以后,这个 Critic 给它一个 Step,它就会产生一个分数,那你把这个分数 当做 B,,所以 G1' 就是要减掉 Vθ(s1),G2' 就是减掉 Vθ(s2),以此类推
 
@@ -766,7 +766,7 @@ Critic 它的工作是要来评估一个 Actor 的好坏,就你现在已经有�
 
 我们已经知道说这个 At 代表s，a 这个 Pair 有多好,我们是用 G' 减掉$ V^θ(s_t)$,来定义这个 A,好 那我们先来看一下这个$ V^θ(s_t)$,到底代表什麽意思
 
-![image-20221030183645931](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183645931.png)
+![image-20221030183645931](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183645931.png)
 
 $ V^θ(s_t)$是看到某一个画面 St 以后,接下来会得到的 Reward
 
@@ -780,7 +780,7 @@ $ V^θ(s_t)$是看到某一个画面 St 以后,接下来会得到的 Reward
 
 所以看到 St 之后,接下来有很多的可能 很多的可能,所以你会算出不同的 Cumulative 的 Reward
 
-![image-20221030183719410](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183719410.png)
+![image-20221030183719410](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183719410.png)
 
 那当然如果你有 Discount 的话,就是 Discounted 的 Cumulative Reward,那我们这边,是把 Discount 这件事情暂时省略掉，那把这些可能的结果平均起来,就是$ V^θ(s_t)$,这是$ V^θ(s_t)$ 这一项的含义
 
@@ -788,7 +788,7 @@ $ V^θ(s_t)$是看到某一个画面 St 以后,接下来会得到的 Reward
 
 Gt' 这一项的含义是,在 St 这个位置 在 St 这个画面下,执行 At 以后,接下来会得到的 Cumulative Reward
 
-![image-20221030183746039](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183746039.png)
+![image-20221030183746039](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183746039.png)
 
 所以你执行 At 以后,接下来 再一路玩下去,你会得到一个结果 得到一个 Reward,就是 Gt'
 
@@ -806,7 +806,7 @@ Gt' 这一项的含义是,在 St 这个位置 在 St 这个画面下,执行 At �
 
 我们执行完 At 以后 得到 Reward rt,然后跑到下一个画面 $ S_{t+1}$,把这个 $ S_{t+1}$ 接下来一直玩下去,有很多不同的可能,每个可能通通会得到一个 Reward,把这些 Reward 平均起来
 
-![image-20221030183812867](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183812867.png)
+![image-20221030183812867](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183812867.png)
 
 把这些 Cumulative 的 Reward 平均起来,其实就是 $ V^θ(s_{t+1})$,本来你会需要玩很多场游戏,才能够得到这个平均值,
 
@@ -814,13 +814,13 @@ Gt' 这一项的含义是,在 St 这个位置 在 St 这个画面下,执行 At �
 
 而接下来 你再加上 $r_t$,接下来再加上  $r_t$,代表说在 St 这个位置採取 at
 
-![image-20221030183906283](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183906283.png)
+![image-20221030183906283](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183906283.png)
 
 跳到 $ S_{t+1}$以后,会得到的 Reward 的期望值,因为我们已经知道说,在 St 这边採取 at 会得到 Reward  $r_t$,再跳到 $ S_{t+1}$,然后 $ S_{t+1}$ 会得到期望值,期望的 Reward 是 $ V^θ(s_{t+1})$
 
 所以我们这边,再给它加上  $r_t$,代表说在 St 这边执行 At 以后,会得到的 Reward 的期望值,接下来再把这两个东西相减,再把  $r_t$+$ V^θ(s_{t+1})$ 减掉$ V^θ(s_t)$
 
-![image-20221030183920036](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030183920036.png)
+![image-20221030183920036](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030183920036.png)
 
 也就是我们把 G' 换成  $r_t$+$ V^θ(s_{t+1})$,再减掉$ V^θ(s_t)$
 
@@ -838,7 +838,7 @@ Gt' 这一项的含义是,在 St 这个位置 在 St 这个画面下,执行 At �
 
 这边有一个训练 Actor-Critic 的小技巧,那你在作业裡面也不妨使用这个技巧
 
-![image-20221030184000214](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030184000214.png)
+![image-20221030184000214](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030184000214.png)
 
 Actor 是一个 Network,Critic 也是一个 Network,Actor 这个 Network,是一个游戏画面当做输入,它的输出是每一个 Action 的分数,Critic 是一个游戏画面当做输入,输出是一个数值,代表接下来会得到的 Cumulative 的 Reward
 
@@ -850,7 +850,7 @@ Actor 是一个 Network,Critic 也是一个 Network,Actor 这个 Network,是一�
 
 那其实今天讲的,并不是 Reinforcement Learning 的全部,那其实在 Reinforcement Learning 裡面,还有一个犀利的做法,是直接採取 Critic,也就是直接用 Critic,就可以决定要用什麽样的 Action
 
-![image-20221030184059198](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221030184059198.png)
+![image-20221030184059198](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221030184059198.png)
 
 那其中最知名的就是,Deep Q Network (DQN),那不过 这边我们就不细讲 DQN 了,如果你真的想知道 DQN 的话,可以参考过去上课的录影,那 DQN 哇 有非常非常多的变形
 
@@ -894,7 +894,7 @@ A5: 我想你这个 Distribution 问的是那个,Actor 的 Distribution 啦 对�
 
 什么是 Reward Shaping 呢？到目前为止我们学到的东西是，我们把我们的 Actor 拿去跟环境互动，得到一堆  Reward，那把这些 Reward 做某些的整理以后，得到这边的分数 A，有了这边的分数 A，你就可以去教你的 Actor，该做什么 不做什么。
 
-![image-20221101200329872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101200329872.png)
+![image-20221101200329872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101200329872.png)
 
 但是在这个 Reinforcement Learning 里面，我们很怕遇到一种状况是，假设 Reward 永远都是 0 的时候怎么办呢，假设多数的时候 Reward 都是 0，只有非常低的机率，你会得到一个巨大的 Reward 的时候，那怎么办呢？
 
@@ -938,7 +938,7 @@ A5: 我想你这个 Distribution 问的是那个,Actor 的 Distribution 啦 对�
 
 那今天再举另外一个 Reward Shaping  的例子
 
-![image-20221101201702246](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101201702246.png)
+![image-20221101201702246](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101201702246.png)
 
 假设你今天要训练一个机器手臂，那这个机器手臂的工作呢，就是把这个蓝色的板子，插到这个棍子上，好 那像这样子的任务，你要凭着 RL 的方法让机器凭空学会，把蓝色的板子插到这个棍子上，没有那么容易。但是你可能会想到一个，很直觉的 Reward Shaping 的方法是，假设今天这个蓝色的板子，离这个棍子越近，那我们得到的 Reward 就越大，但是如果你仔细想想会发现说，单纯让蓝色的板子离这个棍子越近是不够的，为什么让蓝色的板子离棍子近是不够的呢，你可以看看这个像右边这两个 Case，机械手臂也是想把蓝色的板子挪进棍子。但它做的事情，其实就是去打那个棍子。从侧面接近从侧面接近是没有用的，把蓝色的板子从侧面接近棍子，并不能够达到你最终的目标。所以如果我们单纯只是说，现在你的蓝色的板子离这个棍子越近，它的 Reward 就越大，你用 Reward Shaping 的方法。把蓝色的板子跟棍子之间的距离。当做一个新的 Reward但可能对你最终想要解决问题本身，是不一定有帮助的所以 Reward Shaping 这个东西。你在用的时候必须要小心。它需要你对这个问题本身有足够的理解。你才有办法使用 Reward Shaping 这样的招数
 
@@ -950,7 +950,7 @@ A5: 我想你这个 Distribution 问的是那个,Actor 的 Distribution 啦 对�
 
 Curiosity Based 的 Reward Shaping
 
-![image-20221101201904667](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101201904667.png)
+![image-20221101201904667](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101201904667.png)
 
 也就是呢 给机器加上好奇心。所谓好奇心的意思就是要去探索新的事物，所以在原来的 Reward 之外，我们加上一个 Reward这个 Reward 是，如果机器它在活动的过程中看到新的东西，它就被加分。但这边 又有一点要强调的是，新的东西必须是有意义的新，不是无谓的新。什么叫做有意义的新 不是无谓的新呢。那这个我们等一下再解释。
 
@@ -970,7 +970,7 @@ Curiosity Based 的 Reward Shaping
 
 那为什么有时候会连Reward都没有呢？其实像Reward这种东西，往往只在一些比较artifisial的环境，比如说游戏里面，特别容易被定义出来。在游戏里面，有一个记分板，所以你特别容易去定义说在游戏里面，怎么样的行为是好的，怎么样的行为是不好的，某一个行为有多好，或某一个行为有多不好。但是在真实的环境里面，你要定义Reward这件事情，有可能是非常地困难的，假设你今天要用RL的方法来学，学叫自驾车学会在路上走，那到底在路上走，做什么样的事情，会得到什么样的Reward呢？它礼让行人，就给它加100分吗，还是应该加1000分，那闯红灯，应该扣50分，还是扣50000分呢，那像这种东西，你根本不知道要怎么定。所以在更真实，在真实的环境中，有时候我们根本不知道要怎么定义，Reward这个东西，而且有时候，那你说，虽然我们不知道怎么定Reward，但我们可以凭着人类的智慧，去想一些Reward出来，来Guide一个Machine，像我们刚才讲的那种RewardShaping，不就是一个很好的例子吗？我们自己想一些Reward出来，来叫Machine学，但有时候你在想Reward教Machine学的时候，如果你的Reward没想好，Machine可能会产生非常奇怪的行为，你无法预期的行为，那这边举一个比较极端的例子。
 
-![image-20221101203456273](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203456273.png)
+![image-20221101203456273](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101203456273.png)
 
 有一个电影，叫做机械公敌，在机械公敌里面呢，当然这就未来的世界啦，有一大堆机器人，那些机器人的行为，必须符合三条原则，这三条原则是，第一条不能够伤害人类，也不能够坐视人类被伤害。第二条是，在不违反第一条的前提之下，机器必须要听从人类的命令。那第三条是机器必须要保护自己，在不违反第一条跟第二条的前提之下。所以你可以想像，这三条Law，这三条规则，就代表说，机器如果不违反这三条规则，就得到PositiveRewards，违反这三条规则，就得到非常Negative的Reward。然后有了这三条规则以后，机器呢，就自己去发展，自己去学习，但是最终呢，机器就得到神逻辑，在不违反这三条规则的前提之下，要得到最大Reward的方式，就是把人类监禁起来，因为人类会自我伤害，所以应该把人类监禁起来，避免他们自我伤害，这样机器就可以得到最高的Reward，所以这个例子告诉我们说，光订Reward是不够的，机器可能会有神逻辑，展现出你意想不到的行为。
 
@@ -980,21 +980,21 @@ Curiosity Based 的 Reward Shaping
 
 所以怎么办呢，在没有Reward的情况下，我们要怎么训练一个Agent去跟环境互动呢？
 
-![image-20221101203714437](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203714437.png)
+![image-20221101203714437](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101203714437.png)
 
 那在没有Reward的状况下，让机器跟环境互动，其中一个方法，叫做Imtation的Learning，那在ImtationLearning里面，我们假设Actor，它仍然可以跟环境互动，但它不会从环境得到Reward，Environment仍然会送出Observation给Actor，Actor仍然会做出回应，Environment仍然会随着Actor的回应，给不同的Observation，但是没有Reward这个东西。
 
-![image-20221101203801243](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101203801243.png)
+![image-20221101203801243](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101203801243.png)
 
 没有Reward这个东西要怎么学呢？虽然没有Reward，但是我们有另外一个东西，这个东西，是Expert的示范，我们找很多Expert，通常是人类，我们找很多人类，也来跟这个环境互动，把人类跟环境的互动记录下来，这些东西就是，这些纪录就是Expert的示范，就是Expert的示范，然后把这些Expert的示范呢，叫做$τ$，我们用这个这个上标，来代表人类的Expert的示范，那我们现在呢，就是要凭借着这些示范，还有跟环境的互动，来进行学习。这样讲也许有点抽象，什么叫做Expert的示范呢，假设你今天呢，要教机器开自驾车，那人类驾驶的行驶纪录，那就是Expert的示范。人类驾驶的行驶纪录可以告诉机器说，在这个路口，你应该打一下方向盘等等，那这些就是Expert的示范，或者是，你想要叫机器做一些指定的动作，比如说倒水排碗盘，你可能会先拉着机械的手臂示范一次，那人去拉着机械手臂示范一次。这件事情，就是Expert的Demonstration，就是这边的$τ$，那Lmtation Learning要做的事情，就是从这些$τ$，还有与环境的互动，进行学习。
 
 那讲到这边可能有同学就会想说，欸这个问题听起来好像挺简单的，这个不就是Supervised Learning吗，我们就把它当作Supervised Learning的问题，来看待就好啦。
 
-![image-20221101204417046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204417046.png)
+![image-20221101204417046](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101204417046.png)
 
 假设我们今天要训练自驾车，你又有人类驾驶的纪录，也就是你有记录说，欸人看到这样子的路的画面，那人就会采取某一种Action，比如说他就会踩刹车，或者是踩油门等等，欸你有这样子的一堆的纪录，我们不是直接就用Supervised Learning，来Learn我们的Agent就好了吗。你就说，你已经有人类给的资料说，看到s1这样的画面，最好的行为就是a1，s2这样的画面，人类的行为就是a2，你已经有这样子的训练资料，那你就直接叫机器，去模仿人类的行为就好啦，今天机器给它看si，然后它输出ai，你要让它的Actionai，跟人类的Actionai越接近越好，你就让机器去模仿人类的行为。那没错，当你有这个Expert的示范的时候，这是一个做法，那这种做法呢，叫做Behavior的Cloning，就是去复制人类的行为。
 
-![image-20221101204435274](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204435274.png)
+![image-20221101204435274](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101204435274.png)
 
 但是光是让机器去复制人类的行为，有可能有什么样的问题呢？
 
@@ -1008,11 +1008,11 @@ Curiosity Based 的 Reward Shaping
 
 有另外一个技术，叫做Inverse的Reinforcement Learning。接下来Inverse Reinforcement Learning，就是要让机器自己来订Reward啦，那怎么做呢，我们先看原来的Reinforcement Learning，是怎么运作的。原来的Reinforcement Learning是，我们有Reward，有环境，然后呢，用RL的Algorithm，跟环境还有Reward互动，然后你就学出一个Actor，但现在，我们没有Reward了，我们有的只有Expert专家的示范。
 
-![image-20221101204845152](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204845152.png)
+![image-20221101204845152](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101204845152.png)
 
 我们现在要做的事情，是一个叫，Inverse Reinforcement Learning的Algorithm，它是跟原来的Reinforcement Learning是相反的。它要做的事情，并不是根据Reward去学习，而是从Expert的Demonstration，还有Environment，去反推Reward应该长什么样子。也就是这边的RewardFuntion，是学出来的。那学出一个Reward Funtion以后，你就可以直接用一般的Reinforcement Learning，来学你的Actor。
 
-![image-20221101204939121](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101204939121.png)
+![image-20221101204939121](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101204939121.png)
 
 所以在Inverse Reinforcement Learning里面，我们的概念就是，本来不知道Reward Funtion，从Expert的示范，去反推Reward Funtion应该长什么样子，有了Reward Funtion以后，我们就可以再训练一个Optimal的Actor，去根据这些Reward Funtion，来进行学习。
 
@@ -1020,25 +1020,25 @@ Curiosity Based 的 Reward Shaping
 
 Inverse Reinforcement Learning的基本概念，是什么呢，怎么找出RewardFuntion呢？这边最基本的概念就是，老师的行为，是最棒的。但是我这边要强调一下所谓最棒，并不代表，你要完全去模仿老师的行为，而是你假设老师的行为，可以取得最高的Reward。那老师的行为，可以取得最高的Reward这个假设，跟完全模仿老师的行为，这两件事情并不是等价的。也许我们看完这个Algorithm，你会更清楚我想表达的意思。
 
-![image-20221101205128863](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205128863.png)
+![image-20221101205128863](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101205128863.png)
 
 好，现在呢，我们有一个Actor，它一开始是什么都不会，然后呢，在每一个Iteration里面，这个Actor会去跟环境进行互动，学习搜集一些Actor自己的Trajectories。然后接下来呢，我们要定义一个Reward Funtion，这个Reward Funtion怎么定义呢？这个RewardFuntion定义的条件，这个Reward，Learn这个Reward Funtion的条件是，今天老师的行为，得到的Reward，必须要高于学生的行为，就老师也有跟环境互动，我们得到一堆老师的Demonstration，我们得到一堆老师的Trajectory。当你用你Learn出来的Reward Funtion，去计算老师的Trajectory的时候，我们要订一个RewardFuntion，我们要订一个Reward Funtion，这个Reward Funtion，去评估老师的Trajectory的时候，要给比较高的分数，去评估Actor的Trajectory的时候，要给它比较低的分数。然后接下来呢，你再去更新你的Actor，你要去重新训练你的Actor，更新你Update，更新你的Actor的参数，让它去Maximize我们会得到的Reward，然后接下来呢，就反覆执行这个步骤，你有新的Actor，它会有新的Trajectory，你再更新一次Reward Funtion，让这个RewardFuntion评估，这个老师的分数比较高，评估Actor的分数比较低，然后呢，Actor呢，再想办法去Maximize Reward Funtion，然后就反覆这个循环，最终你就会得到一个RewardFuntion。那这个，就是我们用InverseReinforcementLearning，Learn出来的RewardFuntion。
 
-![image-20221101205312626](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205312626.png)
+![image-20221101205312626](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101205312626.png)
 
 好那如果刚才那个Algorithm，你没有看的很懂的话，那这边是用图像化的方法，来讲一下Inverse Reinforcement Learning，那它的缩写呢，是IRL。好那现在呢，有Expert的Demonstration，写成$\hat{τ}$，有Actor跟环境的互动，写成$τ$。那接下来你要定一个Reward Funtion，这个RewardFuntion呢，会给$\hat{τ}$，也就是Expert的Demonstration比较高的分数，给$τ$，也就是你的Actor的Trajectory比较低的分数。
 
-![image-20221101205700988](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205700988.png)
+![image-20221101205700988](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101205700988.png)
 
 那有了这一个R以后，你再去训练你的Actor，去Maximize这个Reward Funtion，怎么训练Actor去Maximize这个，刚学出来的RewardFuntion呢？这边你就要透过，ReinforcementLearning的方法。接下来，你有了新的Actor，新的Actor有新的行为，但这些新的行为，仍然要得到比老师低的分数，你会去更新你的Reward Funtion，让老师得到的分数，仍然高过于Actor得到的分数。然后就反覆反覆这一个回圈，反覆反覆这个循环，最终，你就可以把一个Reward Funtion Learn出来。
 
 那这整个Framework，你听起来有没有觉得有点熟悉呢？我们可以把Actor，想像成是GAN，Generative Adversarial Network，里面的Generator。把RewardFuntion，想像成是GAN里面的Discriminator，我们来很快复习一下GAN的Framework。
 
-![image-20221101205818872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101205818872.png)
+![image-20221101205818872](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101205818872.png)
 
 在GAN的Framework里面，你有一个Generator，它会产生比较差的图片，然后有一个Discriminator，它要想办法给真正的图片高分，Generator产生的图片低分，然后呢，你的这个Generator，会去想办法骗过Discriminator，产生新的图片，Discriminator又会Update它的参数，想办法去，评价好的图片跟Generator产生出来图片的差别。然后这个Discriminator，跟这个Generator，就会反覆地Update，那这个是GAN。
 
-![image-20221101210408997](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101210408997.png)
+![image-20221101210408997](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101210408997.png)
 
 Inverse Reinforcement Learning跟GAN，其实根本就是一样的东西。只是把Generator，跟Discriminator的名字换掉而已。Actor产生一些行为，然后你要去订一个Reward Funtion，给Expert的Trajectories高分，给Actor的Trajectories低分，然后接下来，Actor想办法去，在这个RewardFuntion得到高分，那有了新的Actor，有了新的行为，RewardFuntion又会被Update，想办法给Expert高分，给Actor低分，所以RewardFuntion，完全可以对应到Discriminator，Actor可以对应到Generator。所以你会发现，GAN跟IRL，Inverse Reinforcement Learning。它们有异曲同工之妙，好像是同一个Framework，用不同的方法，不同的角度来描述。好，那像IRL这种方法，常常被用来训练机械手臂。那过去，在如果你不是用Reinforcement Learning，来训练机械手臂的话，可能看起来，是什么样子呢，以下又是从TheBigBangTheory，里面撷出来的一段https://www.youtube.com/watch?v=75rZwxKBAf0&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2P2J&index=33&ab_channel=Hung-yiLee 19分36秒
 
@@ -1048,13 +1048,13 @@ https://www.youtube.com/watch?v=75rZwxKBAf0&list=PLJV_el3uVTsMhtt7_Y6sgTHGHp1Vb2
 
 我这边是不是有点卡顿，我跳出来再跳进去好了，好那我们继续吧，好那就播一下这个影片，在教机器摆盘子，先示范给它看，这边会示范个20次，那这个是示范，这个是教机器那个倒东西，然后这个也是示范20次。好那这个影片是想要告诉大家说，未来我们可能可以用Demonstrate的方法，来教机器事情，好那事实上呢，如果你要教机械手臂一些行为，现在还有一个更潮的做法。那这个更潮的做法呢，是你直接给机器一个画面，然后让机器呢，做出这个画面中的行为，那这个部分我们就不细讲，我这边就是列举了一篇，NIPS的Paper，跟一篇ICML的Paper给大家参考。
 
-![image-20221101210851486](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101210851486.png)
+![image-20221101210851486](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101210851486.png)
 
 那它的基本概念是说，就给机器一个画面，告诉它说，你就去达到这个目标，然后机器就会自己想办法达到目标。那怎么训练机器有这个能力，看到一个画面，就知道怎么达到目标呢，这个训练的过程也非常地有意思，这个训练过程是，机器会自己创造目标。它自己在心里呢，想像一些画面，然后呢，再想办法去达到这些画面，这个就好像是说，有人告诉你说，欸那你要念一个博班，你要拿一个博士学位，那你就会去想办法呢，拿到这个博士学位。那中间的过程是怎么样，不知道，你要自己想办法去Figure Out。可是怎么训练自己，有拿到博士学位的能力呢，你就会自己给自己先设定一些目标。比如说你先设定说，我要成为一个YouTuber，然后要做做做，做一些事情，然后成为一个YouTuber，你就知道说，嗯我有达成目标的能力，那再设定一些别的，别的各式各样的目标，然后都想办法去达成它，就可以培养自己达成目标的能力。那之后有人告诉你说，你现在的目标是拿一个博士学位，那你就会知道要怎么拿一个博士学位这样。
 
 # Concluding Reamrks
 
-![image-20221101211230905](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning/image-20221101211230905.png)
+![image-20221101211230905](https://raw.githubusercontent.com/BaoBaoGitHub/imgs/main/Hungyi_Lee_Machine_Learning_2021/12Reinforcement%20Learning.assets/image-20221101211230905.png)
 
 好那这个有关RL的部分呢，大概就，有关RL的部分呢，就讲到这边。
 
